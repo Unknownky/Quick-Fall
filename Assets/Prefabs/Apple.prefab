@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2058b4654d2cc0643a9a7e9797628bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 2
 --- !u!58 &8669822708759024770
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -222,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1502059642291893367, guid: f1b9c4d8193a2d84e829b2a8a2768797, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8524431169704658363, guid: f1b9c4d8193a2d84e829b2a8a2768797, type: 3}
       propertyPath: m_Name

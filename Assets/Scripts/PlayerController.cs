@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     Animator ani;//声明动画器
     Rigidbody2D rb;//声明刚体用于获取并对其进行操作
 
+    // [Header("PlayerComponent")]
+
     [Header("move")]
     public float speed = 3f;
 
@@ -27,6 +29,9 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
+    private GameObject matchLessEffect;
+
+
     bool playerDead;//用于进行游戏结束判定
 
     bool playerMatchless;//用于进行无敌判定
@@ -43,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        matchLessEffect = transform.GetChild(1).gameObject;
     }
 
     void Update()
@@ -100,8 +106,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("spike"))
         {
-            ani.SetTrigger("dead");
             if (playerMatchless) return;
+            ani.SetTrigger("dead");
             PlayerDead();
         }
     }
@@ -120,8 +126,16 @@ public class PlayerController : MonoBehaviour
     IEnumerator Matchless(float time)
     {
         playerMatchless = true;
+        StartCoroutine(MatchlessBlink(time));
         yield return new WaitForSeconds(time);
         playerMatchless = false;
+    }
+
+    IEnumerator MatchlessBlink(float time)
+    {
+        matchLessEffect.SetActive(true);
+        yield return new WaitForSeconds(time);
+        matchLessEffect.SetActive(false);
     }
 
     private void OnDrawGizmosSelected()//Unity自带的方法,用于画各种线
