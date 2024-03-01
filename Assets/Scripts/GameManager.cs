@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public Text AppleCountText;
 
     public Text OrangeCountText;
+
+    public TMP_Text currentScoreText;
 
     public static GameManager instance;
 
@@ -69,11 +71,13 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
         Time.timeScale = 0;
         int maxScore = PlayerPrefs.GetInt("MaxScore", 0);
-        if (Time.timeSinceLevelLoad + instance.additionalScore > maxScore)
+        int currentScore = (int)Time.timeSinceLevelLoad + instance.additionalScore;
+        if (currentScore > maxScore)
         {
-            PlayerPrefs.SetInt("MaxScore", (int)Time.timeSinceLevelLoad + instance.additionalScore);
+            PlayerPrefs.SetInt("MaxScore", currentScore);
         }
         instance.MaxScore.text = PlayerPrefs.GetInt("MaxScore", 0).ToString();
+        instance.currentScoreText.text = currentScore.ToString();
         instance.GameOverPanelUI.SetActive(true);
     }
 

@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public float defaultGravityScale = 1.5f;
     public float dashGravity = 1.8f;
+
+    public float sharpDownGravity = 3f;
     float xVelocity;//用于接收x轴移动的真假值
 
 
@@ -65,6 +67,17 @@ public class PlayerController : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(xVelocity * speed, rb.velocity.y);//直接根据xVelocity * speed给到该刚体速度,这里简便而没有使用AddForce的方式来改变刚体的速度
+            rb.gravityScale = defaultGravityScale;
+        }
+
+        if(Input.GetKey(KeyCode.Space)){
+            if(!isOnGround)
+            {
+                rb.gravityScale = sharpDownGravity;
+            }
+        }
+        else
+        {
             rb.gravityScale = defaultGravityScale;
         }
 
