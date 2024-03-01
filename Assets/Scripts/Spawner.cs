@@ -14,12 +14,12 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         RandGenerPlatform();
-        #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Time.timeScale = 5f;
-        }
-        #endif
+        // #if UNITY_EDITOR
+        // if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     Time.timeScale = 5f;
+        // }
+        // #endif
     }
 
     void RandGenerPlatform()
@@ -39,7 +39,6 @@ public class Spawner : MonoBehaviour
     void CreatePlatform()
     {
         int index = Random.Range(0, generBox.Count);
-        Logger.Log("index:" + index);
         if (GameObject.Find("Spiked Ball(Clone)") || GameObject.Find("Spiked Ball With Orange Variant(Clone)") || GameObject.Find("FireBoxGroup(Clone)"))
         {
             while (generBox[index].name == "Spiked Ball" || generBox[index].name == "Spiked Ball With Orange Variant" || generBox[index].name == "FireBoxGroup")//如果有该物体的话再随机直到不是
