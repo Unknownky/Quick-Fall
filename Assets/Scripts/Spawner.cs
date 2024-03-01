@@ -14,6 +14,12 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         RandGenerPlatform();
+        #if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Time.timeScale = 5f;
+        }
+        #endif
     }
 
     void RandGenerPlatform()
@@ -33,16 +39,17 @@ public class Spawner : MonoBehaviour
     void CreatePlatform()
     {
         int index = Random.Range(0, generBox.Count);
-        if (GameObject.Find("Spiked Ball(Clone)"))
+        Logger.Log("index:" + index);
+        if (GameObject.Find("Spiked Ball(Clone)") || GameObject.Find("Spiked Ball With Orange Variant(Clone)") || GameObject.Find("FireBoxGroup(Clone)"))
         {
-            while (generBox[index].name == "Spiked Ball")//如果有该物体的话再随机直到不是
+            while (generBox[index].name == "Spiked Ball" || generBox[index].name == "Spiked Ball With Orange Variant" || generBox[index].name == "FireBoxGroup")//如果有该物体的话再随机直到不是
             {
                 index = Random.Range(0, generBox.Count);
             }
         }
         //如果当前已经有了Spiked Ball 并且即将生成 一个
         GameObject newItem = Instantiate(generBox[index], generpoint, Quaternion.identity);//Quaternion.identity即为四元数(0,0,0,0)
-        newItem.transform.SetParent(this.gameObject.transform);//将生成物品的位置设置为当前脚本挂载物体位置的子集
+        newItem.transform.SetParent(gameObject.transform);//将生成物品的位置设置为当前脚本挂载物体位置的子集
         //this是当前脚本
     }
 }

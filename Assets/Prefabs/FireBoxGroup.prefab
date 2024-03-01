@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2506596452285138196}
+  - component: {fileID: 7798908588666327675}
   m_Layer: 0
   m_Name: FireBoxGroup
   m_TagString: Untagged
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7798908588666327675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506596452285138199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef18c5d30ceb7d40b9a19f38e616870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
 --- !u!1001 &2506596451375699940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89,7 +103,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6359575713404839664, guid: 2b0769bbaa1a40a4d9d52aadeb8b1499, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2b0769bbaa1a40a4d9d52aadeb8b1499, type: 3}
 --- !u!4 &8829580141604811027 stripped
 Transform:
@@ -151,7 +166,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6359575713404839664, guid: 2b0769bbaa1a40a4d9d52aadeb8b1499, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2b0769bbaa1a40a4d9d52aadeb8b1499, type: 3}
 --- !u!4 &8829580142930336034 stripped
 Transform:
@@ -213,7 +229,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6359575713404839664, guid: 2b0769bbaa1a40a4d9d52aadeb8b1499, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2b0769bbaa1a40a4d9d52aadeb8b1499, type: 3}
 --- !u!4 &8829580142877583341 stripped
 Transform:
