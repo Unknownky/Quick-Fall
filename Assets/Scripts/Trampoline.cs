@@ -16,7 +16,7 @@ public class Trampoline : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //animator.SetBool("isPlay", true);
+            animator.Play("Trampoline_Jump");
             other.rigidbody.velocity = new Vector2(other.rigidbody.velocity.x, pushHeight);
         }
     }
