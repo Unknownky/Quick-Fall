@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     //进行是否在地面上的判定，可以直接射线检测
     [Header("detection")]
+    public bool teachLevel = false;
     public GameObject groundCheck;
     public bool isOnGround;
     public float checkRadius;
@@ -104,9 +106,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("spike"))
+        if (other.CompareTag("spike") || other.CompareTag("Fire"))
         {
             if (playerMatchless) return;
+            if(teachLevel){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                return;
+            }
             ani.SetTrigger("dead");
             PlayerDead();
         }
