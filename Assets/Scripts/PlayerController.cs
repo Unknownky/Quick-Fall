@@ -72,13 +72,13 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("spike"))
         {
             ani.SetTrigger("dead");
+            if (playerMatchless) return;
             PlayerDead();
         }
     }
 
     private void PlayerDead()
     {
-        if(playerMatchless) return;
         playerDead = true;
         GameManager.GameOver(playerDead);
     }
