@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    public int score = 2;
-
     private Animator collectedAnimator;
 
     private void Awake()
@@ -17,7 +15,7 @@ public class Apple : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.instance.AddScore(score);
+            GameManager.instance.AddFruitsCount("Apple", 1);
             collectedAnimator.Play("Collected_n");
             gameObject.SetActive(false);
         }

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Orange : MonoBehaviour
 {
-    public int score = 6;
-
     public float matchlessTime = 5f;
 
     private Animator collectedAnimator;
@@ -19,7 +17,7 @@ public class Orange : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.instance.AddScore(score);
+            GameManager.instance.AddFruitsCount("Orange", 1);
             collectedAnimator.Play("Collected_n");
             PlayerController.instance.PlayerMatchless(matchlessTime);
             gameObject.SetActive(false);

@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +11,9 @@ public class GameManager : MonoBehaviour
 
     public Text MaxScore;
 
-    public Text AdditionalScoreText;
+    public Text AppleCountText;
+
+    public Text OrangeCountText;
 
     public static GameManager instance;
 
@@ -18,6 +22,10 @@ public class GameManager : MonoBehaviour
     public float levelScap = 0.02f;
 
     public float delayTime = 1.5f;
+
+    private Dictionary<string, int> fruits = new Dictionary<string, int>();
+
+    [SerializeField] private Dictionary<string, int> fruitScores = new Dictionary<string, int>();
 
     private int additionalScore = 0;
     private void Awake()
@@ -28,6 +36,12 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
         Time.timeScale = 1.0f;
+        fruits.Clear();
+        fruits.Add("Apple", 0);
+        fruits.Add("Orange", 0);
+        fruitScores.Clear();
+        fruitScores.Add("Apple", 2);
+        fruitScores.Add("Orange", 6);
     }
 
     void Update()
@@ -64,10 +78,21 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void AddScore(int score)
+    public void AddFruitsCount(string fruitName, int count)
     {
-        additionalScore += score;
-        AdditionalScoreText.text = additionalScore.ToString();
+        fruits[fruitName] += count;
+        switch (fruitName)
+        {
+            case "Apple":
+                AppleCountText.text = "X " + fruits[fruitName].ToString();
+                break;
+            case "Orange":
+                OrangeCountText.text = "X " + fruits[fruitName].ToString();
+                break;
+            default:
+                break;
+        }
+        additionalScore += fruitScores[fruitName] * count;
     }
 
     //难度逐渐升级
