@@ -147,7 +147,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.74, y: 0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2526677501717340153}
   - {fileID: 303891978}
@@ -290,6 +290,7 @@ MonoBehaviour:
   defaultGravityScale: 1.5
   dashGravity: 1.8
   sharpDownGravity: 5
+  teachLevel: 0
   groundCheck: {fileID: 2526677501717340152}
   isOnGround: 0
   checkRadius: 0.11

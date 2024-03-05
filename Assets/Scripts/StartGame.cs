@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
 
-    void Start()
+    private void Update()
     {
-        player = GameObject.Find("Player");
-    }
-
-    private void Update() {
-        if (transform.position.y > player.transform.position.y)
-            SceneManager.LoadScene(1);
+        if (player != null)
+        {
+            if (transform.position.y > player?.transform.position.y)
+                SceneManager.LoadScene(1);
+        }
+        else{
+            GameObject.Find("Player");
+        }
     }
 }
