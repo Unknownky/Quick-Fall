@@ -1,4 +1,0 @@
-repository "Quick Fall@unknownway@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"
