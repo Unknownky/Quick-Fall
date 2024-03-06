@@ -8,6 +8,15 @@ public class StartGame : MonoBehaviour
 {
     public GameObject player;
 
+    private void Start() {
+        LoadPlayer.OnPlayerLoaded += StorePlayer;
+    }
+
+    private void StorePlayer() {
+        player = GameObject.Find("Player(Clone)");
+        LoadPlayer.OnPlayerLoaded -= StorePlayer;//卸载事件
+    }
+
     private void Update()
     {
         if (player != null)
@@ -15,8 +24,6 @@ public class StartGame : MonoBehaviour
             if (transform.position.y > player?.transform.position.y)
                 SceneManager.LoadScene(1);
         }
-        else{
-            player = GameObject.Find("Player(Clone)");
-        }
     }
+
 }

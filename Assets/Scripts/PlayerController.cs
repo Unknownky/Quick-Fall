@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    Animator ani;//ÉùÃ÷¶¯»­Æ÷
-    Rigidbody2D rb;//ÉùÃ÷¸ÕÌåÓÃÓÚ»ñÈ¡²¢¶ÔÆä½øĞĞ²Ù×÷
+    Animator ani;//å£°æ˜åŠ¨ç”»å™¨
+    Rigidbody2D rb;//å£°æ˜åˆšä½“ç”¨äºè·å–å¹¶å¯¹å…¶è¿›è¡Œæ“ä½œ
 
     // [Header("PlayerComponent")]
 
@@ -18,10 +19,10 @@ public class PlayerController : MonoBehaviour
     public float dashGravity = 1.8f;
 
     public float sharpDownGravity = 3f;
-    float xVelocity;//ÓÃÓÚ½ÓÊÕxÖáÒÆ¶¯µÄÕæ¼ÙÖµ
+    float xVelocity;//ç”¨äºæ¥æ”¶xè½´ç§»åŠ¨çš„çœŸå‡å€¼
 
 
-    //½øĞĞÊÇ·ñÔÚµØÃæÉÏµÄÅĞ¶¨£¬¿ÉÒÔÖ±½ÓÉäÏß¼ì²â
+    //è¿›è¡Œæ˜¯å¦åœ¨åœ°é¢ä¸Šçš„åˆ¤å®šï¼Œå¯ä»¥ç›´æ¥å°„çº¿æ£€æµ‹
     [Header("detection")]
     public bool teachLevel = false;
     public GameObject groundCheck;
@@ -34,9 +35,9 @@ public class PlayerController : MonoBehaviour
     private GameObject matchLessEffect;
 
 
-    bool playerDead;//ÓÃÓÚ½øĞĞÓÎÏ·½áÊøÅĞ¶¨
+    bool playerDead;//ç”¨äºè¿›è¡Œæ¸¸æˆç»“æŸåˆ¤å®š
 
-    bool playerMatchless;//ÓÃÓÚ½øĞĞÎŞµĞÅĞ¶¨
+    bool playerMatchless;//ç”¨äºè¿›è¡Œæ— æ•Œåˆ¤å®š
 
     private void Awake()
     {
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour
         ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         matchLessEffect = transform.GetChild(1).gameObject;
+        //è®¾ç½®teachLevelçš„å€¼
+        if (SceneManager.GetActiveScene().name == "TeachLevel")
+        {
+            teachLevel = true;
+        }
     }
 
     void Update()
@@ -74,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(xVelocity * speed, rb.velocity.y);//Ö±½Ó¸ù¾İxVelocity * speed¸øµ½¸Ã¸ÕÌåËÙ¶È,ÕâÀï¼ò±ã¶øÃ»ÓĞÊ¹ÓÃAddForceµÄ·½Ê½À´¸Ä±ä¸ÕÌåµÄËÙ¶È
+            rb.velocity = new Vector2(xVelocity * speed, rb.velocity.y);//ç›´æ¥æ ¹æ®xVelocity * speedç»™åˆ°è¯¥åˆšä½“é€Ÿåº¦,è¿™é‡Œç®€ä¾¿è€Œæ²¡æœ‰ä½¿ç”¨AddForceçš„æ–¹å¼æ¥æ”¹å˜åˆšä½“çš„é€Ÿåº¦
             rb.gravityScale = defaultGravityScale;
         }
 
@@ -90,11 +96,11 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        ani.SetFloat("speed", Mathf.Abs(rb.velocity.x));//¸ù¾İÎïÌåµÄËÙ¶ÈÀ´ÉèÖÃrun×´Ì¬£¬¸ü¼ÓºÏÀíÕæÊµ
-        //²»·ÅÔÚÏÂÃæxÒÆ¶¯¾Í»árun
-        if (xVelocity != 0)//ÓĞ½ÓÊÕµ½
-        {//¸Ä±äÈËÎï³¯Ïò
-            transform.localScale = new Vector3(xVelocity, 1, 1);//È¡ÇÉÍ¨¹ı·´Ïò¸Ä±äÁËscaleÖµ´ïµ½×óÓÒ·´×ªµÄĞ§¹û
+        ani.SetFloat("speed", Mathf.Abs(rb.velocity.x));//æ ¹æ®ç‰©ä½“çš„é€Ÿåº¦æ¥è®¾ç½®runçŠ¶æ€ï¼Œæ›´åŠ åˆç†çœŸå®
+        //ä¸æ”¾åœ¨ä¸‹é¢xç§»åŠ¨å°±ä¼šrun
+        if (xVelocity != 0)//æœ‰æ¥æ”¶åˆ°
+        {//æ”¹å˜äººç‰©æœå‘
+            transform.localScale = new Vector3(xVelocity, 1, 1);//å–å·§é€šè¿‡åå‘æ”¹å˜äº†scaleå€¼è¾¾åˆ°å·¦å³åè½¬çš„æ•ˆæœ
         }
 
         if (transform.position.y < -10)
@@ -109,12 +115,14 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("spike") || other.CompareTag("Fire"))
         {
             if (playerMatchless) return;
+            ani.SetTrigger("dead");
             if(teachLevel){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 return;
             }
-            ani.SetTrigger("dead");
-            PlayerDead();
+            else{
+                PlayerDead();
+            }
         }
     }
 
@@ -144,7 +152,7 @@ public class PlayerController : MonoBehaviour
         matchLessEffect.SetActive(false);
     }
 
-    private void OnDrawGizmosSelected()//Unity×Ô´øµÄ·½·¨,ÓÃÓÚ»­¸÷ÖÖÏß
+    private void OnDrawGizmosSelected()//Unityè‡ªå¸¦çš„æ–¹æ³•,ç”¨äºç”»å„ç§çº¿
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheck.transform.position, checkRadius);
