@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    private GameObject player;
+    public GameObject player;
 
     private void Update()
     {
@@ -16,7 +16,7 @@ public class StartGame : MonoBehaviour
                 SceneManager.LoadScene(1);
         }
         else{
-            GameObject.Find("Player");
+            player = GameObject.Find("Player(Clone)");
         }
     }
 }

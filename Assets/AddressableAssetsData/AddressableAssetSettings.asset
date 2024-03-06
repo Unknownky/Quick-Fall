@@ -67,7 +67,7 @@ MonoBehaviour:
         m_Value: http://[PrivateIpAddress]:[HostingServicePort]
     - m_InheritedParent: 
       m_Id: cbe31583471b2104c80531d01202a65c
-      m_ProfileName: MyServer
+      m_ProfileName: MyPhoneServer
       m_Values:
       - m_Id: bd82d7cf592ae8e4da1613a0679a6375
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
@@ -79,6 +79,20 @@ MonoBehaviour:
         m_Value: ServerData/[BuildTarget]
       - m_Id: 2f8f1f2ba03b9064699ff9e9d330f127
         m_Value: http://192.168.74.165:8080/StandaloneWindows64/[BuildTarget]
+    - m_InheritedParent: 
+      m_Id: 1f86dab402f9cc84f91d05e244a83875
+      m_ProfileName: MyNcuServer
+      m_Values:
+      - m_Id: bd82d7cf592ae8e4da1613a0679a6375
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 3bf6c293e4edb42498fff7745746e8dc
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 9b594471692d37f48ad723896d9c7da9
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 6d7cd174a6a1d434ab6d1938aec34499
+        m_Value: ServerData/[BuildTarget]
+      - m_Id: 2f8f1f2ba03b9064699ff9e9d330f127
+        m_Value: http://10.102.64.130:8080/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: bd82d7cf592ae8e4da1613a0679a6375
       m_Name: BuildTarget
