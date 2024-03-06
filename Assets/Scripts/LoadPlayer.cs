@@ -11,6 +11,8 @@ public class LoadPlayer : MonoBehaviour
 
     [SerializeField] private Vector3 playerPosition;
 
+    
+
     private void Start() {
         Addressables.LoadAssetAsync<GameObject>("Player").Completed += OnLoadDone;
         playerPosition = GameObject.Find("InitPosition").transform.position;
@@ -18,6 +20,7 @@ public class LoadPlayer : MonoBehaviour
 
     private void OnLoadDone(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<GameObject> obj) {
         player = obj.Result;
+        Debug.Log("通过网络获取玩家资源成功！");
         Instantiate(player, playerPosition, Quaternion.identity);   
     }
 

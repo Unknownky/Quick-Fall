@@ -43,8 +43,8 @@ public class SceneLoader : MonoBehaviour
         loadHandle.Completed += (handle) =>
         {
             //卸载加载前的场景
-            SceneManager.UnloadSceneAsync("MainMenu");
             Debug.Log("加载完成");
+            SceneManager.UnloadSceneAsync("MainMenu");
         };
         yield return loadHandle;
         // await loadHandle.Task; //等待加载完成

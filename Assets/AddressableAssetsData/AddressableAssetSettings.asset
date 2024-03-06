@@ -78,7 +78,7 @@ MonoBehaviour:
       - m_Id: 6d7cd174a6a1d434ab6d1938aec34499
         m_Value: ServerData/[BuildTarget]
       - m_Id: 2f8f1f2ba03b9064699ff9e9d330f127
-        m_Value: http://192.168.74.165:8080/StandaloneWindows64/[BuildTarget]
+        m_Value: http://192.168.74.165:8080/[BuildTarget]
     - m_InheritedParent: 
       m_Id: 1f86dab402f9cc84f91d05e244a83875
       m_ProfileName: MyNcuServer
