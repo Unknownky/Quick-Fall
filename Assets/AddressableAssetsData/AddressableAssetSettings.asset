@@ -65,6 +65,20 @@ MonoBehaviour:
         m_Value: ServerData/[BuildTarget]
       - m_Id: 2f8f1f2ba03b9064699ff9e9d330f127
         m_Value: http://[PrivateIpAddress]:[HostingServicePort]
+    - m_InheritedParent: 
+      m_Id: cbe31583471b2104c80531d01202a65c
+      m_ProfileName: MyServer
+      m_Values:
+      - m_Id: bd82d7cf592ae8e4da1613a0679a6375
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 3bf6c293e4edb42498fff7745746e8dc
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 9b594471692d37f48ad723896d9c7da9
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 6d7cd174a6a1d434ab6d1938aec34499
+        m_Value: ServerData/[BuildTarget]
+      - m_Id: 2f8f1f2ba03b9064699ff9e9d330f127
+        m_Value: http://192.168.74.165:8080/StandaloneWindows64/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: bd82d7cf592ae8e4da1613a0679a6375
       m_Name: BuildTarget
@@ -98,7 +112,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 13be77c35bca5cc41ad601b8d40a8d5a, type: 2}
   - {fileID: 11400000, guid: 97669e3f5084cb047848882b191a5dd3, type: 2}
   - {fileID: 11400000, guid: ce04fe8d2f1c66540b1ef124b98f787a, type: 2}
-  m_ActiveProfileId: ac29726f61d29154db9aa8f57c95e2aa
+  m_ActiveProfileId: cbe31583471b2104c80531d01202a65c
   m_HostingServicesManager:
     m_HostingServiceInfos:
     - classRef: UnityEditor.AddressableAssets.HostingServices.HttpHostingService,

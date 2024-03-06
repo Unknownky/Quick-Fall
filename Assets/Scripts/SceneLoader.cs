@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
+
 
 /// <summary>
 /// 用于加载场景的类
@@ -14,15 +16,11 @@ public class SceneLoader : MonoBehaviour
 
     public WaitUntil waitUntilAnimationEnd;
 
-    private AsyncOperation asyncOperation;
+    private AsyncOperationHandle loadHandle;
 
     private void Awake()
     {
-        Addressables.LoadAssetAsync<Scene>("TeachScene").Completed += handle =>
-        {
-            teachScene = handle.Result;
-            Logger.Log("TeachScene loaded");
-        };
+
     }
 
     #region 公共方法
@@ -41,18 +39,25 @@ public class SceneLoader : MonoBehaviour
     {
         //TODO：播放加载动画
 
-        var asyncOperation = SceneManager.LoadSceneAsync(teachScene.name, LoadSceneMode.Additive);
-        yield return asyncOperation;  //等待加载完成
+        loadHandle = Addressables.LoadSceneAsync("TeachScene", LoadSceneMode.Additive);
+        loadHandle.Completed += (handle) =>
+        {
+            //卸载加载前的场景
+            SceneManager.UnloadSceneAsync("MainMenu");
+            Debug.Log("加载完成");
+        };
+        yield return loadHandle;
+        // await loadHandle.Task; //等待加载完成
         yield return waitUntilAnimationEnd; //等待动画结束
         //TODO：播放加载完成动画
 
         //移除加载前的场景
-        UnLoadCurrentScene();
+        // UnLoadLoadedScene();
     }
 
 
-    public void UnLoadCurrentScene()
+    public void UnLoadLoadedScene()
     {
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        Addressables.UnloadSceneAsync(loadHandle);
     }
 }
