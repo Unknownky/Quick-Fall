@@ -20,16 +20,11 @@ public class LoadDllManager : MonoBehaviour
 
     private void Start()
     {
-
         //加载aot元数据
-        LoadAotDll();
+        // LoadAotDll();
         //加载热更程序集
         LoadHotFixDll();
-        //加载菜单场景
-        LoadMenuScene();
     }
-
-
 
     private void LoadAotDll()
     {
@@ -38,16 +33,21 @@ public class LoadDllManager : MonoBehaviour
         Addressables.LoadAssetsAsync<TextAsset>(aotMetadataDllLabelRef, null).Completed += (handle) =>
         {
             var aots = handle.Result;
-            foreach (var asset in aots)
+            if (aots.Count != 0)
             {
-                LoadImageErrorCode errorCode = RuntimeApi.LoadMetadataForAOTAssembly(asset.bytes, mode);
-                if (errorCode == LoadImageErrorCode.OK)
+                foreach (var asset in aots)
                 {
-                    continue;
+                    LoadImageErrorCode errorCode = RuntimeApi.LoadMetadataForAOTAssembly(asset.bytes, mode);
+                    if (errorCode == LoadImageErrorCode.OK)
+                    {
+                        continue;
+                    }
+
+                    Debug.LogError($"加载AOT元数据DLL:{asset.name}失败,错误码:{errorCode}");
                 }
 
-                Debug.LogError($"加载AOT元数据DLL:{asset.name}失败,错误码:{errorCode}");
             }
+
         };
 
     }
@@ -64,7 +64,10 @@ public class LoadDllManager : MonoBehaviour
                 Debug.Log("加载热更DLL:" + asset.name);
                 Assembly.Load(asset.bytes);
                 Debug.Log("加载热更DLL:" + asset.name + "完成");
+
             }
+            //加载菜单场景
+            LoadMenuScene();
         };
     }
 

@@ -21,6 +21,14 @@ MonoBehaviour:
     m_Address: Loader
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5776736a890cb224cbd25cce0792bca8
+    m_Address: AlimamaDongFangDaKai-Regular
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 263ab7ebc93447f48ae81ca60d58ffbb
+    m_Address: AlimamaDongFangDaKai-Regular SDF
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:
