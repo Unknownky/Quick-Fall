@@ -31,8 +31,8 @@ public class LoadPlayer : MonoBehaviour
         player = obj.Result;
         Debug.Log("通过网络获取玩家资源成功！");
         Instantiate(player, playerPosition, Quaternion.identity);
-        OnPlayerLoaded.Invoke();
+        //判断是否有订阅者
+        if (OnPlayerLoaded != null)
+            OnPlayerLoaded.Invoke();
     }
-
-
 }
