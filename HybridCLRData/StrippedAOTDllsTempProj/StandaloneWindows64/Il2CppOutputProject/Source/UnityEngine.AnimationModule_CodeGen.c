@@ -697,229 +697,275 @@ extern void AnimatorControllerParameter_Equals_m9FDC3900B8DB91E9F99295CADB9574F7
 extern void AnimatorControllerParameter_GetHashCode_m145EFDAFC4D2C410BB84F8290883977340E25312 (void);
 // 0x00000158 System.Void UnityEngine.AnimatorControllerParameter::.ctor()
 extern void AnimatorControllerParameter__ctor_m91C7057D6AC6D38ACA5EC852D5FDA829F83C8474 (void);
-// 0x00000159 System.Void UnityEngine.AnimatorOverrideController::OnInvalidateOverrideController(UnityEngine.AnimatorOverrideController)
+// 0x00000159 System.Void UnityEngine.AnimationClipPair::.ctor()
+extern void AnimationClipPair__ctor_mD70020644551CCC04857BA2D4F7F63AD3E2159ED (void);
+// 0x0000015A System.Void UnityEngine.AnimatorOverrideController::.ctor()
+extern void AnimatorOverrideController__ctor_mB3C6317471A40FC19527AA7731E775AFC665CE15 (void);
+// 0x0000015B System.Void UnityEngine.AnimatorOverrideController::.ctor(UnityEngine.RuntimeAnimatorController)
+extern void AnimatorOverrideController__ctor_mE9C4FCBE3FCAF3CE2601CF50D3B19CC683BC47F8 (void);
+// 0x0000015C System.Void UnityEngine.AnimatorOverrideController::Internal_Create(UnityEngine.AnimatorOverrideController,UnityEngine.RuntimeAnimatorController)
+extern void AnimatorOverrideController_Internal_Create_mB5271F04B0FB0E2BADDF1AD4ACDC983E80D8C2C3 (void);
+// 0x0000015D UnityEngine.RuntimeAnimatorController UnityEngine.AnimatorOverrideController::get_runtimeAnimatorController()
+extern void AnimatorOverrideController_get_runtimeAnimatorController_mA611B48488C4A645B1FD68855A84ECC0406D2DD7 (void);
+// 0x0000015E System.Void UnityEngine.AnimatorOverrideController::set_runtimeAnimatorController(UnityEngine.RuntimeAnimatorController)
+extern void AnimatorOverrideController_set_runtimeAnimatorController_mDE783426F6A6283710A7D7FF96ADACB524D9BF6D (void);
+// 0x0000015F UnityEngine.AnimationClip UnityEngine.AnimatorOverrideController::get_Item(System.String)
+extern void AnimatorOverrideController_get_Item_mF0A0D7B4CB2A8E1AC31D2054827D3FF8D91B806C (void);
+// 0x00000160 System.Void UnityEngine.AnimatorOverrideController::set_Item(System.String,UnityEngine.AnimationClip)
+extern void AnimatorOverrideController_set_Item_mE99B279ADC548ADA701C80E02CE97E38E4F453F1 (void);
+// 0x00000161 UnityEngine.AnimationClip UnityEngine.AnimatorOverrideController::Internal_GetClipByName(System.String,System.Boolean)
+extern void AnimatorOverrideController_Internal_GetClipByName_m31FBDF024F4A5A99130A62518DEA736CC5177FBE (void);
+// 0x00000162 System.Void UnityEngine.AnimatorOverrideController::Internal_SetClipByName(System.String,UnityEngine.AnimationClip)
+extern void AnimatorOverrideController_Internal_SetClipByName_m52CA560F49002766E9B61980D07312340B195B88 (void);
+// 0x00000163 UnityEngine.AnimationClip UnityEngine.AnimatorOverrideController::get_Item(UnityEngine.AnimationClip)
+extern void AnimatorOverrideController_get_Item_m49AB9172BFD735042B422E9347B44624DB9D11DC (void);
+// 0x00000164 System.Void UnityEngine.AnimatorOverrideController::set_Item(UnityEngine.AnimationClip,UnityEngine.AnimationClip)
+extern void AnimatorOverrideController_set_Item_m02FC2BE81A2A4120D202C25CB040DA19AE9BB48A (void);
+// 0x00000165 UnityEngine.AnimationClip UnityEngine.AnimatorOverrideController::GetClip(UnityEngine.AnimationClip,System.Boolean)
+extern void AnimatorOverrideController_GetClip_m55AFB27CC2D666A280D2AE7E78D82F7AC7FE8424 (void);
+// 0x00000166 System.Void UnityEngine.AnimatorOverrideController::SetClip(UnityEngine.AnimationClip,UnityEngine.AnimationClip,System.Boolean)
+extern void AnimatorOverrideController_SetClip_m5978905B5D13EE9626CE77000F7C620C26EDF025 (void);
+// 0x00000167 System.Void UnityEngine.AnimatorOverrideController::SendNotification()
+extern void AnimatorOverrideController_SendNotification_m370030BDB9A21AF982EBF3B68012224D02D4397A (void);
+// 0x00000168 UnityEngine.AnimationClip UnityEngine.AnimatorOverrideController::GetOriginalClip(System.Int32)
+extern void AnimatorOverrideController_GetOriginalClip_m10DEA1312336A51EBC45B89E0D947836CAD4EAD5 (void);
+// 0x00000169 UnityEngine.AnimationClip UnityEngine.AnimatorOverrideController::GetOverrideClip(UnityEngine.AnimationClip)
+extern void AnimatorOverrideController_GetOverrideClip_m8F7F5831ED4E5D96FC2B2EF8FD427F14BAFA2A13 (void);
+// 0x0000016A System.Int32 UnityEngine.AnimatorOverrideController::get_overridesCount()
+extern void AnimatorOverrideController_get_overridesCount_m4A241C738A0F2F03B7578E32F2C3342F536DE9DE (void);
+// 0x0000016B System.Void UnityEngine.AnimatorOverrideController::GetOverrides(System.Collections.Generic.List`1<System.Collections.Generic.KeyValuePair`2<UnityEngine.AnimationClip,UnityEngine.AnimationClip>>)
+extern void AnimatorOverrideController_GetOverrides_m4C9F72BECAE151033F913C00A016E7A4A8D4E860 (void);
+// 0x0000016C System.Void UnityEngine.AnimatorOverrideController::ApplyOverrides(System.Collections.Generic.IList`1<System.Collections.Generic.KeyValuePair`2<UnityEngine.AnimationClip,UnityEngine.AnimationClip>>)
+extern void AnimatorOverrideController_ApplyOverrides_m4882D28731BA7F28095DC1994375E38255F2DA90 (void);
+// 0x0000016D UnityEngine.AnimationClipPair[] UnityEngine.AnimatorOverrideController::get_clips()
+extern void AnimatorOverrideController_get_clips_mD6E8C35C32B3418CCC8C0970A76E36E18A32E3B3 (void);
+// 0x0000016E System.Void UnityEngine.AnimatorOverrideController::set_clips(UnityEngine.AnimationClipPair[])
+extern void AnimatorOverrideController_set_clips_m5EA55A1B147ED78ED4FCB0FF033013CAF6E960A9 (void);
+// 0x0000016F System.Void UnityEngine.AnimatorOverrideController::PerformOverrideClipListCleanup()
+extern void AnimatorOverrideController_PerformOverrideClipListCleanup_mE5578B170C6E70763B20A4DF6CA6DDFF83B31E41 (void);
+// 0x00000170 System.Void UnityEngine.AnimatorOverrideController::OnInvalidateOverrideController(UnityEngine.AnimatorOverrideController)
 extern void AnimatorOverrideController_OnInvalidateOverrideController_mA6B0AA977505FDEFDD6BCA2E941FD3A18AE1AD23 (void);
-// 0x0000015A System.Void UnityEngine.AnimatorOverrideController/OnOverrideControllerDirtyCallback::.ctor(System.Object,System.IntPtr)
+// 0x00000171 System.Void UnityEngine.AnimatorOverrideController/OnOverrideControllerDirtyCallback::.ctor(System.Object,System.IntPtr)
 extern void OnOverrideControllerDirtyCallback__ctor_mA49B11AF24CB49A9B764058DB73CE221AE54E106 (void);
-// 0x0000015B System.Void UnityEngine.AnimatorOverrideController/OnOverrideControllerDirtyCallback::Invoke()
+// 0x00000172 System.Void UnityEngine.AnimatorOverrideController/OnOverrideControllerDirtyCallback::Invoke()
 extern void OnOverrideControllerDirtyCallback_Invoke_m538DCB0FFFE75495DC3977DBBF55A07C570F8B5A (void);
-// 0x0000015C System.Void UnityEngine.Avatar::.ctor()
+// 0x00000173 System.Void UnityEngine.Avatar::.ctor()
 extern void Avatar__ctor_mA58012D9A6FD2A7BB88D05E58703B5619536E118 (void);
-// 0x0000015D UnityEngine.HumanDescription UnityEngine.Avatar::get_humanDescription()
+// 0x00000174 UnityEngine.HumanDescription UnityEngine.Avatar::get_humanDescription()
 extern void Avatar_get_humanDescription_m8E211B52B89B57AF6793D781C69E46F6E1217E1E (void);
-// 0x0000015E System.Void UnityEngine.Avatar::get_humanDescription_Injected(UnityEngine.HumanDescription&)
+// 0x00000175 System.Void UnityEngine.Avatar::get_humanDescription_Injected(UnityEngine.HumanDescription&)
 extern void Avatar_get_humanDescription_Injected_mB2DC483AC2212729E7C92641B6FFDDB4056BF3D0 (void);
-// 0x0000015F System.Boolean UnityEngine.AvatarMask::GetHumanoidBodyPartActive(UnityEngine.AvatarMaskBodyPart)
+// 0x00000176 System.Boolean UnityEngine.AvatarMask::GetHumanoidBodyPartActive(UnityEngine.AvatarMaskBodyPart)
 extern void AvatarMask_GetHumanoidBodyPartActive_m9CB208B9F4A6E150B0C8335FF7F86F6DBD4C9C69 (void);
-// 0x00000160 System.Int32 UnityEngine.AvatarMask::get_transformCount()
+// 0x00000177 System.Int32 UnityEngine.AvatarMask::get_transformCount()
 extern void AvatarMask_get_transformCount_m4217FC2AAAB139DD391FE7404096BE69EC4227F7 (void);
-// 0x00000161 System.String UnityEngine.AvatarMask::GetTransformPath(System.Int32)
+// 0x00000178 System.String UnityEngine.AvatarMask::GetTransformPath(System.Int32)
 extern void AvatarMask_GetTransformPath_m63FD27A96E20C77FCE6E164D994C8666C9900CA5 (void);
-// 0x00000162 System.Single UnityEngine.AvatarMask::GetTransformWeight(System.Int32)
+// 0x00000179 System.Single UnityEngine.AvatarMask::GetTransformWeight(System.Int32)
 extern void AvatarMask_GetTransformWeight_mB0574B9F42737B0115832C96BB8F01C5AEDB7BD2 (void);
-// 0x00000163 System.Boolean UnityEngine.AvatarMask::GetTransformActive(System.Int32)
+// 0x0000017A System.Boolean UnityEngine.AvatarMask::GetTransformActive(System.Int32)
 extern void AvatarMask_GetTransformActive_m72AA5B6C5707F645496E610DA69D5736396F9AF8 (void);
-// 0x00000164 System.Int32 UnityEngine.HumanTrait::GetBoneIndexFromMono(System.Int32)
+// 0x0000017B System.Int32 UnityEngine.HumanTrait::GetBoneIndexFromMono(System.Int32)
 extern void HumanTrait_GetBoneIndexFromMono_mDE16E21275A55D263014CFD3307BEB7353AE6925 (void);
-// 0x00000165 System.Void UnityEngine.Motion::.ctor()
+// 0x0000017C System.Void UnityEngine.Motion::.ctor()
 extern void Motion__ctor_mB6190858E566BFA1B80D2E94B65CD27920A49443 (void);
-// 0x00000166 System.Boolean UnityEngine.Motion::get_isLooping()
+// 0x0000017D System.Boolean UnityEngine.Motion::get_isLooping()
 extern void Motion_get_isLooping_mD11B7C5FFEC7BC2BC5D2AB4D3B2A06D2959DFB99 (void);
-// 0x00000167 System.Void UnityEngine.RuntimeAnimatorController::.ctor()
+// 0x0000017E System.Void UnityEngine.RuntimeAnimatorController::.ctor()
 extern void RuntimeAnimatorController__ctor_m676D4538BB6C62314B256173C5F592EFCA16AAC8 (void);
-// 0x00000168 UnityEngine.AnimationClip[] UnityEngine.RuntimeAnimatorController::get_animationClips()
+// 0x0000017F UnityEngine.AnimationClip[] UnityEngine.RuntimeAnimatorController::get_animationClips()
 extern void RuntimeAnimatorController_get_animationClips_mA8F51FF202C2C41A3E9C5366ABDEE35EDFBE8F93 (void);
-// 0x00000169 UnityEngine.Playables.PlayableBinding UnityEngine.Animations.AnimationPlayableBinding::Create(System.String,UnityEngine.Object)
+// 0x00000180 UnityEngine.Playables.PlayableBinding UnityEngine.Animations.AnimationPlayableBinding::Create(System.String,UnityEngine.Object)
 extern void AnimationPlayableBinding_Create_m3E764C5FC95E912E727275AA705701933B93C2CB (void);
-// 0x0000016A UnityEngine.Playables.PlayableOutput UnityEngine.Animations.AnimationPlayableBinding::CreateAnimationOutput(UnityEngine.Playables.PlayableGraph,System.String)
+// 0x00000181 UnityEngine.Playables.PlayableOutput UnityEngine.Animations.AnimationPlayableBinding::CreateAnimationOutput(UnityEngine.Playables.PlayableGraph,System.String)
 extern void AnimationPlayableBinding_CreateAnimationOutput_mAAF4FE67781A130389ADA1BD625D42215B4C55A2 (void);
-// 0x0000016B System.Void UnityEngine.Animations.IAnimationWindowPreview::UpdatePreviewGraph(UnityEngine.Playables.PlayableGraph)
-// 0x0000016C System.Void UnityEngine.Animations.NotKeyableAttribute::.ctor()
+// 0x00000182 System.Void UnityEngine.Animations.IAnimationWindowPreview::UpdatePreviewGraph(UnityEngine.Playables.PlayableGraph)
+// 0x00000183 System.Void UnityEngine.Animations.NotKeyableAttribute::.ctor()
 extern void NotKeyableAttribute__ctor_m818249C0E7E98C56F41B672A3140A87EA568EB84 (void);
-// 0x0000016D UnityEngine.Animations.AnimationClipPlayable UnityEngine.Animations.AnimationClipPlayable::Create(UnityEngine.Playables.PlayableGraph,UnityEngine.AnimationClip)
+// 0x00000184 UnityEngine.Animations.AnimationClipPlayable UnityEngine.Animations.AnimationClipPlayable::Create(UnityEngine.Playables.PlayableGraph,UnityEngine.AnimationClip)
 extern void AnimationClipPlayable_Create_m034A4A30AC2642E675B95A0A7C3C384F533F5C1A (void);
-// 0x0000016E UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationClipPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,UnityEngine.AnimationClip)
+// 0x00000185 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationClipPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,UnityEngine.AnimationClip)
 extern void AnimationClipPlayable_CreateHandle_m9804DF3694EC65E8531F6839194AB189401AE564 (void);
-// 0x0000016F System.Void UnityEngine.Animations.AnimationClipPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
+// 0x00000186 System.Void UnityEngine.Animations.AnimationClipPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
 extern void AnimationClipPlayable__ctor_mF2EE31CC772B100F98CCAE26963059C6C722FA1A (void);
-// 0x00000170 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationClipPlayable::GetHandle()
+// 0x00000187 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationClipPlayable::GetHandle()
 extern void AnimationClipPlayable_GetHandle_mE775F2247901BA293DB01A8D384D3F9D02A25627 (void);
-// 0x00000171 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationClipPlayable::op_Implicit(UnityEngine.Animations.AnimationClipPlayable)
+// 0x00000188 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationClipPlayable::op_Implicit(UnityEngine.Animations.AnimationClipPlayable)
 extern void AnimationClipPlayable_op_Implicit_m112BA2303DA5A9A8E24310332E3C27E13F74A0FD (void);
-// 0x00000172 System.Boolean UnityEngine.Animations.AnimationClipPlayable::Equals(UnityEngine.Animations.AnimationClipPlayable)
+// 0x00000189 System.Boolean UnityEngine.Animations.AnimationClipPlayable::Equals(UnityEngine.Animations.AnimationClipPlayable)
 extern void AnimationClipPlayable_Equals_mC5263BEA86C02CEDF93C5B14EAA168883E1DB5F4 (void);
-// 0x00000173 System.Void UnityEngine.Animations.AnimationClipPlayable::SetApplyFootIK(System.Boolean)
+// 0x0000018A System.Void UnityEngine.Animations.AnimationClipPlayable::SetApplyFootIK(System.Boolean)
 extern void AnimationClipPlayable_SetApplyFootIK_m7CBA77F56815AD21784AC53D9EBDAE18AFA48507 (void);
-// 0x00000174 System.Void UnityEngine.Animations.AnimationClipPlayable::SetRemoveStartOffset(System.Boolean)
+// 0x0000018B System.Void UnityEngine.Animations.AnimationClipPlayable::SetRemoveStartOffset(System.Boolean)
 extern void AnimationClipPlayable_SetRemoveStartOffset_mBAC88E40F6A759FACA4105EF683181D43381C8E5 (void);
-// 0x00000175 System.Void UnityEngine.Animations.AnimationClipPlayable::SetOverrideLoopTime(System.Boolean)
+// 0x0000018C System.Void UnityEngine.Animations.AnimationClipPlayable::SetOverrideLoopTime(System.Boolean)
 extern void AnimationClipPlayable_SetOverrideLoopTime_mF1F57940D8DDBCC6EBCB75A27C2372BB39DED177 (void);
-// 0x00000176 System.Void UnityEngine.Animations.AnimationClipPlayable::SetLoopTime(System.Boolean)
+// 0x0000018D System.Void UnityEngine.Animations.AnimationClipPlayable::SetLoopTime(System.Boolean)
 extern void AnimationClipPlayable_SetLoopTime_m3AAA1134C4D339C84EF57FE289D33100D4971ED8 (void);
-// 0x00000177 System.Boolean UnityEngine.Animations.AnimationClipPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.AnimationClip,UnityEngine.Playables.PlayableHandle&)
+// 0x0000018E System.Boolean UnityEngine.Animations.AnimationClipPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.AnimationClip,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationClipPlayable_CreateHandleInternal_mB8466F44A261B040DBCE8BA442DA8CF7153D2212 (void);
-// 0x00000178 System.Void UnityEngine.Animations.AnimationClipPlayable::SetApplyFootIKInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
+// 0x0000018F System.Void UnityEngine.Animations.AnimationClipPlayable::SetApplyFootIKInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
 extern void AnimationClipPlayable_SetApplyFootIKInternal_m57C77DC9937F7BA02885EEBF5D7CDC1CF9412DFC (void);
-// 0x00000179 System.Void UnityEngine.Animations.AnimationClipPlayable::SetRemoveStartOffsetInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
+// 0x00000190 System.Void UnityEngine.Animations.AnimationClipPlayable::SetRemoveStartOffsetInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
 extern void AnimationClipPlayable_SetRemoveStartOffsetInternal_m5C095AAB7C17821144A2CD4D7DDFE562358CC5A4 (void);
-// 0x0000017A System.Void UnityEngine.Animations.AnimationClipPlayable::SetOverrideLoopTimeInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
+// 0x00000191 System.Void UnityEngine.Animations.AnimationClipPlayable::SetOverrideLoopTimeInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
 extern void AnimationClipPlayable_SetOverrideLoopTimeInternal_m44BAF0A6EE093D0E30EC8FF99423BF6E4B832CC5 (void);
-// 0x0000017B System.Void UnityEngine.Animations.AnimationClipPlayable::SetLoopTimeInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
+// 0x00000192 System.Void UnityEngine.Animations.AnimationClipPlayable::SetLoopTimeInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
 extern void AnimationClipPlayable_SetLoopTimeInternal_mC308D81D4A82EFACED882515D17935E43298E386 (void);
-// 0x0000017C System.Boolean UnityEngine.Animations.AnimationClipPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.AnimationClip,UnityEngine.Playables.PlayableHandle&)
+// 0x00000193 System.Boolean UnityEngine.Animations.AnimationClipPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.AnimationClip,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationClipPlayable_CreateHandleInternal_Injected_m4FD6B80E5194144660D7974F13F44BA0355C6E3B (void);
-// 0x0000017D UnityEngine.Animations.AnimationLayerMixerPlayable UnityEngine.Animations.AnimationLayerMixerPlayable::Create(UnityEngine.Playables.PlayableGraph,System.Int32,System.Boolean)
+// 0x00000194 UnityEngine.Animations.AnimationLayerMixerPlayable UnityEngine.Animations.AnimationLayerMixerPlayable::Create(UnityEngine.Playables.PlayableGraph,System.Int32,System.Boolean)
 extern void AnimationLayerMixerPlayable_Create_mB080375BE13D2A1159D6AD4AB45FB10C36E389FF (void);
-// 0x0000017E UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationLayerMixerPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,System.Int32)
+// 0x00000195 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationLayerMixerPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,System.Int32)
 extern void AnimationLayerMixerPlayable_CreateHandle_m74B2930D89DABE9160B08D8C92D6EA6622D88A1D (void);
-// 0x0000017F System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::.ctor(UnityEngine.Playables.PlayableHandle,System.Boolean)
+// 0x00000196 System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::.ctor(UnityEngine.Playables.PlayableHandle,System.Boolean)
 extern void AnimationLayerMixerPlayable__ctor_m28884B8B9F7E057DF947E3B43ED78EA107368BD6 (void);
-// 0x00000180 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationLayerMixerPlayable::GetHandle()
+// 0x00000197 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationLayerMixerPlayable::GetHandle()
 extern void AnimationLayerMixerPlayable_GetHandle_m324A98D0B0BFC0441377D65CAE93C914F828721F (void);
-// 0x00000181 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationLayerMixerPlayable::op_Implicit(UnityEngine.Animations.AnimationLayerMixerPlayable)
+// 0x00000198 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationLayerMixerPlayable::op_Implicit(UnityEngine.Animations.AnimationLayerMixerPlayable)
 extern void AnimationLayerMixerPlayable_op_Implicit_m50234C22795358D76242C022AF5CC90DF7C0141B (void);
-// 0x00000182 System.Boolean UnityEngine.Animations.AnimationLayerMixerPlayable::Equals(UnityEngine.Animations.AnimationLayerMixerPlayable)
+// 0x00000199 System.Boolean UnityEngine.Animations.AnimationLayerMixerPlayable::Equals(UnityEngine.Animations.AnimationLayerMixerPlayable)
 extern void AnimationLayerMixerPlayable_Equals_mA5D24E61E2DE1140B409F3B569DBA3C185751970 (void);
-// 0x00000183 System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::SetLayerMaskFromAvatarMask(System.UInt32,UnityEngine.AvatarMask)
+// 0x0000019A System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::SetLayerMaskFromAvatarMask(System.UInt32,UnityEngine.AvatarMask)
 extern void AnimationLayerMixerPlayable_SetLayerMaskFromAvatarMask_mC4BDE2B476AC13C31053100085FAF6BC86000280 (void);
-// 0x00000184 System.Boolean UnityEngine.Animations.AnimationLayerMixerPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Playables.PlayableHandle&)
+// 0x0000019B System.Boolean UnityEngine.Animations.AnimationLayerMixerPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationLayerMixerPlayable_CreateHandleInternal_mEEEEBA10E6AD409C8CAF16BDF7F0E89E47A91FC8 (void);
-// 0x00000185 System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::SetSingleLayerOptimizationInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
+// 0x0000019C System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::SetSingleLayerOptimizationInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
 extern void AnimationLayerMixerPlayable_SetSingleLayerOptimizationInternal_mF1EC1B461F2CCB8D7E01799875DDB5FC8FE4BBDB (void);
-// 0x00000186 System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::SetLayerMaskFromAvatarMaskInternal(UnityEngine.Playables.PlayableHandle&,System.UInt32,UnityEngine.AvatarMask)
+// 0x0000019D System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::SetLayerMaskFromAvatarMaskInternal(UnityEngine.Playables.PlayableHandle&,System.UInt32,UnityEngine.AvatarMask)
 extern void AnimationLayerMixerPlayable_SetLayerMaskFromAvatarMaskInternal_mDA82665D20D53C1638037283DDCFE7BB2B2DD035 (void);
-// 0x00000187 System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::.cctor()
+// 0x0000019E System.Void UnityEngine.Animations.AnimationLayerMixerPlayable::.cctor()
 extern void AnimationLayerMixerPlayable__cctor_m27A78F2EB8840FFCC84901AB4E916ACCE8D8E49B (void);
-// 0x00000188 System.Boolean UnityEngine.Animations.AnimationLayerMixerPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Playables.PlayableHandle&)
+// 0x0000019F System.Boolean UnityEngine.Animations.AnimationLayerMixerPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationLayerMixerPlayable_CreateHandleInternal_Injected_m052C3DAAC09B1BADE847FB348E0FFFB228B17C26 (void);
-// 0x00000189 UnityEngine.Animations.AnimationMixerPlayable UnityEngine.Animations.AnimationMixerPlayable::Create(UnityEngine.Playables.PlayableGraph,System.Int32)
+// 0x000001A0 UnityEngine.Animations.AnimationMixerPlayable UnityEngine.Animations.AnimationMixerPlayable::Create(UnityEngine.Playables.PlayableGraph,System.Int32)
 extern void AnimationMixerPlayable_Create_m4136E1F8A7BF26D3DE52C68111F8E1D789A7A8F3 (void);
-// 0x0000018A UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationMixerPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,System.Int32)
+// 0x000001A1 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationMixerPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,System.Int32)
 extern void AnimationMixerPlayable_CreateHandle_m98DCB979893A9C4F782B2E07EF12BD69CF838A9C (void);
-// 0x0000018B System.Void UnityEngine.Animations.AnimationMixerPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
+// 0x000001A2 System.Void UnityEngine.Animations.AnimationMixerPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
 extern void AnimationMixerPlayable__ctor_mBF84CC064549C2C00B2AE1174018335958EB7EA7 (void);
-// 0x0000018C UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationMixerPlayable::GetHandle()
+// 0x000001A3 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationMixerPlayable::GetHandle()
 extern void AnimationMixerPlayable_GetHandle_mBA6CEB1579A713A985D474E75BC282728318882F (void);
-// 0x0000018D UnityEngine.Playables.Playable UnityEngine.Animations.AnimationMixerPlayable::op_Implicit(UnityEngine.Animations.AnimationMixerPlayable)
+// 0x000001A4 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationMixerPlayable::op_Implicit(UnityEngine.Animations.AnimationMixerPlayable)
 extern void AnimationMixerPlayable_op_Implicit_m7B2D50F94CD0EE3E66478A560CC929BE7C985323 (void);
-// 0x0000018E System.Boolean UnityEngine.Animations.AnimationMixerPlayable::Equals(UnityEngine.Animations.AnimationMixerPlayable)
+// 0x000001A5 System.Boolean UnityEngine.Animations.AnimationMixerPlayable::Equals(UnityEngine.Animations.AnimationMixerPlayable)
 extern void AnimationMixerPlayable_Equals_m6EBE215636EEEA3196A43F4D6C1FE6DD704AFA4E (void);
-// 0x0000018F System.Boolean UnityEngine.Animations.AnimationMixerPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Playables.PlayableHandle&)
+// 0x000001A6 System.Boolean UnityEngine.Animations.AnimationMixerPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationMixerPlayable_CreateHandleInternal_m0C404F86C8C0FDD248BED7E153F3BEFBEEA39D37 (void);
-// 0x00000190 System.Void UnityEngine.Animations.AnimationMixerPlayable::.cctor()
+// 0x000001A7 System.Void UnityEngine.Animations.AnimationMixerPlayable::.cctor()
 extern void AnimationMixerPlayable__cctor_m7D67E8E778387293AF1ACB1FDBE6ADA3E456A969 (void);
-// 0x00000191 System.Boolean UnityEngine.Animations.AnimationMixerPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Playables.PlayableHandle&)
+// 0x000001A8 System.Boolean UnityEngine.Animations.AnimationMixerPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationMixerPlayable_CreateHandleInternal_Injected_mD26E05A0F2676C90B7F06E718B7843167D33FE1E (void);
-// 0x00000192 UnityEngine.Animations.AnimationMotionXToDeltaPlayable UnityEngine.Animations.AnimationMotionXToDeltaPlayable::Create(UnityEngine.Playables.PlayableGraph)
+// 0x000001A9 UnityEngine.Animations.AnimationMotionXToDeltaPlayable UnityEngine.Animations.AnimationMotionXToDeltaPlayable::Create(UnityEngine.Playables.PlayableGraph)
 extern void AnimationMotionXToDeltaPlayable_Create_m9F2C95194E1B5F76A0399BDE8FCEF33A80B77F73 (void);
-// 0x00000193 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationMotionXToDeltaPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph)
+// 0x000001AA UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationMotionXToDeltaPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph)
 extern void AnimationMotionXToDeltaPlayable_CreateHandle_m848549F4FA09509BCBD846D85E5E2E8DFB8CBE3B (void);
-// 0x00000194 System.Void UnityEngine.Animations.AnimationMotionXToDeltaPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
+// 0x000001AB System.Void UnityEngine.Animations.AnimationMotionXToDeltaPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
 extern void AnimationMotionXToDeltaPlayable__ctor_mDE3C14B4B975AC693669D66B6E41BB6432AFA940 (void);
-// 0x00000195 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationMotionXToDeltaPlayable::GetHandle()
+// 0x000001AC UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationMotionXToDeltaPlayable::GetHandle()
 extern void AnimationMotionXToDeltaPlayable_GetHandle_m09F605E78AD7F0135C7F57EB048031091A50E3A2 (void);
-// 0x00000196 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationMotionXToDeltaPlayable::op_Implicit(UnityEngine.Animations.AnimationMotionXToDeltaPlayable)
+// 0x000001AD UnityEngine.Playables.Playable UnityEngine.Animations.AnimationMotionXToDeltaPlayable::op_Implicit(UnityEngine.Animations.AnimationMotionXToDeltaPlayable)
 extern void AnimationMotionXToDeltaPlayable_op_Implicit_m1AC02CC4C55FD3550D6DFFFB7ADF960BD7D6E35D (void);
-// 0x00000197 System.Boolean UnityEngine.Animations.AnimationMotionXToDeltaPlayable::Equals(UnityEngine.Animations.AnimationMotionXToDeltaPlayable)
+// 0x000001AE System.Boolean UnityEngine.Animations.AnimationMotionXToDeltaPlayable::Equals(UnityEngine.Animations.AnimationMotionXToDeltaPlayable)
 extern void AnimationMotionXToDeltaPlayable_Equals_m7CBF3B7618EDBA4ECC2F3C2F54011248BC45CDCC (void);
-// 0x00000198 System.Void UnityEngine.Animations.AnimationMotionXToDeltaPlayable::SetAbsoluteMotion(System.Boolean)
+// 0x000001AF System.Void UnityEngine.Animations.AnimationMotionXToDeltaPlayable::SetAbsoluteMotion(System.Boolean)
 extern void AnimationMotionXToDeltaPlayable_SetAbsoluteMotion_m5D1B029F6E6BFFB521CC6CB72ACBE7EA27B28715 (void);
-// 0x00000199 System.Boolean UnityEngine.Animations.AnimationMotionXToDeltaPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Playables.PlayableHandle&)
+// 0x000001B0 System.Boolean UnityEngine.Animations.AnimationMotionXToDeltaPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationMotionXToDeltaPlayable_CreateHandleInternal_m9556CCBB3F290E53A0BA8021F06C8E83232EF706 (void);
-// 0x0000019A System.Void UnityEngine.Animations.AnimationMotionXToDeltaPlayable::SetAbsoluteMotionInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
+// 0x000001B1 System.Void UnityEngine.Animations.AnimationMotionXToDeltaPlayable::SetAbsoluteMotionInternal(UnityEngine.Playables.PlayableHandle&,System.Boolean)
 extern void AnimationMotionXToDeltaPlayable_SetAbsoluteMotionInternal_m616455F80B4EAE4A0CD24A29630792C62872E929 (void);
-// 0x0000019B System.Void UnityEngine.Animations.AnimationMotionXToDeltaPlayable::.cctor()
+// 0x000001B2 System.Void UnityEngine.Animations.AnimationMotionXToDeltaPlayable::.cctor()
 extern void AnimationMotionXToDeltaPlayable__cctor_m4FC582F607F00D5E2A6B97219D2D4150AFA42AF1 (void);
-// 0x0000019C System.Boolean UnityEngine.Animations.AnimationMotionXToDeltaPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Playables.PlayableHandle&)
+// 0x000001B3 System.Boolean UnityEngine.Animations.AnimationMotionXToDeltaPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationMotionXToDeltaPlayable_CreateHandleInternal_Injected_mAFF1C58B8D07A6A9E92042C038231D7CC873EF11 (void);
-// 0x0000019D UnityEngine.Animations.AnimationOffsetPlayable UnityEngine.Animations.AnimationOffsetPlayable::Create(UnityEngine.Playables.PlayableGraph,UnityEngine.Vector3,UnityEngine.Quaternion,System.Int32)
+// 0x000001B4 UnityEngine.Animations.AnimationOffsetPlayable UnityEngine.Animations.AnimationOffsetPlayable::Create(UnityEngine.Playables.PlayableGraph,UnityEngine.Vector3,UnityEngine.Quaternion,System.Int32)
 extern void AnimationOffsetPlayable_Create_mA5D6C2A6687EC937E35D758C88300F1F0056AB39 (void);
-// 0x0000019E UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationOffsetPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,UnityEngine.Vector3,UnityEngine.Quaternion,System.Int32)
+// 0x000001B5 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationOffsetPlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,UnityEngine.Vector3,UnityEngine.Quaternion,System.Int32)
 extern void AnimationOffsetPlayable_CreateHandle_m27C7AEF0B9D954591B9FB7A9EF4C92CE96037518 (void);
-// 0x0000019F System.Void UnityEngine.Animations.AnimationOffsetPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
+// 0x000001B6 System.Void UnityEngine.Animations.AnimationOffsetPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
 extern void AnimationOffsetPlayable__ctor_mBF3AC6493556DAAEF608B359BEBE8FA6D9F8DBFD (void);
-// 0x000001A0 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationOffsetPlayable::GetHandle()
+// 0x000001B7 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationOffsetPlayable::GetHandle()
 extern void AnimationOffsetPlayable_GetHandle_m769BEFF90379AEAB0C579F7800953458CE3EBA78 (void);
-// 0x000001A1 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationOffsetPlayable::op_Implicit(UnityEngine.Animations.AnimationOffsetPlayable)
+// 0x000001B8 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationOffsetPlayable::op_Implicit(UnityEngine.Animations.AnimationOffsetPlayable)
 extern void AnimationOffsetPlayable_op_Implicit_m0718409D76954C4C3D1F02F8B55DD39C6BC66C0F (void);
-// 0x000001A2 System.Boolean UnityEngine.Animations.AnimationOffsetPlayable::Equals(UnityEngine.Animations.AnimationOffsetPlayable)
+// 0x000001B9 System.Boolean UnityEngine.Animations.AnimationOffsetPlayable::Equals(UnityEngine.Animations.AnimationOffsetPlayable)
 extern void AnimationOffsetPlayable_Equals_mEC28392ADD4E9639EB9228D106D93E21B3587270 (void);
-// 0x000001A3 System.Boolean UnityEngine.Animations.AnimationOffsetPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Playables.PlayableHandle&)
+// 0x000001BA System.Boolean UnityEngine.Animations.AnimationOffsetPlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationOffsetPlayable_CreateHandleInternal_m877AC3B2ED395B0C0A7FC1E2C9E44BC7A776BABF (void);
-// 0x000001A4 System.Void UnityEngine.Animations.AnimationOffsetPlayable::.cctor()
+// 0x000001BB System.Void UnityEngine.Animations.AnimationOffsetPlayable::.cctor()
 extern void AnimationOffsetPlayable__cctor_m6F50D35CE1FAF52BD587DD3B440CBDE34A76B096 (void);
-// 0x000001A5 System.Boolean UnityEngine.Animations.AnimationOffsetPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Vector3&,UnityEngine.Quaternion&,UnityEngine.Playables.PlayableHandle&)
+// 0x000001BC System.Boolean UnityEngine.Animations.AnimationOffsetPlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Vector3&,UnityEngine.Quaternion&,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationOffsetPlayable_CreateHandleInternal_Injected_m39A68EF379AFC09A9E070474CA3E19859FB41F85 (void);
-// 0x000001A6 System.Void UnityEngine.Animations.AnimationPlayableExtensions::SetAnimatedProperties(U,UnityEngine.AnimationClip)
-// 0x000001A7 System.Void UnityEngine.Animations.AnimationPlayableExtensions::SetAnimatedPropertiesInternal(UnityEngine.Playables.PlayableHandle&,UnityEngine.AnimationClip)
+// 0x000001BD System.Void UnityEngine.Animations.AnimationPlayableExtensions::SetAnimatedProperties(U,UnityEngine.AnimationClip)
+// 0x000001BE System.Void UnityEngine.Animations.AnimationPlayableExtensions::SetAnimatedPropertiesInternal(UnityEngine.Playables.PlayableHandle&,UnityEngine.AnimationClip)
 extern void AnimationPlayableExtensions_SetAnimatedPropertiesInternal_m9038247416A38E252EF0DCBCCBFE990589F4C51F (void);
-// 0x000001A8 System.Boolean UnityEngine.Animations.AnimationPlayableGraphExtensions::InternalCreateAnimationOutput(UnityEngine.Playables.PlayableGraph&,System.String,UnityEngine.Playables.PlayableOutputHandle&)
+// 0x000001BF System.Boolean UnityEngine.Animations.AnimationPlayableGraphExtensions::InternalCreateAnimationOutput(UnityEngine.Playables.PlayableGraph&,System.String,UnityEngine.Playables.PlayableOutputHandle&)
 extern void AnimationPlayableGraphExtensions_InternalCreateAnimationOutput_m2FBE35C9ADFA39052F34E49F46E39CEBD10F4B49 (void);
-// 0x000001A9 UnityEngine.Animations.AnimationPlayableOutput UnityEngine.Animations.AnimationPlayableOutput::Create(UnityEngine.Playables.PlayableGraph,System.String,UnityEngine.Animator)
+// 0x000001C0 UnityEngine.Animations.AnimationPlayableOutput UnityEngine.Animations.AnimationPlayableOutput::Create(UnityEngine.Playables.PlayableGraph,System.String,UnityEngine.Animator)
 extern void AnimationPlayableOutput_Create_m65847A70F6C74854387814C5B1D4C281B6CCCDC4 (void);
-// 0x000001AA System.Void UnityEngine.Animations.AnimationPlayableOutput::.ctor(UnityEngine.Playables.PlayableOutputHandle)
+// 0x000001C1 System.Void UnityEngine.Animations.AnimationPlayableOutput::.ctor(UnityEngine.Playables.PlayableOutputHandle)
 extern void AnimationPlayableOutput__ctor_mE4FB8AA6DFB2F3C18E04A9317F5CE53597A7D22A (void);
-// 0x000001AB UnityEngine.Animations.AnimationPlayableOutput UnityEngine.Animations.AnimationPlayableOutput::get_Null()
+// 0x000001C2 UnityEngine.Animations.AnimationPlayableOutput UnityEngine.Animations.AnimationPlayableOutput::get_Null()
 extern void AnimationPlayableOutput_get_Null_mDF5638798B49F3E7ACCF766C266D7F776E553900 (void);
-// 0x000001AC UnityEngine.Playables.PlayableOutputHandle UnityEngine.Animations.AnimationPlayableOutput::GetHandle()
+// 0x000001C3 UnityEngine.Playables.PlayableOutputHandle UnityEngine.Animations.AnimationPlayableOutput::GetHandle()
 extern void AnimationPlayableOutput_GetHandle_m2A8E2A9CBD12EDCF48FC946445AB42802083338D (void);
-// 0x000001AD UnityEngine.Playables.PlayableOutput UnityEngine.Animations.AnimationPlayableOutput::op_Implicit(UnityEngine.Animations.AnimationPlayableOutput)
+// 0x000001C4 UnityEngine.Playables.PlayableOutput UnityEngine.Animations.AnimationPlayableOutput::op_Implicit(UnityEngine.Animations.AnimationPlayableOutput)
 extern void AnimationPlayableOutput_op_Implicit_mB256AA7AA6BC0577B47399941D4B42BBC5C28DA7 (void);
-// 0x000001AE UnityEngine.Animations.AnimationPlayableOutput UnityEngine.Animations.AnimationPlayableOutput::op_Explicit(UnityEngine.Playables.PlayableOutput)
+// 0x000001C5 UnityEngine.Animations.AnimationPlayableOutput UnityEngine.Animations.AnimationPlayableOutput::op_Explicit(UnityEngine.Playables.PlayableOutput)
 extern void AnimationPlayableOutput_op_Explicit_m7139943338A06A1B3DE71DF52A0D253C6DC8877E (void);
-// 0x000001AF UnityEngine.Animator UnityEngine.Animations.AnimationPlayableOutput::GetTarget()
+// 0x000001C6 UnityEngine.Animator UnityEngine.Animations.AnimationPlayableOutput::GetTarget()
 extern void AnimationPlayableOutput_GetTarget_m2E55D32775E0B27063F697346701A0EB5424DA9D (void);
-// 0x000001B0 System.Void UnityEngine.Animations.AnimationPlayableOutput::SetTarget(UnityEngine.Animator)
+// 0x000001C7 System.Void UnityEngine.Animations.AnimationPlayableOutput::SetTarget(UnityEngine.Animator)
 extern void AnimationPlayableOutput_SetTarget_m0F7745C4A721D76EB1E804AA48E70C9C798E0DCE (void);
-// 0x000001B1 UnityEngine.Animator UnityEngine.Animations.AnimationPlayableOutput::InternalGetTarget(UnityEngine.Playables.PlayableOutputHandle&)
+// 0x000001C8 UnityEngine.Animator UnityEngine.Animations.AnimationPlayableOutput::InternalGetTarget(UnityEngine.Playables.PlayableOutputHandle&)
 extern void AnimationPlayableOutput_InternalGetTarget_m3ECC05C07DEBDD5ECCAB92A2213DA9087E43B5F2 (void);
-// 0x000001B2 System.Void UnityEngine.Animations.AnimationPlayableOutput::InternalSetTarget(UnityEngine.Playables.PlayableOutputHandle&,UnityEngine.Animator)
+// 0x000001C9 System.Void UnityEngine.Animations.AnimationPlayableOutput::InternalSetTarget(UnityEngine.Playables.PlayableOutputHandle&,UnityEngine.Animator)
 extern void AnimationPlayableOutput_InternalSetTarget_m49002BC3713A0AF76F2447A0147493F234B8E616 (void);
-// 0x000001B3 System.Void UnityEngine.Animations.AnimationPosePlayable::.ctor(UnityEngine.Playables.PlayableHandle)
+// 0x000001CA System.Void UnityEngine.Animations.AnimationPosePlayable::.ctor(UnityEngine.Playables.PlayableHandle)
 extern void AnimationPosePlayable__ctor_mC6C096785918358CA7EC12BABCDF4BBD47F7BA3F (void);
-// 0x000001B4 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationPosePlayable::GetHandle()
+// 0x000001CB UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationPosePlayable::GetHandle()
 extern void AnimationPosePlayable_GetHandle_m5DC7CA4CAF3CD525D454D99EBC3D12C3571B527B (void);
-// 0x000001B5 System.Boolean UnityEngine.Animations.AnimationPosePlayable::Equals(UnityEngine.Animations.AnimationPosePlayable)
+// 0x000001CC System.Boolean UnityEngine.Animations.AnimationPosePlayable::Equals(UnityEngine.Animations.AnimationPosePlayable)
 extern void AnimationPosePlayable_Equals_m10F1E7DD7037B2AB3F7DAE3E01A1DC843EABD0A3 (void);
-// 0x000001B6 System.Void UnityEngine.Animations.AnimationPosePlayable::.cctor()
+// 0x000001CD System.Void UnityEngine.Animations.AnimationPosePlayable::.cctor()
 extern void AnimationPosePlayable__cctor_mFA5FE84F06C8E9A89C07190055BC898525F897C4 (void);
-// 0x000001B7 UnityEngine.Animations.AnimationRemoveScalePlayable UnityEngine.Animations.AnimationRemoveScalePlayable::Create(UnityEngine.Playables.PlayableGraph,System.Int32)
+// 0x000001CE UnityEngine.Animations.AnimationRemoveScalePlayable UnityEngine.Animations.AnimationRemoveScalePlayable::Create(UnityEngine.Playables.PlayableGraph,System.Int32)
 extern void AnimationRemoveScalePlayable_Create_mABCE46803804604412781B86B321BE816649401C (void);
-// 0x000001B8 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationRemoveScalePlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,System.Int32)
+// 0x000001CF UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationRemoveScalePlayable::CreateHandle(UnityEngine.Playables.PlayableGraph,System.Int32)
 extern void AnimationRemoveScalePlayable_CreateHandle_mE15186AF821904AC09E8F0DC30096BF63A812D66 (void);
-// 0x000001B9 System.Void UnityEngine.Animations.AnimationRemoveScalePlayable::.ctor(UnityEngine.Playables.PlayableHandle)
+// 0x000001D0 System.Void UnityEngine.Animations.AnimationRemoveScalePlayable::.ctor(UnityEngine.Playables.PlayableHandle)
 extern void AnimationRemoveScalePlayable__ctor_m4D6C7C4AB8E078050B0CC34C6732051CF043CFA2 (void);
-// 0x000001BA UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationRemoveScalePlayable::GetHandle()
+// 0x000001D1 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationRemoveScalePlayable::GetHandle()
 extern void AnimationRemoveScalePlayable_GetHandle_mFFA58B879F31327187A20ED30E1C814B7BEAA9C6 (void);
-// 0x000001BB UnityEngine.Playables.Playable UnityEngine.Animations.AnimationRemoveScalePlayable::op_Implicit(UnityEngine.Animations.AnimationRemoveScalePlayable)
+// 0x000001D2 UnityEngine.Playables.Playable UnityEngine.Animations.AnimationRemoveScalePlayable::op_Implicit(UnityEngine.Animations.AnimationRemoveScalePlayable)
 extern void AnimationRemoveScalePlayable_op_Implicit_m0658568E028F0099166238728756300A839F0606 (void);
-// 0x000001BC System.Boolean UnityEngine.Animations.AnimationRemoveScalePlayable::Equals(UnityEngine.Animations.AnimationRemoveScalePlayable)
+// 0x000001D3 System.Boolean UnityEngine.Animations.AnimationRemoveScalePlayable::Equals(UnityEngine.Animations.AnimationRemoveScalePlayable)
 extern void AnimationRemoveScalePlayable_Equals_m0ACDD59B80103591DA8E84CB387FB10778D8C327 (void);
-// 0x000001BD System.Boolean UnityEngine.Animations.AnimationRemoveScalePlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Playables.PlayableHandle&)
+// 0x000001D4 System.Boolean UnityEngine.Animations.AnimationRemoveScalePlayable::CreateHandleInternal(UnityEngine.Playables.PlayableGraph,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationRemoveScalePlayable_CreateHandleInternal_mDB6C3A766BA756328A459D4EBB356A8F8E289FD1 (void);
-// 0x000001BE System.Void UnityEngine.Animations.AnimationRemoveScalePlayable::.cctor()
+// 0x000001D5 System.Void UnityEngine.Animations.AnimationRemoveScalePlayable::.cctor()
 extern void AnimationRemoveScalePlayable__cctor_m42E614B0B33898D92DFE06CA6045698BE94DE633 (void);
-// 0x000001BF System.Boolean UnityEngine.Animations.AnimationRemoveScalePlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Playables.PlayableHandle&)
+// 0x000001D6 System.Boolean UnityEngine.Animations.AnimationRemoveScalePlayable::CreateHandleInternal_Injected(UnityEngine.Playables.PlayableGraph&,UnityEngine.Playables.PlayableHandle&)
 extern void AnimationRemoveScalePlayable_CreateHandleInternal_Injected_m0ED3A968526682B946A2D157855A91B93CDE9A13 (void);
-// 0x000001C0 System.Void UnityEngine.Animations.AnimationScriptPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
+// 0x000001D7 System.Void UnityEngine.Animations.AnimationScriptPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
 extern void AnimationScriptPlayable__ctor_m6DEFD72735E79009FC1484AA2A7A82E6CE601247 (void);
-// 0x000001C1 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationScriptPlayable::GetHandle()
+// 0x000001D8 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimationScriptPlayable::GetHandle()
 extern void AnimationScriptPlayable_GetHandle_m30355B6EE1AA3BA36D628251FB4291386D223646 (void);
-// 0x000001C2 System.Boolean UnityEngine.Animations.AnimationScriptPlayable::Equals(UnityEngine.Animations.AnimationScriptPlayable)
+// 0x000001D9 System.Boolean UnityEngine.Animations.AnimationScriptPlayable::Equals(UnityEngine.Animations.AnimationScriptPlayable)
 extern void AnimationScriptPlayable_Equals_mAD02E40704CBE4AB188DE0569052F8EA9864F4E4 (void);
-// 0x000001C3 System.Void UnityEngine.Animations.AnimationScriptPlayable::.cctor()
+// 0x000001DA System.Void UnityEngine.Animations.AnimationScriptPlayable::.cctor()
 extern void AnimationScriptPlayable__cctor_m5ED4D3FC06BC7A51D3A48B5611F759CB00F7CF54 (void);
-// 0x000001C4 System.Void UnityEngine.Animations.AnimatorControllerPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
+// 0x000001DB System.Void UnityEngine.Animations.AnimatorControllerPlayable::.ctor(UnityEngine.Playables.PlayableHandle)
 extern void AnimatorControllerPlayable__ctor_mBCB9475E2740BE1AEB94C08BAD14D51333258BFE (void);
-// 0x000001C5 UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimatorControllerPlayable::GetHandle()
+// 0x000001DC UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimatorControllerPlayable::GetHandle()
 extern void AnimatorControllerPlayable_GetHandle_m718D9A4E0DB7AC62947B1D09E47DBCD25C27AF6C (void);
-// 0x000001C6 System.Void UnityEngine.Animations.AnimatorControllerPlayable::SetHandle(UnityEngine.Playables.PlayableHandle)
+// 0x000001DD System.Void UnityEngine.Animations.AnimatorControllerPlayable::SetHandle(UnityEngine.Playables.PlayableHandle)
 extern void AnimatorControllerPlayable_SetHandle_mD86A3C0D03453FAF21903F7A52A743AB2DA6DED4 (void);
-// 0x000001C7 System.Boolean UnityEngine.Animations.AnimatorControllerPlayable::Equals(UnityEngine.Animations.AnimatorControllerPlayable)
+// 0x000001DE System.Boolean UnityEngine.Animations.AnimatorControllerPlayable::Equals(UnityEngine.Animations.AnimatorControllerPlayable)
 extern void AnimatorControllerPlayable_Equals_m14125BB4CCFCDFFD098223AF20E38501BA264180 (void);
-// 0x000001C8 System.Void UnityEngine.Animations.AnimatorControllerPlayable::.cctor()
+// 0x000001DF System.Void UnityEngine.Animations.AnimatorControllerPlayable::.cctor()
 extern void AnimatorControllerPlayable__cctor_m88506D1B15D609B818DFDC6B2BCFF42ABB41B090 (void);
-static Il2CppMethodPointer s_methodPointers[456] = 
+static Il2CppMethodPointer s_methodPointers[479] = 
 {
 	StateMachineBehaviour_OnStateEnter_mB618EFE75A50CBAA3EE6471E64A3E2CA2A2C90FD,
 	StateMachineBehaviour_OnStateUpdate_mC1A83A4F693AF3AB51BC592A0CE525CE4F320D6B,
@@ -1265,6 +1311,29 @@ static Il2CppMethodPointer s_methodPointers[456] =
 	AnimatorControllerParameter_Equals_m9FDC3900B8DB91E9F99295CADB9574F7E1C55C71,
 	AnimatorControllerParameter_GetHashCode_m145EFDAFC4D2C410BB84F8290883977340E25312,
 	AnimatorControllerParameter__ctor_m91C7057D6AC6D38ACA5EC852D5FDA829F83C8474,
+	AnimationClipPair__ctor_mD70020644551CCC04857BA2D4F7F63AD3E2159ED,
+	AnimatorOverrideController__ctor_mB3C6317471A40FC19527AA7731E775AFC665CE15,
+	AnimatorOverrideController__ctor_mE9C4FCBE3FCAF3CE2601CF50D3B19CC683BC47F8,
+	AnimatorOverrideController_Internal_Create_mB5271F04B0FB0E2BADDF1AD4ACDC983E80D8C2C3,
+	AnimatorOverrideController_get_runtimeAnimatorController_mA611B48488C4A645B1FD68855A84ECC0406D2DD7,
+	AnimatorOverrideController_set_runtimeAnimatorController_mDE783426F6A6283710A7D7FF96ADACB524D9BF6D,
+	AnimatorOverrideController_get_Item_mF0A0D7B4CB2A8E1AC31D2054827D3FF8D91B806C,
+	AnimatorOverrideController_set_Item_mE99B279ADC548ADA701C80E02CE97E38E4F453F1,
+	AnimatorOverrideController_Internal_GetClipByName_m31FBDF024F4A5A99130A62518DEA736CC5177FBE,
+	AnimatorOverrideController_Internal_SetClipByName_m52CA560F49002766E9B61980D07312340B195B88,
+	AnimatorOverrideController_get_Item_m49AB9172BFD735042B422E9347B44624DB9D11DC,
+	AnimatorOverrideController_set_Item_m02FC2BE81A2A4120D202C25CB040DA19AE9BB48A,
+	AnimatorOverrideController_GetClip_m55AFB27CC2D666A280D2AE7E78D82F7AC7FE8424,
+	AnimatorOverrideController_SetClip_m5978905B5D13EE9626CE77000F7C620C26EDF025,
+	AnimatorOverrideController_SendNotification_m370030BDB9A21AF982EBF3B68012224D02D4397A,
+	AnimatorOverrideController_GetOriginalClip_m10DEA1312336A51EBC45B89E0D947836CAD4EAD5,
+	AnimatorOverrideController_GetOverrideClip_m8F7F5831ED4E5D96FC2B2EF8FD427F14BAFA2A13,
+	AnimatorOverrideController_get_overridesCount_m4A241C738A0F2F03B7578E32F2C3342F536DE9DE,
+	AnimatorOverrideController_GetOverrides_m4C9F72BECAE151033F913C00A016E7A4A8D4E860,
+	AnimatorOverrideController_ApplyOverrides_m4882D28731BA7F28095DC1994375E38255F2DA90,
+	AnimatorOverrideController_get_clips_mD6E8C35C32B3418CCC8C0970A76E36E18A32E3B3,
+	AnimatorOverrideController_set_clips_m5EA55A1B147ED78ED4FCB0FF033013CAF6E960A9,
+	AnimatorOverrideController_PerformOverrideClipListCleanup_mE5578B170C6E70763B20A4DF6CA6DDFF83B31E41,
 	AnimatorOverrideController_OnInvalidateOverrideController_mA6B0AA977505FDEFDD6BCA2E941FD3A18AE1AD23,
 	OnOverrideControllerDirtyCallback__ctor_mA49B11AF24CB49A9B764058DB73CE221AE54E106,
 	OnOverrideControllerDirtyCallback_Invoke_m538DCB0FFFE75495DC3977DBBF55A07C570F8B5A,
@@ -1424,510 +1493,533 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[41] =
 	{ 0x0600003E, AnimatorClipInfo_get_clip_m6205DB403EBEAEAC14DB8928FFC7EBC50142E1AC_AdjustorThunk },
 	{ 0x0600003F, AnimatorClipInfo_get_weight_m1CC29E2C37B30993EFFD12161059E4AD86EE287D_AdjustorThunk },
 	{ 0x06000041, AnimatorStateInfo_get_fullPathHash_m583FA8FAAC28BF65A65166D100949833E515210F_AdjustorThunk },
-	{ 0x0600016F, AnimationClipPlayable__ctor_mF2EE31CC772B100F98CCAE26963059C6C722FA1A_AdjustorThunk },
-	{ 0x06000170, AnimationClipPlayable_GetHandle_mE775F2247901BA293DB01A8D384D3F9D02A25627_AdjustorThunk },
-	{ 0x06000172, AnimationClipPlayable_Equals_mC5263BEA86C02CEDF93C5B14EAA168883E1DB5F4_AdjustorThunk },
-	{ 0x06000173, AnimationClipPlayable_SetApplyFootIK_m7CBA77F56815AD21784AC53D9EBDAE18AFA48507_AdjustorThunk },
-	{ 0x06000174, AnimationClipPlayable_SetRemoveStartOffset_mBAC88E40F6A759FACA4105EF683181D43381C8E5_AdjustorThunk },
-	{ 0x06000175, AnimationClipPlayable_SetOverrideLoopTime_mF1F57940D8DDBCC6EBCB75A27C2372BB39DED177_AdjustorThunk },
-	{ 0x06000176, AnimationClipPlayable_SetLoopTime_m3AAA1134C4D339C84EF57FE289D33100D4971ED8_AdjustorThunk },
-	{ 0x0600017F, AnimationLayerMixerPlayable__ctor_m28884B8B9F7E057DF947E3B43ED78EA107368BD6_AdjustorThunk },
-	{ 0x06000180, AnimationLayerMixerPlayable_GetHandle_m324A98D0B0BFC0441377D65CAE93C914F828721F_AdjustorThunk },
-	{ 0x06000182, AnimationLayerMixerPlayable_Equals_mA5D24E61E2DE1140B409F3B569DBA3C185751970_AdjustorThunk },
-	{ 0x06000183, AnimationLayerMixerPlayable_SetLayerMaskFromAvatarMask_mC4BDE2B476AC13C31053100085FAF6BC86000280_AdjustorThunk },
-	{ 0x0600018B, AnimationMixerPlayable__ctor_mBF84CC064549C2C00B2AE1174018335958EB7EA7_AdjustorThunk },
-	{ 0x0600018C, AnimationMixerPlayable_GetHandle_mBA6CEB1579A713A985D474E75BC282728318882F_AdjustorThunk },
-	{ 0x0600018E, AnimationMixerPlayable_Equals_m6EBE215636EEEA3196A43F4D6C1FE6DD704AFA4E_AdjustorThunk },
-	{ 0x06000194, AnimationMotionXToDeltaPlayable__ctor_mDE3C14B4B975AC693669D66B6E41BB6432AFA940_AdjustorThunk },
-	{ 0x06000195, AnimationMotionXToDeltaPlayable_GetHandle_m09F605E78AD7F0135C7F57EB048031091A50E3A2_AdjustorThunk },
-	{ 0x06000197, AnimationMotionXToDeltaPlayable_Equals_m7CBF3B7618EDBA4ECC2F3C2F54011248BC45CDCC_AdjustorThunk },
-	{ 0x06000198, AnimationMotionXToDeltaPlayable_SetAbsoluteMotion_m5D1B029F6E6BFFB521CC6CB72ACBE7EA27B28715_AdjustorThunk },
-	{ 0x0600019F, AnimationOffsetPlayable__ctor_mBF3AC6493556DAAEF608B359BEBE8FA6D9F8DBFD_AdjustorThunk },
-	{ 0x060001A0, AnimationOffsetPlayable_GetHandle_m769BEFF90379AEAB0C579F7800953458CE3EBA78_AdjustorThunk },
-	{ 0x060001A2, AnimationOffsetPlayable_Equals_mEC28392ADD4E9639EB9228D106D93E21B3587270_AdjustorThunk },
-	{ 0x060001AA, AnimationPlayableOutput__ctor_mE4FB8AA6DFB2F3C18E04A9317F5CE53597A7D22A_AdjustorThunk },
-	{ 0x060001AC, AnimationPlayableOutput_GetHandle_m2A8E2A9CBD12EDCF48FC946445AB42802083338D_AdjustorThunk },
-	{ 0x060001AF, AnimationPlayableOutput_GetTarget_m2E55D32775E0B27063F697346701A0EB5424DA9D_AdjustorThunk },
-	{ 0x060001B0, AnimationPlayableOutput_SetTarget_m0F7745C4A721D76EB1E804AA48E70C9C798E0DCE_AdjustorThunk },
-	{ 0x060001B3, AnimationPosePlayable__ctor_mC6C096785918358CA7EC12BABCDF4BBD47F7BA3F_AdjustorThunk },
-	{ 0x060001B4, AnimationPosePlayable_GetHandle_m5DC7CA4CAF3CD525D454D99EBC3D12C3571B527B_AdjustorThunk },
-	{ 0x060001B5, AnimationPosePlayable_Equals_m10F1E7DD7037B2AB3F7DAE3E01A1DC843EABD0A3_AdjustorThunk },
-	{ 0x060001B9, AnimationRemoveScalePlayable__ctor_m4D6C7C4AB8E078050B0CC34C6732051CF043CFA2_AdjustorThunk },
-	{ 0x060001BA, AnimationRemoveScalePlayable_GetHandle_mFFA58B879F31327187A20ED30E1C814B7BEAA9C6_AdjustorThunk },
-	{ 0x060001BC, AnimationRemoveScalePlayable_Equals_m0ACDD59B80103591DA8E84CB387FB10778D8C327_AdjustorThunk },
-	{ 0x060001C0, AnimationScriptPlayable__ctor_m6DEFD72735E79009FC1484AA2A7A82E6CE601247_AdjustorThunk },
-	{ 0x060001C1, AnimationScriptPlayable_GetHandle_m30355B6EE1AA3BA36D628251FB4291386D223646_AdjustorThunk },
-	{ 0x060001C2, AnimationScriptPlayable_Equals_mAD02E40704CBE4AB188DE0569052F8EA9864F4E4_AdjustorThunk },
-	{ 0x060001C4, AnimatorControllerPlayable__ctor_mBCB9475E2740BE1AEB94C08BAD14D51333258BFE_AdjustorThunk },
-	{ 0x060001C5, AnimatorControllerPlayable_GetHandle_m718D9A4E0DB7AC62947B1D09E47DBCD25C27AF6C_AdjustorThunk },
-	{ 0x060001C6, AnimatorControllerPlayable_SetHandle_mD86A3C0D03453FAF21903F7A52A743AB2DA6DED4_AdjustorThunk },
-	{ 0x060001C7, AnimatorControllerPlayable_Equals_m14125BB4CCFCDFFD098223AF20E38501BA264180_AdjustorThunk },
+	{ 0x06000186, AnimationClipPlayable__ctor_mF2EE31CC772B100F98CCAE26963059C6C722FA1A_AdjustorThunk },
+	{ 0x06000187, AnimationClipPlayable_GetHandle_mE775F2247901BA293DB01A8D384D3F9D02A25627_AdjustorThunk },
+	{ 0x06000189, AnimationClipPlayable_Equals_mC5263BEA86C02CEDF93C5B14EAA168883E1DB5F4_AdjustorThunk },
+	{ 0x0600018A, AnimationClipPlayable_SetApplyFootIK_m7CBA77F56815AD21784AC53D9EBDAE18AFA48507_AdjustorThunk },
+	{ 0x0600018B, AnimationClipPlayable_SetRemoveStartOffset_mBAC88E40F6A759FACA4105EF683181D43381C8E5_AdjustorThunk },
+	{ 0x0600018C, AnimationClipPlayable_SetOverrideLoopTime_mF1F57940D8DDBCC6EBCB75A27C2372BB39DED177_AdjustorThunk },
+	{ 0x0600018D, AnimationClipPlayable_SetLoopTime_m3AAA1134C4D339C84EF57FE289D33100D4971ED8_AdjustorThunk },
+	{ 0x06000196, AnimationLayerMixerPlayable__ctor_m28884B8B9F7E057DF947E3B43ED78EA107368BD6_AdjustorThunk },
+	{ 0x06000197, AnimationLayerMixerPlayable_GetHandle_m324A98D0B0BFC0441377D65CAE93C914F828721F_AdjustorThunk },
+	{ 0x06000199, AnimationLayerMixerPlayable_Equals_mA5D24E61E2DE1140B409F3B569DBA3C185751970_AdjustorThunk },
+	{ 0x0600019A, AnimationLayerMixerPlayable_SetLayerMaskFromAvatarMask_mC4BDE2B476AC13C31053100085FAF6BC86000280_AdjustorThunk },
+	{ 0x060001A2, AnimationMixerPlayable__ctor_mBF84CC064549C2C00B2AE1174018335958EB7EA7_AdjustorThunk },
+	{ 0x060001A3, AnimationMixerPlayable_GetHandle_mBA6CEB1579A713A985D474E75BC282728318882F_AdjustorThunk },
+	{ 0x060001A5, AnimationMixerPlayable_Equals_m6EBE215636EEEA3196A43F4D6C1FE6DD704AFA4E_AdjustorThunk },
+	{ 0x060001AB, AnimationMotionXToDeltaPlayable__ctor_mDE3C14B4B975AC693669D66B6E41BB6432AFA940_AdjustorThunk },
+	{ 0x060001AC, AnimationMotionXToDeltaPlayable_GetHandle_m09F605E78AD7F0135C7F57EB048031091A50E3A2_AdjustorThunk },
+	{ 0x060001AE, AnimationMotionXToDeltaPlayable_Equals_m7CBF3B7618EDBA4ECC2F3C2F54011248BC45CDCC_AdjustorThunk },
+	{ 0x060001AF, AnimationMotionXToDeltaPlayable_SetAbsoluteMotion_m5D1B029F6E6BFFB521CC6CB72ACBE7EA27B28715_AdjustorThunk },
+	{ 0x060001B6, AnimationOffsetPlayable__ctor_mBF3AC6493556DAAEF608B359BEBE8FA6D9F8DBFD_AdjustorThunk },
+	{ 0x060001B7, AnimationOffsetPlayable_GetHandle_m769BEFF90379AEAB0C579F7800953458CE3EBA78_AdjustorThunk },
+	{ 0x060001B9, AnimationOffsetPlayable_Equals_mEC28392ADD4E9639EB9228D106D93E21B3587270_AdjustorThunk },
+	{ 0x060001C1, AnimationPlayableOutput__ctor_mE4FB8AA6DFB2F3C18E04A9317F5CE53597A7D22A_AdjustorThunk },
+	{ 0x060001C3, AnimationPlayableOutput_GetHandle_m2A8E2A9CBD12EDCF48FC946445AB42802083338D_AdjustorThunk },
+	{ 0x060001C6, AnimationPlayableOutput_GetTarget_m2E55D32775E0B27063F697346701A0EB5424DA9D_AdjustorThunk },
+	{ 0x060001C7, AnimationPlayableOutput_SetTarget_m0F7745C4A721D76EB1E804AA48E70C9C798E0DCE_AdjustorThunk },
+	{ 0x060001CA, AnimationPosePlayable__ctor_mC6C096785918358CA7EC12BABCDF4BBD47F7BA3F_AdjustorThunk },
+	{ 0x060001CB, AnimationPosePlayable_GetHandle_m5DC7CA4CAF3CD525D454D99EBC3D12C3571B527B_AdjustorThunk },
+	{ 0x060001CC, AnimationPosePlayable_Equals_m10F1E7DD7037B2AB3F7DAE3E01A1DC843EABD0A3_AdjustorThunk },
+	{ 0x060001D0, AnimationRemoveScalePlayable__ctor_m4D6C7C4AB8E078050B0CC34C6732051CF043CFA2_AdjustorThunk },
+	{ 0x060001D1, AnimationRemoveScalePlayable_GetHandle_mFFA58B879F31327187A20ED30E1C814B7BEAA9C6_AdjustorThunk },
+	{ 0x060001D3, AnimationRemoveScalePlayable_Equals_m0ACDD59B80103591DA8E84CB387FB10778D8C327_AdjustorThunk },
+	{ 0x060001D7, AnimationScriptPlayable__ctor_m6DEFD72735E79009FC1484AA2A7A82E6CE601247_AdjustorThunk },
+	{ 0x060001D8, AnimationScriptPlayable_GetHandle_m30355B6EE1AA3BA36D628251FB4291386D223646_AdjustorThunk },
+	{ 0x060001D9, AnimationScriptPlayable_Equals_mAD02E40704CBE4AB188DE0569052F8EA9864F4E4_AdjustorThunk },
+	{ 0x060001DB, AnimatorControllerPlayable__ctor_mBCB9475E2740BE1AEB94C08BAD14D51333258BFE_AdjustorThunk },
+	{ 0x060001DC, AnimatorControllerPlayable_GetHandle_m718D9A4E0DB7AC62947B1D09E47DBCD25C27AF6C_AdjustorThunk },
+	{ 0x060001DD, AnimatorControllerPlayable_SetHandle_mD86A3C0D03453FAF21903F7A52A743AB2DA6DED4_AdjustorThunk },
+	{ 0x060001DE, AnimatorControllerPlayable_Equals_m14125BB4CCFCDFFD098223AF20E38501BA264180_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[456] = 
+static const int32_t s_InvokerIndices[479] = 
 {
-	1552,
-	1552,
-	1552,
-	1552,
-	1552,
-	2988,
-	2988,
-	1042,
-	1042,
-	1042,
-	1042,
-	1042,
-	1562,
-	1562,
-	6530,
-	6530,
-	6305,
-	3767,
-	3767,
-	6398,
-	4694,
-	6369,
-	5239,
-	6398,
-	6305,
-	6530,
-	6530,
-	6530,
-	6530,
-	10855,
-	3005,
-	7870,
-	6461,
-	6461,
-	6461,
-	6461,
-	5300,
-	1103,
-	6530,
-	6530,
-	6369,
-	5211,
-	6303,
-	5143,
-	6305,
-	5144,
-	6305,
-	6305,
-	6305,
-	6305,
-	6305,
-	6305,
-	6305,
-	5239,
-	5239,
-	6398,
-	5239,
-	5239,
-	6398,
-	5131,
-	5131,
-	6398,
-	6461,
-	10568,
-	6369,
-	6305,
-	6305,
-	6305,
-	6305,
-	6461,
-	6305,
-	4805,
-	4804,
-	3005,
-	1119,
-	2794,
-	1027,
-	3799,
-	3767,
-	2979,
-	2687,
-	4447,
-	4422,
-	2988,
-	2726,
-	5239,
-	5211,
-	5239,
-	5211,
-	3799,
-	3767,
-	6520,
-	6417,
-	6520,
-	6520,
-	6520,
-	5357,
-	6417,
-	5259,
-	6305,
-	5144,
-	6305,
-	5144,
-	6305,
-	5144,
-	6369,
-	5211,
-	6305,
-	6305,
-	5144,
-	6461,
-	6520,
-	5357,
-	6520,
-	5357,
-	6417,
-	5259,
-	6417,
-	5259,
-	4899,
-	4899,
-	2837,
-	2837,
-	4742,
-	4742,
-	2762,
-	2762,
-	4804,
-	4804,
-	2794,
-	2794,
-	4804,
-	4804,
-	2794,
-	2794,
-	4899,
-	4899,
-	2837,
-	2837,
-	4804,
-	4804,
-	2794,
-	2794,
-	5357,
-	5357,
-	5300,
-	3051,
-	1644,
-	1138,
-	559,
-	559,
-	2762,
-	2762,
-	4698,
+	1556,
+	1556,
+	1556,
+	1556,
+	1556,
+	2995,
+	2995,
+	1046,
+	1046,
+	1046,
+	1046,
+	1046,
+	1566,
+	1566,
+	6539,
+	6539,
+	6314,
+	3775,
+	3775,
+	6407,
+	4702,
+	6378,
+	5247,
+	6407,
+	6314,
+	6539,
+	6539,
+	6539,
+	6539,
+	10874,
+	3012,
+	7885,
+	6470,
+	6470,
+	6470,
+	6470,
+	5308,
+	1107,
+	6539,
+	6539,
+	6378,
+	5219,
+	6312,
+	5151,
+	6314,
+	5152,
+	6314,
+	6314,
+	6314,
+	6314,
+	6314,
+	6314,
+	6314,
+	5247,
+	5247,
+	6407,
+	5247,
+	5247,
+	6407,
+	5139,
+	5139,
+	6407,
+	6470,
+	10587,
+	6378,
+	6314,
+	6314,
+	6314,
+	6314,
+	6470,
+	6314,
+	4813,
+	4812,
+	3012,
+	1123,
+	2801,
+	1031,
+	3807,
+	3775,
+	2986,
+	2694,
+	4455,
+	4430,
+	2995,
+	2733,
+	5247,
+	5219,
+	5247,
+	5219,
+	3807,
+	3775,
+	6529,
+	6426,
+	6529,
+	6529,
+	6529,
+	5365,
+	6426,
+	5267,
+	6314,
+	5152,
+	6314,
+	5152,
+	6314,
+	5152,
+	6378,
+	5219,
+	6314,
+	6314,
+	5152,
+	6470,
+	6529,
+	5365,
+	6529,
+	5365,
+	6426,
+	5267,
+	6426,
+	5267,
+	4907,
+	4907,
+	2844,
+	2844,
+	4750,
+	4750,
+	2769,
+	2769,
+	4812,
+	4812,
+	2801,
+	2801,
+	4812,
+	4812,
+	2801,
+	2801,
+	4907,
+	4907,
+	2844,
+	2844,
+	4812,
+	4812,
+	2801,
+	2801,
+	5365,
+	5365,
+	5308,
+	3058,
+	1648,
+	1142,
+	561,
+	561,
+	2769,
+	2769,
+	4706,
 	0,
 	0,
 	0,
-	4698,
-	2354,
-	1351,
-	6305,
-	5144,
-	6369,
-	4694,
-	4447,
-	4804,
-	2794,
-	1506,
-	3401,
-	3401,
-	2679,
-	3402,
-	2132,
-	4422,
-	4422,
-	4694,
-	4694,
-	2751,
-	1504,
-	2751,
-	3767,
-	6398,
-	6369,
-	4694,
-	6461,
-	5300,
-	6461,
-	6520,
+	4706,
+	2361,
+	1355,
+	6314,
+	5152,
+	6378,
+	4702,
+	4455,
+	4812,
+	2801,
+	1510,
+	3409,
+	3409,
+	2686,
+	3410,
+	2139,
+	4430,
+	4430,
+	4702,
+	4702,
+	2758,
+	1508,
+	2758,
+	3775,
+	6407,
+	6378,
+	4702,
+	6470,
+	5308,
+	6470,
+	6529,
 	183,
-	563,
+	565,
 	289,
 	183,
-	6530,
-	5144,
-	6305,
-	6461,
-	5300,
-	5300,
-	3005,
-	1606,
-	1118,
-	545,
-	1025,
-	1525,
-	2794,
-	504,
-	6530,
-	1118,
-	1606,
-	3005,
-	545,
-	504,
-	1025,
-	1525,
-	2794,
-	2988,
-	5239,
-	1573,
-	1514,
-	2726,
-	5211,
-	2988,
-	5239,
-	1573,
-	1514,
-	2726,
-	5211,
-	2794,
-	6520,
+	6539,
+	5152,
+	6314,
+	6470,
+	5308,
+	5308,
+	3012,
+	1610,
+	1122,
+	547,
+	1029,
+	1529,
+	2801,
+	506,
+	6539,
+	1122,
+	1610,
+	3012,
+	547,
+	506,
+	1029,
+	1529,
+	2801,
+	2995,
+	5247,
+	1577,
+	1518,
+	2733,
+	5219,
+	2995,
+	5247,
+	1577,
+	1518,
+	2733,
+	5219,
+	2801,
+	6529,
+	6426,
+	3807,
+	3807,
+	6407,
+	4702,
+	4702,
+	6378,
+	5219,
+	6539,
+	6539,
+	6470,
+	5308,
+	5219,
+	6539,
+	6470,
+	5308,
+	6470,
+	6470,
+	5308,
+	6470,
+	6378,
+	6407,
+	5247,
+	6314,
+	6539,
+	1867,
+	10497,
+	6407,
+	5247,
+	6407,
 	6417,
-	3799,
-	3799,
-	6398,
-	4694,
-	4694,
-	6369,
-	5211,
-	6530,
-	6530,
-	6461,
-	5300,
-	5211,
-	6530,
-	6461,
-	5300,
-	6461,
-	6461,
-	5300,
-	6461,
-	6369,
-	6398,
-	5239,
-	6305,
-	6530,
-	1862,
-	10478,
-	6398,
-	5239,
-	6398,
-	6408,
-	5131,
-	6530,
-	6305,
-	3005,
-	2794,
-	4805,
-	4804,
-	2979,
-	2687,
-	3799,
-	3767,
-	2988,
-	2726,
-	4447,
-	4422,
-	5239,
-	5211,
-	5239,
-	5211,
-	3799,
-	3767,
-	1119,
-	1027,
-	6305,
-	5144,
-	6461,
-	6461,
-	6305,
-	6530,
-	6530,
-	6530,
-	5300,
-	6530,
-	5144,
-	6530,
-	6530,
-	5300,
-	4694,
-	4694,
-	2352,
-	4694,
-	6305,
-	5144,
-	6305,
-	5144,
-	6305,
-	5144,
-	4900,
-	4899,
-	3014,
-	2837,
-	4743,
-	4742,
-	2999,
-	2762,
-	6530,
-	5131,
-	5131,
-	5131,
-	5131,
-	5131,
-	5131,
-	5131,
-	5131,
-	5131,
-	5131,
-	5131,
-	5131,
-	2679,
-	2679,
-	2679,
-	2679,
-	2679,
-	2679,
-	5131,
-	2679,
-	5131,
+	5139,
+	6539,
+	6314,
+	3012,
+	2801,
+	4813,
+	4812,
+	2986,
+	2694,
+	3807,
+	3775,
+	2995,
+	2733,
+	4455,
+	4430,
+	5247,
+	5219,
+	5247,
+	5219,
+	3807,
+	3775,
+	1123,
+	1031,
+	6314,
+	5152,
+	6470,
+	6470,
+	6314,
+	6539,
+	6539,
+	6539,
+	5308,
+	6539,
+	5152,
+	6539,
+	6539,
+	5308,
+	4702,
+	4702,
+	2359,
+	4702,
+	6314,
+	5152,
+	6314,
+	5152,
+	6314,
+	5152,
+	4908,
+	4907,
+	3021,
+	2844,
+	4751,
+	4750,
+	3006,
+	2769,
+	6539,
+	5139,
+	5139,
+	5139,
+	5139,
+	5139,
+	5139,
+	5139,
+	5139,
+	5139,
+	5139,
+	5139,
+	5139,
+	2686,
+	2686,
+	2686,
+	2686,
+	2686,
+	2686,
+	5139,
+	2686,
+	5139,
 	145,
-	5131,
-	5131,
-	6398,
-	3799,
-	6369,
-	6530,
-	10855,
-	2991,
-	6530,
-	6530,
-	6366,
-	5131,
-	3767,
-	6369,
-	4694,
-	4804,
-	3767,
-	10474,
-	6530,
-	6305,
-	6530,
-	6398,
-	9220,
-	9223,
+	5139,
+	5139,
+	6407,
+	3807,
+	6378,
+	6539,
+	6539,
+	6539,
+	5247,
+	9561,
+	6407,
+	5247,
+	4706,
+	3002,
+	2368,
+	3002,
+	4706,
+	3002,
+	2368,
+	1587,
+	6539,
+	4702,
+	4706,
+	6378,
+	5247,
+	5247,
+	6407,
+	5247,
+	6539,
+	10874,
+	2998,
+	6539,
+	6539,
+	6375,
+	5139,
+	3775,
+	6378,
+	4702,
+	4812,
+	3775,
+	10493,
+	6539,
+	6314,
+	6539,
+	6407,
+	9238,
+	9241,
 	0,
-	6530,
-	8823,
-	9222,
-	5251,
-	6409,
-	10592,
-	3678,
-	5144,
-	5144,
-	5144,
-	5144,
-	8102,
-	9445,
-	9445,
-	9445,
-	9445,
-	8070,
-	8042,
-	9221,
-	3025,
-	6409,
-	10593,
-	3679,
-	3071,
-	8937,
-	9445,
-	8551,
-	11682,
-	8862,
-	8824,
-	9221,
-	5251,
-	6409,
-	10594,
-	3680,
-	8937,
-	11682,
-	8862,
-	10316,
-	10602,
-	5251,
-	6409,
-	10595,
-	3681,
-	5144,
-	8937,
-	9445,
-	11682,
-	8862,
-	7476,
-	7763,
-	5251,
-	6409,
-	10596,
-	3682,
-	7516,
-	11682,
-	7483,
-	0,
-	9450,
-	8070,
-	8044,
-	5252,
-	11609,
-	6411,
-	10603,
-	10317,
-	6398,
-	5239,
-	10558,
-	9450,
-	5251,
-	6409,
-	3683,
-	11682,
-	8825,
-	9221,
-	5251,
-	6409,
-	10598,
-	3684,
-	8937,
-	11682,
-	8862,
-	5251,
-	6409,
-	3685,
-	11682,
-	5251,
-	6409,
-	5251,
+	6539,
+	8841,
+	9240,
+	5259,
+	6418,
+	10611,
+	3686,
+	5152,
+	5152,
+	5152,
+	5152,
+	8118,
+	9463,
+	9463,
+	9463,
+	9463,
+	8086,
+	8058,
+	9239,
+	3032,
+	6418,
+	10612,
 	3687,
-	11682,
+	3078,
+	8955,
+	9463,
+	8567,
+	11701,
+	8880,
+	8842,
+	9239,
+	5259,
+	6418,
+	10613,
+	3688,
+	8955,
+	11701,
+	8880,
+	10335,
+	10621,
+	5259,
+	6418,
+	10614,
+	3689,
+	5152,
+	8955,
+	9463,
+	11701,
+	8880,
+	7489,
+	7777,
+	5259,
+	6418,
+	10615,
+	3690,
+	7529,
+	11701,
+	7496,
+	0,
+	9468,
+	8086,
+	8060,
+	5260,
+	11628,
+	6420,
+	10622,
+	10336,
+	6407,
+	5247,
+	10577,
+	9468,
+	5259,
+	6418,
+	3691,
+	11701,
+	8843,
+	9239,
+	5259,
+	6418,
+	10617,
+	3692,
+	8955,
+	11701,
+	8880,
+	5259,
+	6418,
+	3693,
+	11701,
+	5259,
+	6418,
+	5259,
+	3695,
+	11701,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[4] = 
 {
 	{ 0x0600009B, { 0, 2 } },
 	{ 0x0600009C, { 2, 2 } },
 	{ 0x0600009D, { 4, 2 } },
-	{ 0x060001A6, { 6, 2 } },
+	{ 0x060001BD, { 6, 2 } },
 };
 extern const uint32_t g_rgctx_T_tC4A05419E1F5D1CD1B3EC2178BEAF13D883B4C70;
 extern const uint32_t g_rgctx_T_tC4A05419E1F5D1CD1B3EC2178BEAF13D883B4C70;
@@ -1952,7 +2044,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_AnimationModule_CodeGenM
 const Il2CppCodeGenModule g_UnityEngine_AnimationModule_CodeGenModule = 
 {
 	"UnityEngine.AnimationModule.dll",
-	456,
+	479,
 	s_methodPointers,
 	41,
 	s_adjustorThunks,

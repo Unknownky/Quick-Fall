@@ -20,32 +20,42 @@ public class LoadDllManager : MonoBehaviour
 
     private void Start()
     {
-        //加载aot元数据
-        // LoadAotDll();
         //加载热更程序集
         LoadHotFixDll();
+        //加载aot元数据
+        LoadAotDll();
+
     }
 
     private void LoadAotDll()
     {
         //这一步实际上是为了解决AOT 泛型类的问题 
         HomologousImageMode mode = HomologousImageMode.SuperSet;
+        if (aotMetadataDllLabelRef == null)
+        {
+            Debug.Log("AOT元数据DLL标签为空");
+            return;
+        }
         Addressables.LoadAssetsAsync<TextAsset>(aotMetadataDllLabelRef, null).Completed += (handle) =>
         {
             var aots = handle.Result;
-            if (aots.Count != 0)
+            if (aots != null) //加载AOT元数据DLL
             {
                 foreach (var asset in aots)
                 {
                     LoadImageErrorCode errorCode = RuntimeApi.LoadMetadataForAOTAssembly(asset.bytes, mode);
                     if (errorCode == LoadImageErrorCode.OK)
                     {
+                        Debug.Log($"加载AOT元数据DLL:{asset.name}成功");
                         continue;
                     }
 
-                    Debug.LogError($"加载AOT元数据DLL:{asset.name}失败,错误码:{errorCode}");
+                    Debug.Log($"加载AOT元数据DLL:{asset.name}失败,错误码:{errorCode}");
                 }
 
+            }
+            else{
+                Debug.Log("AOT元数据加载错误");
             }
 
         };
