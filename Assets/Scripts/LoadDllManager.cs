@@ -16,8 +16,11 @@ public class LoadDllManager : MonoBehaviour
     public AssetLabelReference aotMetadataDllLabelRef; // AOT元数据DLL标签
     public AssetReference hotUpdateMainSceneRef; // 热更主场景
 
+    public AsyncOperation waitHandle;
+
     private void Start()
     {
+
         //加载aot元数据
         LoadAotDll();
         //加载热更程序集
@@ -25,6 +28,8 @@ public class LoadDllManager : MonoBehaviour
         //加载菜单场景
         LoadMenuScene();
     }
+
+
 
     private void LoadAotDll()
     {

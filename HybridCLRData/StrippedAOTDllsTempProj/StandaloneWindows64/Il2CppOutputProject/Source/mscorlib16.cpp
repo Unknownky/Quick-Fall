@@ -7636,6 +7636,41 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebuggerNonUserCodeAttribute__ctor_mCB1C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void System.Diagnostics.DebuggableAttribute::.ctor(System.Boolean,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebuggableAttribute__ctor_m6C0C2F707816BC8C3786951A4E7C6251BCF39E16 (DebuggableAttribute_tE5FA22579082706F95769C94BB410B4F6F84F029* __this, bool ___isJITTrackingEnabled0, bool ___isJITOptimizerDisabled1, const RuntimeMethod* method) 
+{
+	{
+		Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2(__this, NULL);
+		__this->___m_debuggingModes_0 = 0;
+		bool L_0 = ___isJITTrackingEnabled0;
+		if (!L_0)
+		{
+			goto IL_001e;
+		}
+	}
+	{
+		int32_t L_1 = __this->___m_debuggingModes_0;
+		__this->___m_debuggingModes_0 = ((int32_t)((int32_t)L_1|1));
+	}
+
+IL_001e:
+	{
+		bool L_2 = ___isJITOptimizerDisabled1;
+		if (!L_2)
+		{
+			goto IL_0033;
+		}
+	}
+	{
+		int32_t L_3 = __this->___m_debuggingModes_0;
+		__this->___m_debuggingModes_0 = ((int32_t)((int32_t)L_3|((int32_t)256)));
+	}
+
+IL_0033:
+	{
+		return;
+	}
+}
 // System.Void System.Diagnostics.DebuggableAttribute::.ctor(System.Diagnostics.DebuggableAttribute/DebuggingModes)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebuggableAttribute__ctor_mEA1D84CE13056A4092BCB1B1DD5D664EDB71482D (DebuggableAttribute_tE5FA22579082706F95769C94BB410B4F6F84F029* __this, int32_t ___modes0, const RuntimeMethod* method) 
 {
@@ -7644,6 +7679,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebuggableAttribute__ctor_mEA1D84CE13056
 		int32_t L_0 = ___modes0;
 		__this->___m_debuggingModes_0 = L_0;
 		return;
+	}
+}
+// System.Boolean System.Diagnostics.DebuggableAttribute::get_IsJITTrackingEnabled()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DebuggableAttribute_get_IsJITTrackingEnabled_m15D7C02C4B6DFEF015C5F9733A8E0E32939B925E (DebuggableAttribute_tE5FA22579082706F95769C94BB410B4F6F84F029* __this, const RuntimeMethod* method) 
+{
+	{
+		int32_t L_0 = __this->___m_debuggingModes_0;
+		return (bool)((!(((uint32_t)((int32_t)((int32_t)L_0&1))) <= ((uint32_t)0)))? 1 : 0);
+	}
+}
+// System.Boolean System.Diagnostics.DebuggableAttribute::get_IsJITOptimizerDisabled()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DebuggableAttribute_get_IsJITOptimizerDisabled_mDC452B42004752D58D6F4B777FF92844AFB294D6 (DebuggableAttribute_tE5FA22579082706F95769C94BB410B4F6F84F029* __this, const RuntimeMethod* method) 
+{
+	{
+		int32_t L_0 = __this->___m_debuggingModes_0;
+		return (bool)((!(((uint32_t)((int32_t)((int32_t)L_0&((int32_t)256)))) <= ((uint32_t)0)))? 1 : 0);
+	}
+}
+// System.Diagnostics.DebuggableAttribute/DebuggingModes System.Diagnostics.DebuggableAttribute::get_DebuggingFlags()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DebuggableAttribute_get_DebuggingFlags_m0BD8BBF93D3FF4DF064697D0582666A904076989 (DebuggableAttribute_tE5FA22579082706F95769C94BB410B4F6F84F029* __this, const RuntimeMethod* method) 
+{
+	{
+		int32_t L_0 = __this->___m_debuggingModes_0;
+		return L_0;
 	}
 }
 #ifdef __clang__

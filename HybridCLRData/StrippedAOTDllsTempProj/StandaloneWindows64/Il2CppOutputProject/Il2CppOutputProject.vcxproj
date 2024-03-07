@@ -181,8 +181,6 @@
     </ClCompile>
     <ClCompile Include="Source\Generics57.cpp">
     </ClCompile>
-    <ClCompile Include="Source\Generics58.cpp">
-    </ClCompile>
     <ClCompile Include="Source\Generics6.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics7.cpp">
@@ -190,6 +188,8 @@
     <ClCompile Include="Source\Generics8.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics9.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\HybridCLR.Runtime.cpp">
     </ClCompile>
     <ClCompile Include="Source\Il2CppCCalculateFieldValues.cpp">
     </ClCompile>
@@ -470,6 +470,8 @@
     <ClCompile Include="Source\Assembly-CSharp_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\HybridCLR.Runtime_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\Il2CppGenericAdjustorThunkTable.c">
     </ClCompile>
@@ -4379,15 +4381,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <NMakePreprocessorDefinitions>_DEBUG;DEBUG;ALL_INTERIOR_POINTERS=1;GC_GCJ_SUPPORT=1;JAVA_FINALIZATION=1;NO_EXECUTE_PERMISSION=1;GC_NO_THREADS_DISCOVERY=1;IGNORE_DYNAMIC_LOADING=1;GC_DONT_REGISTER_MAIN_STATIC_DATA=1;GC_VERSION_MAJOR=7;GC_VERSION_MINOR=7;GC_VERSION_MICRO=0;GC_THREADS=1;USE_MMAP=1;USE_MUNMAP=1;NET_4_0=1;UNITY_AOT=1;NET_STANDARD_2_0=1;NET_UNITY_4_8=1;NET_STANDARD=1;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;WINDOWS;_UNICODE;UNICODE;WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP;IL2CPP_ENABLE_WRITE_BARRIERS=1;IL2CPP_INCREMENTAL_TIME_SLICE=3</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions>_DEBUG;DEBUG;ALL_INTERIOR_POINTERS=1;GC_GCJ_SUPPORT=1;JAVA_FINALIZATION=1;NO_EXECUTE_PERMISSION=1;GC_NO_THREADS_DISCOVERY=1;IGNORE_DYNAMIC_LOADING=1;GC_DONT_REGISTER_MAIN_STATIC_DATA=1;GC_VERSION_MAJOR=7;GC_VERSION_MINOR=7;GC_VERSION_MICRO=0;GC_THREADS=1;USE_MMAP=1;USE_MUNMAP=1;NET_4_0=1;UNITY_AOT=1;NET_STANDARD_2_0=1;NET_UNITY_4_8=1;NET_STANDARD=1;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;WINDOWS;_UNICODE;UNICODE;WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP</NMakePreprocessorDefinitions>
     <BuilderConfiguration>Debug</BuilderConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Release' OR '$(Configuration)'=='Master'">
-    <NMakePreprocessorDefinitions>_NDEBUG;NDEBUG;ALL_INTERIOR_POINTERS=1;GC_GCJ_SUPPORT=1;JAVA_FINALIZATION=1;NO_EXECUTE_PERMISSION=1;GC_NO_THREADS_DISCOVERY=1;IGNORE_DYNAMIC_LOADING=1;GC_DONT_REGISTER_MAIN_STATIC_DATA=1;GC_VERSION_MAJOR=7;GC_VERSION_MINOR=7;GC_VERSION_MICRO=0;GC_THREADS=1;USE_MMAP=1;USE_MUNMAP=1;NET_4_0=1;UNITY_AOT=1;NET_STANDARD_2_0=1;NET_UNITY_4_8=1;NET_STANDARD=1;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;WINDOWS;_UNICODE;UNICODE;WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP;IL2CPP_ENABLE_WRITE_BARRIERS=1;IL2CPP_INCREMENTAL_TIME_SLICE=3</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions>_NDEBUG;NDEBUG;ALL_INTERIOR_POINTERS=1;GC_GCJ_SUPPORT=1;JAVA_FINALIZATION=1;NO_EXECUTE_PERMISSION=1;GC_NO_THREADS_DISCOVERY=1;IGNORE_DYNAMIC_LOADING=1;GC_DONT_REGISTER_MAIN_STATIC_DATA=1;GC_VERSION_MAJOR=7;GC_VERSION_MINOR=7;GC_VERSION_MICRO=0;GC_THREADS=1;USE_MMAP=1;USE_MUNMAP=1;NET_4_0=1;UNITY_AOT=1;NET_STANDARD_2_0=1;NET_UNITY_4_8=1;NET_STANDARD=1;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;WINDOWS;_UNICODE;UNICODE;WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP</NMakePreprocessorDefinitions>
     <BuilderConfiguration>Release</BuilderConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='MasterWithLTCG'">
-    <NMakePreprocessorDefinitions>_NDEBUG;NDEBUG;ALL_INTERIOR_POINTERS=1;GC_GCJ_SUPPORT=1;JAVA_FINALIZATION=1;NO_EXECUTE_PERMISSION=1;GC_NO_THREADS_DISCOVERY=1;IGNORE_DYNAMIC_LOADING=1;GC_DONT_REGISTER_MAIN_STATIC_DATA=1;GC_VERSION_MAJOR=7;GC_VERSION_MINOR=7;GC_VERSION_MICRO=0;GC_THREADS=1;USE_MMAP=1;USE_MUNMAP=1;NET_4_0=1;UNITY_AOT=1;NET_STANDARD_2_0=1;NET_UNITY_4_8=1;NET_STANDARD=1;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;WINDOWS;_UNICODE;UNICODE;WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP;IL2CPP_ENABLE_WRITE_BARRIERS=1;IL2CPP_INCREMENTAL_TIME_SLICE=3</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions>_NDEBUG;NDEBUG;ALL_INTERIOR_POINTERS=1;GC_GCJ_SUPPORT=1;JAVA_FINALIZATION=1;NO_EXECUTE_PERMISSION=1;GC_NO_THREADS_DISCOVERY=1;IGNORE_DYNAMIC_LOADING=1;GC_DONT_REGISTER_MAIN_STATIC_DATA=1;GC_VERSION_MAJOR=7;GC_VERSION_MINOR=7;GC_VERSION_MICRO=0;GC_THREADS=1;USE_MMAP=1;USE_MUNMAP=1;NET_4_0=1;UNITY_AOT=1;NET_STANDARD_2_0=1;NET_UNITY_4_8=1;NET_STANDARD=1;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;WINDOWS;_UNICODE;UNICODE;WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP</NMakePreprocessorDefinitions>
     <BuilderConfiguration>ReleasePlus</BuilderConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug' OR '$(Configuration)'=='Release'">
@@ -4407,7 +4409,7 @@
     <IntDir>$(SolutionDir)\build\obj\il2cppOutputProject\$(BuilderArchitecture)\$(Configuration)\</IntDir>
     <NMakeOutput>$(OutDir)GameAssembly.dll</NMakeOutput>
     <IncludePath>$(VC_IncludePath);$(UniversalCRT_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\IL2CPP\libil2cpp;$(ProjectDir)\IL2CPP\libil2cpp\pch;$(ProjectDir)\IL2CPP\external\bdwgc\include</IncludePath>
-    <NMakeBuildCommandLine>"$(ProjectDir)\IL2CPP/build/deploy/il2cpp.exe" --compile-cpp --platform=WindowsDesktop --outputpath="GameAssembly.dll" --libil2cpp-static --baselib-directory="D:/PC/unity/2021.3.10f1c2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_il2cpp" --incremental-g-c-time-slice=3 --dotnetprofile=unityaot-win32 --profiler-report --profiler-output-file="D:/PC/unity/游戏制作文件/Quick Fall/Library/Bee/artifacts/il2cpp_conv_lz5x.traceevents" --print-command-line --architecture=$(BuilderArchitecture) --configuration=$(BuilderConfiguration) --outputpath="$(NMakeOutput)" --data-folder="$(OutDir)\" --cachedirectory="$(IntDir)\" --generatedcppdir="$(ProjectDir)\Source" $(Il2CppDebuggerFlags) --verbose</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>"$(ProjectDir)\IL2CPP/build/deploy/il2cpp.exe" --compile-cpp --platform=WindowsDesktop --outputpath="GameAssembly.dll" --libil2cpp-static --baselib-directory="D:/PC/unity/2021.3.10f1c2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_il2cpp" --dotnetprofile=unityaot-win32 --profiler-report --profiler-output-file="D:/PC/unity/游戏制作文件/Quick Fall/Library/Bee/artifacts/il2cpp_conv_lz5x.traceevents" --print-command-line --architecture=$(BuilderArchitecture) --configuration=$(BuilderConfiguration) --outputpath="$(NMakeOutput)" --data-folder="$(OutDir)\" --cachedirectory="$(IntDir)\" --generatedcppdir="$(ProjectDir)\Source" $(Il2CppDebuggerFlags) --verbose</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>$(NMakeBuildCommandLine) -forcerebuild</NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>del "$(NMakeOutput)"</NMakeCleanCommandLine>
   </PropertyGroup>

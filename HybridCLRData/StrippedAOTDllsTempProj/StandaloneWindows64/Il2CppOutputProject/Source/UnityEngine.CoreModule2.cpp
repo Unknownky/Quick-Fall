@@ -8067,8 +8067,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Exception__ctor_m412D5FC4D69035738F1DB88
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* TextAsset_get_bytes_m244B31755642C9623B570FC96B9A04523B1E5178 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) ;
 // System.String UnityEngine.TextAsset::DecodeString(System.Byte[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TextAsset_DecodeString_m3345EAF0DE3FE4AAF99F105269E0B83C528198D9 (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___bytes0, const RuntimeMethod* method) ;
+// System.Int64 UnityEngine.TextAsset::GetDataSize()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t TextAsset_GetDataSize_m78769320C9FB0AF225B9D0C384E6F096F616C23D (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) ;
 // System.String UnityEngine.TextAsset::get_text()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TextAsset_get_text_m36846042E3CF3D9DD337BF3F8B2B1902D10C8FD9 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) ;
+// System.Void UnityEngine.TextAsset::.ctor(UnityEngine.TextAsset/CreateOptions,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextAsset__ctor_mC8EEBC230157B4C459E87D591C722D8803FB5846 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, int32_t ___options0, String_t* ___text1, const RuntimeMethod* method) ;
+// System.Void UnityEngine.TextAsset::Internal_CreateInstance(UnityEngine.TextAsset,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextAsset_Internal_CreateInstance_m9EB31EDB11B4AC96E3CBF5EC3E8FE018D71EE0AD (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* ___self0, String_t* ___text1, const RuntimeMethod* method) ;
+// System.Byte[] UnityEngine.TextAsset::GetPreviewBytes(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* TextAsset_GetPreviewBytes_mA92651497E54AB7AE033FFB61E97DF2B25F5D700 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, int32_t ___maxByteCount0, const RuntimeMethod* method) ;
 // TKey System.Collections.Generic.KeyValuePair`2<System.Byte[],System.Text.Encoding>::get_Key()
 inline ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* KeyValuePair_2_get_Key_mAE38941DFB83CFA0D219CF4C92683BC01B684D0C_inline (KeyValuePair_2_t8B5EE930394CF3A42A94197BC61889FD4EA4D0C3* __this, const RuntimeMethod* method)
 {
@@ -14171,6 +14179,45 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A8261
 	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* icallRetVal = _il2cpp_icall_func(__this);
 	return icallRetVal;
 }
+// System.Byte[] UnityEngine.TextAsset::GetPreviewBytes(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* TextAsset_GetPreviewBytes_mA92651497E54AB7AE033FFB61E97DF2B25F5D700 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, int32_t ___maxByteCount0, const RuntimeMethod* method) 
+{
+	typedef ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* (*TextAsset_GetPreviewBytes_mA92651497E54AB7AE033FFB61E97DF2B25F5D700_ftn) (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69*, int32_t);
+	static TextAsset_GetPreviewBytes_mA92651497E54AB7AE033FFB61E97DF2B25F5D700_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (TextAsset_GetPreviewBytes_mA92651497E54AB7AE033FFB61E97DF2B25F5D700_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextAsset::GetPreviewBytes(System.Int32)");
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* icallRetVal = _il2cpp_icall_func(__this, ___maxByteCount0);
+	return icallRetVal;
+}
+// System.Void UnityEngine.TextAsset::Internal_CreateInstance(UnityEngine.TextAsset,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextAsset_Internal_CreateInstance_m9EB31EDB11B4AC96E3CBF5EC3E8FE018D71EE0AD (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* ___self0, String_t* ___text1, const RuntimeMethod* method) 
+{
+	typedef void (*TextAsset_Internal_CreateInstance_m9EB31EDB11B4AC96E3CBF5EC3E8FE018D71EE0AD_ftn) (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69*, String_t*);
+	static TextAsset_Internal_CreateInstance_m9EB31EDB11B4AC96E3CBF5EC3E8FE018D71EE0AD_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (TextAsset_Internal_CreateInstance_m9EB31EDB11B4AC96E3CBF5EC3E8FE018D71EE0AD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextAsset::Internal_CreateInstance(UnityEngine.TextAsset,System.String)");
+	_il2cpp_icall_func(___self0, ___text1);
+}
+// System.IntPtr UnityEngine.TextAsset::GetDataPtr()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TextAsset_GetDataPtr_m69D87B26730F246E0F6EC1FBEFAB3B8159C04002 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) 
+{
+	typedef intptr_t (*TextAsset_GetDataPtr_m69D87B26730F246E0F6EC1FBEFAB3B8159C04002_ftn) (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69*);
+	static TextAsset_GetDataPtr_m69D87B26730F246E0F6EC1FBEFAB3B8159C04002_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (TextAsset_GetDataPtr_m69D87B26730F246E0F6EC1FBEFAB3B8159C04002_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextAsset::GetDataPtr()");
+	intptr_t icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
+}
+// System.Int64 UnityEngine.TextAsset::GetDataSize()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t TextAsset_GetDataSize_m78769320C9FB0AF225B9D0C384E6F096F616C23D (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) 
+{
+	typedef int64_t (*TextAsset_GetDataSize_m78769320C9FB0AF225B9D0C384E6F096F616C23D_ftn) (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69*);
+	static TextAsset_GetDataSize_m78769320C9FB0AF225B9D0C384E6F096F616C23D_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (TextAsset_GetDataSize_m78769320C9FB0AF225B9D0C384E6F096F616C23D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextAsset::GetDataSize()");
+	int64_t icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
+}
 // System.String UnityEngine.TextAsset::get_text()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TextAsset_get_text_m36846042E3CF3D9DD337BF3F8B2B1902D10C8FD9 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) 
 {
@@ -14190,6 +14237,15 @@ IL_000f:
 		return L_2;
 	}
 }
+// System.Int64 UnityEngine.TextAsset::get_dataSize()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t TextAsset_get_dataSize_m288A6538051A1E87657723FA4A3153C069C16AB7 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) 
+{
+	{
+		int64_t L_0;
+		L_0 = TextAsset_GetDataSize_m78769320C9FB0AF225B9D0C384E6F096F616C23D(__this, NULL);
+		return L_0;
+	}
+}
 // System.String UnityEngine.TextAsset::ToString()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TextAsset_ToString_m6A506652E11BF9679E6BE931EA2844035FF68923 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) 
 {
@@ -14205,6 +14261,74 @@ IL_000a:
 	{
 		String_t* L_1 = V_0;
 		return L_1;
+	}
+}
+// System.Void UnityEngine.TextAsset::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextAsset__ctor_m27C97A718A563E124A07FAE057A69D4D44A93595 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, const RuntimeMethod* method) 
+{
+	{
+		TextAsset__ctor_mC8EEBC230157B4C459E87D591C722D8803FB5846(__this, 1, (String_t*)NULL, NULL);
+		return;
+	}
+}
+// System.Void UnityEngine.TextAsset::.ctor(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextAsset__ctor_mA162199A887009DC367699067E007D0ABF933E02 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, String_t* ___text0, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___text0;
+		TextAsset__ctor_mC8EEBC230157B4C459E87D591C722D8803FB5846(__this, 1, L_0, NULL);
+		return;
+	}
+}
+// System.Void UnityEngine.TextAsset::.ctor(UnityEngine.TextAsset/CreateOptions,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextAsset__ctor_mC8EEBC230157B4C459E87D591C722D8803FB5846 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, int32_t ___options0, String_t* ___text1, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	{
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		Object__ctor_m2149FA40CEC8D82AC20D3508AB40C0D8EFEF68E6(__this, NULL);
+		int32_t L_0 = ___options0;
+		V_0 = (bool)((((int32_t)L_0) == ((int32_t)1))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_001a;
+		}
+	}
+	{
+		String_t* L_2 = ___text1;
+		TextAsset_Internal_CreateInstance_m9EB31EDB11B4AC96E3CBF5EC3E8FE018D71EE0AD(__this, L_2, NULL);
+	}
+
+IL_001a:
+	{
+		return;
+	}
+}
+// System.String UnityEngine.TextAsset::GetPreview(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TextAsset_GetPreview_m07CDE63B7C22AE43C69130D42076E7825B47C8E6 (TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69* __this, int32_t ___maxChars0, const RuntimeMethod* method) 
+{
+	String_t* V_0 = NULL;
+	{
+		int32_t L_0 = ___maxChars0;
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_1;
+		L_1 = TextAsset_GetPreviewBytes_mA92651497E54AB7AE033FFB61E97DF2B25F5D700(__this, ((int32_t)il2cpp_codegen_multiply(L_0, 4)), NULL);
+		String_t* L_2;
+		L_2 = TextAsset_DecodeString_m3345EAF0DE3FE4AAF99F105269E0B83C528198D9(L_1, NULL);
+		V_0 = L_2;
+		goto IL_0012;
+	}
+
+IL_0012:
+	{
+		String_t* L_3 = V_0;
+		return L_3;
 	}
 }
 // System.String UnityEngine.TextAsset::DecodeString(System.Byte[])
@@ -24246,7 +24370,7 @@ IL_00fd:
 		L_48 = VirtualFuncInvoker0< Assembly_t* >::Invoke(26 /* System.Reflection.Assembly System.Type::get_Assembly() */, L_47);
 		NullCheck(L_48);
 		AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* L_49;
-		L_49 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(17 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_48);
+		L_49 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(18 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_48);
 		NullCheck(L_49);
 		String_t* L_50;
 		L_50 = AssemblyName_get_Name_m7899B9B3F289EEBAF62AEAB51D1CA91DA92C4E6A_inline(L_49, NULL);
