@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: TeachScene
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 1ebe613a1fe11d940a1eb1eb13b1c9aa
+    m_Address: MainMenu
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:
