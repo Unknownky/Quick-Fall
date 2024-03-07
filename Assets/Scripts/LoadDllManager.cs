@@ -22,22 +22,25 @@ public class LoadDllManager : MonoBehaviour
 
     private void Start()
     {
-        //加载热更程序集
-        LoadHotFixDll();
-        //加载aot元数据
-        LoadAotDll();
-        //更新资源
-        _update_address_ables();
+        StartCoroutine(InitTask());
     }
 
-    private void _update_address_ables()
+    IEnumerator InitTask()
     {
-        StartCoroutine(_update_address_ablesReally());
+        //检查资源更新 
+        yield return _update_address_ables();
+        //加载热更程序集
+        yield return LoadHotFixDll();
+        //加载aot元数据
+        yield return LoadAotDll();
+        //加载菜单场景
+        LoadMenuScene();
     }
 
-    private IEnumerator _update_address_ablesReally()
+    private IEnumerator _update_address_ables()
     {
         // 初始化Addressables
+        Debug.Log("初始化Addressables");
         yield return Addressables.InitializeAsync();
 
         // 检查文件更新
@@ -45,8 +48,22 @@ public class LoadDllManager : MonoBehaviour
         // 打包后 会 从配置中的RemoteBuildPath中下载资源
         // Addressables 会自动根据catalog中各个资源的hash值来判断是否需要更新
 
-        yield return waitHandle = Addressables.CheckForCatalogUpdates();
+        Debug.Log("检查文件更新");
+        waitHandle = Addressables.CheckForCatalogUpdates();
 
+        yield return waitHandle;
+
+        if(!waitHandle.IsDone)
+        {
+            Debug.Log("检查文件更新失败");
+            yield break;
+        }
+
+        if (waitHandle.DebugName == "InvalidHandle")
+        {
+            Debug.Log("没有需要更新的资源");
+            yield break;
+        }
         List<string> catalogs = waitHandle.Result as List<string>; //获取需要更新的catalog
 
         if (catalogs.Count <= 0)
@@ -100,59 +117,58 @@ public class LoadDllManager : MonoBehaviour
     }
 
 
-    private void LoadAotDll()
+    private IEnumerator LoadAotDll()
     {
         //这一步实际上是为了解决AOT 泛型类的问题 
         HomologousImageMode mode = HomologousImageMode.SuperSet;
         if (aotMetadataDllLabelRef == null)
         {
             Debug.Log("AOT元数据DLL标签为空");
-            return;
+            yield break;
         }
-        Addressables.LoadAssetsAsync<TextAsset>(aotMetadataDllLabelRef, null).Completed += (handle) =>
-        {
-            var aots = handle.Result;
-            if (aots != null) //加载AOT元数据DLL
-            {
-                foreach (var asset in aots)
-                {
-                    LoadImageErrorCode errorCode = RuntimeApi.LoadMetadataForAOTAssembly(asset.bytes, mode);
-                    if (errorCode == LoadImageErrorCode.OK)
-                    {
-                        Debug.Log($"加载AOT元数据DLL:{asset.name}成功");
-                        continue;
-                    }
+        yield return waitHandle = Addressables.LoadAssetsAsync<TextAsset>(aotMetadataDllLabelRef, null);
 
-                    Debug.Log($"加载AOT元数据DLL:{asset.name}失败,错误码:{errorCode}");
+        List<TextAsset> aots = waitHandle.Result as List<TextAsset>; //获取AOT元数据DLL
+        if (aots != null) //加载AOT元数据DLL
+        {
+            foreach (var asset in aots)
+            {
+                LoadImageErrorCode errorCode = RuntimeApi.LoadMetadataForAOTAssembly(asset.bytes, mode);
+                if (errorCode == LoadImageErrorCode.OK)
+                {
+                    Debug.Log($"加载AOT元数据DLL:{asset.name}成功");
+                    continue;
                 }
 
-            }
-            else
-            {
-                Debug.Log("AOT元数据加载错误");
+                Debug.Log($"加载AOT元数据DLL:{asset.name}失败,错误码:{errorCode}");
             }
 
-        };
+        }
+        else
+        {
+            Debug.Log("AOT元数据加载错误");
+        }
 
     }
 
-    private void LoadHotFixDll()
+    private IEnumerator LoadHotFixDll()
     {
         // 加载热更DLL
         // 这里使用标签来加载资源 Addressables会自动根据标签来加载所有资源
-        Addressables.LoadAssetsAsync<TextAsset>(hotUpdateDllLabelRef, null).Completed += (handle) =>
+        yield return waitHandle = Addressables.LoadAssetsAsync<TextAsset>(hotUpdateDllLabelRef, null); 
+        List<TextAsset>dlls = waitHandle.Result as List<TextAsset>;
+        if(dlls == null)
         {
-            var dlls = handle.Result;
-            foreach (var asset in dlls)
-            {
-                Debug.Log("加载热更DLL:" + asset.name);
-                Assembly.Load(asset.bytes);
-                Debug.Log("加载热更DLL:" + asset.name + "完成");
+            Debug.Log("无热更DLL");
+            yield break;
+        }
+        foreach (var asset in dlls)
+        {
+            Debug.Log("加载热更DLL:" + asset.name);
+            Assembly.Load(asset.bytes);
+            Debug.Log("加载热更DLL:" + asset.name + "完成");
 
-            }
-            //加载菜单场景
-            LoadMenuScene();
-        };
+        }
     }
 
 
