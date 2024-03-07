@@ -5,6 +5,6 @@ using UnityEngine;
 public class PrintHello : MonoBehaviour
 {
     private void Start() {
-        Debug.Log("你好世界！");
+        Debug.Log("你好世界，更新！");
     }
 }
