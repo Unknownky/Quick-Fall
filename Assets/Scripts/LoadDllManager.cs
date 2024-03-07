@@ -4,6 +4,8 @@ using System.Reflection;
 using HybridCLR;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.AddressableAssets.ResourceLocators;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 
 //进行aot元数据的加载以及热更程序集的加载
@@ -16,7 +18,7 @@ public class LoadDllManager : MonoBehaviour
     public AssetLabelReference aotMetadataDllLabelRef; // AOT元数据DLL标签
     public AssetReference hotUpdateMainSceneRef; // 热更主场景
 
-    public AsyncOperation waitHandle;
+    private AsyncOperationHandle waitHandle;
 
     private void Start()
     {
@@ -24,8 +26,79 @@ public class LoadDllManager : MonoBehaviour
         LoadHotFixDll();
         //加载aot元数据
         LoadAotDll();
-
+        //更新资源
+        _update_address_ables();
     }
+
+    private void _update_address_ables()
+    {
+        StartCoroutine(_update_address_ablesReally());
+    }
+
+    private IEnumerator _update_address_ablesReally()
+    {
+        // 初始化Addressables
+        yield return Addressables.InitializeAsync();
+
+        // 检查文件更新
+        // 这一步会根据Addressables中的资源组来依次检查更新
+        // 打包后 会 从配置中的RemoteBuildPath中下载资源
+        // Addressables 会自动根据catalog中各个资源的hash值来判断是否需要更新
+
+        yield return waitHandle = Addressables.CheckForCatalogUpdates();
+
+        List<string> catalogs = waitHandle.Result as List<string>; //获取需要更新的catalog
+
+        if (catalogs.Count <= 0)
+        {
+            //没有需要更新的资源
+            Debug.Log("没有需要更新的资源");
+            yield break;
+        }
+
+        //需要更新资源  则 根据catalogs 拿到需要更新的资源位置 
+        yield return waitHandle = Addressables.UpdateCatalogs(catalogs, true);
+
+        List<IResourceLocator> resourceLocators = waitHandle.Result as List<IResourceLocator>;
+        Debug.Log($"需要更新:{resourceLocators.Count}个资源");
+
+        foreach (IResourceLocator resourceLocator in resourceLocators)
+        {
+            Debug.Log($"开始下载资源:{resourceLocator}");
+            yield return StartCoroutine(_download(resourceLocator));
+            Debug.Log($"下载资源:{resourceLocator}完成");
+        }
+    }
+
+    private IEnumerator _download(IResourceLocator resourceLocator)
+    {
+        yield return waitHandle = Addressables.GetDownloadSizeAsync(resourceLocator.Keys);
+        long size = (long)waitHandle.Result;
+
+        if (size <= 0) yield break;
+
+        Debug.Log($"更新:{resourceLocator}资源,总大小:{size}");
+
+        waitHandle = Addressables.DownloadDependenciesAsync(resourceLocator.Keys, Addressables.MergeMode.Union);
+        float progress = 0;
+        while (waitHandle.Status == AsyncOperationStatus.None)
+        {
+            float percentageComplete = waitHandle.GetDownloadStatus().Percent;
+            if (percentageComplete > progress * 1.01) // Report at most every 10% or so
+            {
+                progress = percentageComplete; // More accurate %
+                print($"下载百分比：{progress * 100}%");
+            }
+
+            yield return null;
+        }
+
+        yield return waitHandle;
+
+        Debug.Log("更新完毕!");
+        Addressables.Release(waitHandle);
+    }
+
 
     private void LoadAotDll()
     {
@@ -54,7 +127,8 @@ public class LoadDllManager : MonoBehaviour
                 }
 
             }
-            else{
+            else
+            {
                 Debug.Log("AOT元数据加载错误");
             }
 
