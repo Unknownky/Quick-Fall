@@ -28,92 +28,91 @@ public class LoadDllManager : MonoBehaviour
     IEnumerator InitTask()
     {
         //检查资源更新 
-        yield return _update_address_ables();
+        yield return StartCoroutine(CheckAndUpdateResources());
         //加载热更程序集
-        yield return LoadHotFixDll();
+        yield return StartCoroutine(LoadHotFixDll());
         //加载aot元数据
-        yield return LoadAotDll();
+        yield return StartCoroutine(LoadAotDll());
         //加载菜单场景
         LoadMenuScene();
     }
 
-    private IEnumerator _update_address_ables()
+    private IEnumerator CheckAndUpdateResources()
     {
-        // 初始化Addressables
-        Debug.Log("初始化Addressables");
+        Debug.Log("Initializing Addressables");
         yield return Addressables.InitializeAsync();
 
-        // 检查文件更新
-        // 这一步会根据Addressables中的资源组来依次检查更新
-        // 打包后 会 从配置中的RemoteBuildPath中下载资源
-        // Addressables 会自动根据catalog中各个资源的hash值来判断是否需要更新
+        Debug.Log("Checking for catalog updates");
+        AsyncOperationHandle<List<string>> checkUpdatesHandle = Addressables.CheckForCatalogUpdates();
+        yield return checkUpdatesHandle;
 
-        Debug.Log("检查文件更新");
-        waitHandle = Addressables.CheckForCatalogUpdates();
-
-        yield return waitHandle;
-
-        if(!waitHandle.IsDone)
+        if (!checkUpdatesHandle.IsDone)
         {
-            Debug.Log("检查文件更新失败");
+            Debug.Log("Failed to check for catalog updates");
             yield break;
         }
 
-        if (waitHandle.DebugName == "InvalidHandle")
+        if (checkUpdatesHandle.DebugName == "InvalidHandle")
         {
-            Debug.Log("没有需要更新的资源");
+            Debug.Log("No resources to update");
             yield break;
         }
-        List<string> catalogs = waitHandle.Result as List<string>; //获取需要更新的catalog
 
+        List<string> catalogs = checkUpdatesHandle.Result;
         if (catalogs.Count <= 0)
         {
-            //没有需要更新的资源
-            Debug.Log("没有需要更新的资源");
+            Debug.Log("No resources to update");
             yield break;
         }
 
-        //需要更新资源  则 根据catalogs 拿到需要更新的资源位置 
-        yield return waitHandle = Addressables.UpdateCatalogs(catalogs, true);
+        Debug.Log($"Updating {catalogs.Count} resources");
+        AsyncOperationHandle<List<IResourceLocator>> updateCatalogsHandle = Addressables.UpdateCatalogs(catalogs, true);
+        yield return updateCatalogsHandle;
 
-        List<IResourceLocator> resourceLocators = waitHandle.Result as List<IResourceLocator>;
-        Debug.Log($"需要更新:{resourceLocators.Count}个资源");
+        List<IResourceLocator> resourceLocators = updateCatalogsHandle.Result;
+        Debug.Log($"Downloading {resourceLocators.Count} resources");
 
         foreach (IResourceLocator resourceLocator in resourceLocators)
         {
-            Debug.Log($"开始下载资源:{resourceLocator}");
-            yield return StartCoroutine(_download(resourceLocator));
-            Debug.Log($"下载资源:{resourceLocator}完成");
+            Debug.Log($"Downloading resource: {resourceLocator}");
+            yield return StartCoroutine(DownloadResource(resourceLocator));
+            Debug.Log($"Downloaded resource: {resourceLocator}");
         }
     }
 
-    private IEnumerator _download(IResourceLocator resourceLocator)
+    private IEnumerator DownloadResource(IResourceLocator resourceLocator)
     {
-        yield return waitHandle = Addressables.GetDownloadSizeAsync(resourceLocator.Keys);
-        long size = (long)waitHandle.Result;
+        AsyncOperationHandle<long> downloadSizeHandle = Addressables.GetDownloadSizeAsync(resourceLocator.Keys);
+        yield return downloadSizeHandle;
 
-        if (size <= 0) yield break;
-
-        Debug.Log($"更新:{resourceLocator}资源,总大小:{size}");
-
-        waitHandle = Addressables.DownloadDependenciesAsync(resourceLocator.Keys, Addressables.MergeMode.Union);
-        float progress = 0;
-        while (waitHandle.Status == AsyncOperationStatus.None)
+        long size = downloadSizeHandle.Result;
+        if (size <= 0)
         {
-            float percentageComplete = waitHandle.GetDownloadStatus().Percent;
-            if (percentageComplete > progress * 1.01) // Report at most every 10% or so
+            yield break;
+        }
+
+        Debug.Log($"Updating resource: {resourceLocator}, total size: {size}");
+
+        // Download the resources, and report progress, clean the cache
+        AsyncOperationHandle downloadHandle = Addressables.DownloadDependenciesAsync(resourceLocator.Keys, Addressables.MergeMode.Union,true);
+        float progress = 0;
+
+        while (!downloadHandle.IsDone)
+        {
+            float percentageComplete = downloadHandle.GetDownloadStatus().Percent;
+            if (percentageComplete > progress * 1.01f) // Report at most every 10% or so
             {
                 progress = percentageComplete; // More accurate %
-                print($"下载百分比：{progress * 100}%");
+                Debug.Log($"Download progress: {progress * 100}%");
             }
 
             yield return null;
         }
 
-        yield return waitHandle;
+        yield return downloadHandle;
 
-        Debug.Log("更新完毕!");
-        Addressables.Release(waitHandle);
+        Debug.Log("Resource update completed!");
+        Addressables.Release(downloadHandle);
     }
 
 
