@@ -189,6 +189,7 @@ namespace QFSW.QC
         {
             if (!IsActive)
             {
+                
                 if (_keyConfig.ShowConsoleKey.IsPressed() || _keyConfig.ToggleConsoleVisibilityKey.IsPressed())
                 {
                     Activate();

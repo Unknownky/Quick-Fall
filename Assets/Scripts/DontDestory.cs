@@ -10,7 +10,7 @@ public class DontDestory : MonoBehaviour
 
     IEnumerator DelayDontDestroy()
     {
-        yield return new WaitForSeconds(5f);
+        yield return null;
         DontDestroyOnLoad(gameObject);
     }
 }

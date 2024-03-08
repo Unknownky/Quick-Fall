@@ -31,6 +31,8 @@ public class LoadDllManager : MonoBehaviour
         yield return StartCoroutine(LoadHotFixDll());
         //加载aot元数据
         yield return StartCoroutine(LoadAotDll());
+
+        yield return new WaitForSeconds(1);
         //加载菜单场景
         LoadMenuScene();
     }
@@ -94,7 +96,7 @@ public class LoadDllManager : MonoBehaviour
     private void LoadMenuScene()
     {
         // 加载菜单场景
-        Addressables.LoadSceneAsync(hotUpdateMainSceneRef, LoadSceneMode.Single).Completed += (handle) =>
+        Addressables.LoadSceneAsync(hotUpdateMainSceneRef, LoadSceneMode.Additive).Completed += (handle) =>
         {
             Debug.Log("加载菜单场景完成");
         };
