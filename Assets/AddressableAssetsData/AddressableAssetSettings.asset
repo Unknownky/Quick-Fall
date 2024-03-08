@@ -116,6 +116,8 @@ MonoBehaviour:
     - default
     - hotfix
     - aot
+    - Scene
+    - Objects
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 12816e1414ed58447a593e579db458f0, type: 2}

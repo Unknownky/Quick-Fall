@@ -9,7 +9,7 @@ using UnityEngine.ResourceManagement.ResourceLocations;
 
 public class AssetBundleUpdate : MonoBehaviour
 {
-    [Tooltip("需要下载的资源组标签")]private List<string> assetBundleLables;
+    [Tooltip("需要下载的资源组标签"), SerializeField]private List<AssetLabelReference> assetBundleLables;
 
     [Tooltip("需要快速获取的资源的标签")]public AssetLabelReference assetLabelForFastGet;
 
@@ -28,7 +28,8 @@ public class AssetBundleUpdate : MonoBehaviour
 
     private void LoadFastGetAssets()
     {
-        Addressables.LoadResourceLocationsAsync(assetLabelForFastGet.labelString).Completed += OnLoadFastGetAssetsCompleted;
+        if(assetLabelForFastGet != null)
+            Addressables.LoadResourceLocationsAsync(assetLabelForFastGet.labelString).Completed += OnLoadFastGetAssetsCompleted;
     }
 
     private void OnLoadFastGetAssetsCompleted(AsyncOperationHandle<IList<IResourceLocation>> handle)
@@ -59,11 +60,22 @@ public class AssetBundleUpdate : MonoBehaviour
         //TODO:询问用户是否下载
         Debug.Log("同意下载");
         //开始下载资源
+        PrintDownLoadLabels();
         StartCoroutine(DownLoadAssetBundles());
     }
 
+    private void PrintDownLoadLabels()
+    {
+        string labels = "";
+        foreach (var item in assetBundleLables)
+        {
+            labels += item.labelString + " ";
+        }
+        Debug.Log("需要下载的资源标签为：" + labels);
+    }
+
     private IEnumerator DownLoadAssetBundles(){
-        AsyncOperationHandle downloadHandle = Addressables.DownloadDependenciesAsync(assetBundleLables, Addressables.MergeMode.Union, true);
+        AsyncOperationHandle downloadHandle = Addressables.DownloadDependenciesAsync(assetBundleLables, Addressables.MergeMode.Union, false);
         float progress = 0;
         while (!downloadHandle.IsDone)
         {
