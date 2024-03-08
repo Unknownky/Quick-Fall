@@ -28,6 +28,7 @@ MonoBehaviour:
   - System.dll
   - Unity.ResourceManager.dll
   - mscorlib.dll
+  - UnityEngine.CoreModule.dll
   outputLinkFile: HybridCLRGenerate/link.xml
   outputAOTGenericReferenceFile: HybridCLRGenerate/AOTGenericReferences.cs
   maxGenericReferenceIteration: 10
