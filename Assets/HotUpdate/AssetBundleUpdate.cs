@@ -5,14 +5,15 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
 public class AssetBundleUpdate : MonoBehaviour
 {
-    [Tooltip("需要下载的资源组标签"), SerializeField]private List<AssetLabelReference> assetBundleLables;
+    [Tooltip("需要下载的资源组标签"), SerializeField] private List<AssetLabelReference> assetBundleLables;
 
-    [Tooltip("需要快速获取的资源的标签")]public AssetLabelReference assetLabelForFastGet;
+    [Tooltip("需要快速获取的资源的标签")] public AssetLabelReference assetLabelForFastGet;
 
     public List<IResourceLocation> resourceLocations; //保存资源位置，用于之后使用字典获取需要快速获取的资源
 
@@ -21,8 +22,10 @@ public class AssetBundleUpdate : MonoBehaviour
     private long totalDownloadSize = 0;
 
 
-    private void Start() {
-        if(progressText == null){
+    private void Start()
+    {
+        if (progressText == null)
+        {
             progressText = GameObject.Find("ProgressText").GetComponent<Text>();
         }
         //首先获取需要更新的资源的大小
@@ -30,17 +33,26 @@ public class AssetBundleUpdate : MonoBehaviour
         //下载资源
         GetDownLoadSizeThenAskForDownLoad();
         LoadFastGetAssets();
+
+
+        // 加载菜单场景
+        Addressables.LoadSceneAsync("MainMenu", LoadSceneMode.Single).Completed += (handle) =>
+        {
+            Debug.Log("加载菜单场景完成");
+        };
+
     }
 
     private void LoadFastGetAssets()
     {
-        if(assetLabelForFastGet != null)
+        if (assetLabelForFastGet != null)
             Addressables.LoadResourceLocationsAsync(assetLabelForFastGet.labelString).Completed += OnLoadFastGetAssetsCompleted;
     }
 
     private void OnLoadFastGetAssetsCompleted(AsyncOperationHandle<IList<IResourceLocation>> handle)
     {
-        if(handle.Status == AsyncOperationStatus.Failed){
+        if (handle.Status == AsyncOperationStatus.Failed)
+        {
             progressText.text = "获取需要快速获取的资源失败，请检查网络连接,一秒后重试";
             Debug.Log("获取需要快速获取的资源失败，请检查网络连接,一秒后重试");
             Invoke("LoadFastGetAssets", 1);
@@ -57,7 +69,8 @@ public class AssetBundleUpdate : MonoBehaviour
 
     private void OnGetDownloadSizeCompleted(AsyncOperationHandle<long> handle)
     {
-        if(handle.Status == AsyncOperationStatus.Failed){
+        if (handle.Status == AsyncOperationStatus.Failed)
+        {
             progressText.text = "获取资源大小失败，一秒后重试，请检查网络连接";
             Debug.Log("获取资源大小失败，一秒后重试，请检查网络连接");
             Invoke("GetDownLoadSize", 1);
@@ -83,7 +96,8 @@ public class AssetBundleUpdate : MonoBehaviour
         Debug.Log("需要下载的资源标签为：" + labels);
     }
 
-    private IEnumerator DownLoadAssetBundles(){
+    private IEnumerator DownLoadAssetBundles()
+    {
         AsyncOperationHandle downloadHandle = Addressables.DownloadDependenciesAsync(assetBundleLables, Addressables.MergeMode.Union, false);
         float progress = 0;
         while (!downloadHandle.IsDone)
