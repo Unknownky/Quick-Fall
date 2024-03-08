@@ -25,6 +25,7 @@ public class AssetBundleUpdate : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("开始检查资源更新!!!");
         if (progressText == null)
         {
             progressText = GameObject.Find("ProgressText").GetComponent<Text>();
