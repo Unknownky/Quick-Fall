@@ -22,7 +22,7 @@ public class HotOpen : MonoBehaviour
     }
 
     [Command]
-    public static void LoadMainMenu()
+    public static void LoadMenu()
     {
         // 加载菜单场景
         Addressables.LoadSceneAsync("MainMenu", LoadSceneMode.Single).Completed += (handle) =>
