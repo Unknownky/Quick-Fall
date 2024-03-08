@@ -15,14 +15,21 @@
   <assembly fullname="UnityEngine.CoreModule">
     <type fullname="UnityEngine.Coroutine" preserve="all" />
     <type fullname="UnityEngine.Debug" preserve="all" />
+    <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.MonoBehaviour" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.SerializeField" preserve="all" />
     <type fullname="UnityEngine.TooltipAttribute" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI">
+    <type fullname="UnityEngine.UI.Text" preserve="all" />
   </assembly>
   <assembly fullname="mscorlib">
     <type fullname="System.Action`1" preserve="all" />
     <type fullname="System.Collections.Generic.IEnumerator`1" preserve="all" />
     <type fullname="System.Collections.Generic.IList`1" preserve="all" />
     <type fullname="System.Collections.Generic.List`1" preserve="all" />
+    <type fullname="System.Collections.Generic.List`1/Enumerator" preserve="all" />
     <type fullname="System.Collections.IEnumerable" preserve="all" />
     <type fullname="System.Collections.IEnumerator" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />

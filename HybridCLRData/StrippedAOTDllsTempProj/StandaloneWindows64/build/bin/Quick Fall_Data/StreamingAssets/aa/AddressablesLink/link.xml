@@ -24,6 +24,7 @@
     <type fullname="Cinemachine.LensSettings" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="HotUpdate, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="AssetBundleUpdate" preserve="all" />
     <type fullname="PrintHello" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">

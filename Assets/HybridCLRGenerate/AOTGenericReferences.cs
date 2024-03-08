@@ -8,6 +8,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		"System.Core.dll",
 		"System.dll",
 		"Unity.ResourceManager.dll",
+		"UnityEngine.CoreModule.dll",
 		"mscorlib.dll",
 	};
 	// }}
@@ -75,5 +76,6 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 
 	public void RefMethods()
 	{
+		// object UnityEngine.GameObject.GetComponent<object>()
 	}
 }
