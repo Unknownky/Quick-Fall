@@ -35,10 +35,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Assembly-CSharp-firstpass.cpp">
-    </ClCompile>
-    <ClCompile Include="Source\Assembly-CSharp-firstpass1.cpp">
-    </ClCompile>
     <ClCompile Include="Source\Assembly-CSharp.cpp">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine.cpp">
@@ -50,8 +46,6 @@
     <ClCompile Include="Source\Cinemachine3.cpp">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine4.cpp">
-    </ClCompile>
-    <ClCompile Include="Source\CommandSystem.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods.cpp">
     </ClCompile>
@@ -66,6 +60,14 @@
     <ClCompile Include="Source\GenericMethods13.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods14.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods15.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods16.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods17.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods18.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods2.cpp">
     </ClCompile>
@@ -203,9 +205,49 @@
     </ClCompile>
     <ClCompile Include="Source\Generics62.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Generics63.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics64.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics65.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics66.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics67.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics68.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics69.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Generics7.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Generics70.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics71.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics72.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics73.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics74.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics75.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics76.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics77.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics78.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics79.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Generics8.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics80.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics81.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics82.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics9.cpp">
     </ClCompile>
@@ -233,7 +275,59 @@
     </ClCompile>
     <ClCompile Include="Source\Il2CppReversePInvokeWrapperTable.cpp">
     </ClCompile>
+    <ClCompile Include="Source\mcs.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs1.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs10.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs11.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs12.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs13.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs14.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs15.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs16.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs17.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs18.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs19.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs2.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs20.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs21.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs22.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs23.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs24.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs3.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs4.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs5.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs6.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs7.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs8.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mcs9.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Mono.Security.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Mono.Security1.cpp">
     </ClCompile>
     <ClCompile Include="Source\mscorlib.cpp">
     </ClCompile>
@@ -257,7 +351,17 @@
     </ClCompile>
     <ClCompile Include="Source\mscorlib18.cpp">
     </ClCompile>
+    <ClCompile Include="Source\mscorlib19.cpp">
+    </ClCompile>
     <ClCompile Include="Source\mscorlib2.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mscorlib20.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mscorlib21.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mscorlib22.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mscorlib23.cpp">
     </ClCompile>
     <ClCompile Include="Source\mscorlib3.cpp">
     </ClCompile>
@@ -273,6 +377,22 @@
     </ClCompile>
     <ClCompile Include="Source\mscorlib9.cpp">
     </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Demo.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Extras.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Grammar.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Parsers.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Serializers.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.UI.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC1.cpp">
+    </ClCompile>
     <ClCompile Include="Source\System.Configuration.cpp">
     </ClCompile>
     <ClCompile Include="Source\System.Core.cpp">
@@ -283,15 +403,43 @@
     </ClCompile>
     <ClCompile Include="Source\System.Core3.cpp">
     </ClCompile>
+    <ClCompile Include="Source\System.Core4.cpp">
+    </ClCompile>
     <ClCompile Include="Source\System.cpp">
     </ClCompile>
+    <ClCompile Include="Source\System.Numerics.cpp">
+    </ClCompile>
     <ClCompile Include="Source\System.Xml.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Xml1.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Xml2.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Xml3.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Xml4.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Xml5.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Xml6.cpp">
     </ClCompile>
     <ClCompile Include="Source\System1.cpp">
     </ClCompile>
     <ClCompile Include="Source\System2.cpp">
     </ClCompile>
     <ClCompile Include="Source\System3.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System4.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System5.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System6.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System7.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System8.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System9.cpp">
     </ClCompile>
     <ClCompile Include="Source\Unity.Addressables.cpp">
     </ClCompile>
@@ -401,8 +549,6 @@
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.cpp">
     </ClCompile>
-    <ClCompile Include="Source\UnityEngine.CrashReportingModule.cpp">
-    </ClCompile>
     <ClCompile Include="Source\UnityEngine.DirectorModule.cpp">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.GridModule.cpp">
@@ -418,8 +564,6 @@
     <ClCompile Include="Source\UnityEngine.JSONSerializeModule.cpp">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.ParticleSystemModule.cpp">
-    </ClCompile>
-    <ClCompile Include="Source\UnityEngine.PerformanceReportingModule.cpp">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.Physics2DModule.cpp">
     </ClCompile>
@@ -503,13 +647,9 @@
     </ClCompile>
     <ClCompile Include="Source\__Generated.cpp">
     </ClCompile>
-    <ClCompile Include="Source\Assembly-CSharp-firstpass_CodeGen.c">
-    </ClCompile>
     <ClCompile Include="Source\Assembly-CSharp_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine_CodeGen.c">
-    </ClCompile>
-    <ClCompile Include="Source\CommandSystem_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\HybridCLR.Runtime_CodeGen.c">
     </ClCompile>
@@ -533,13 +673,31 @@
     </ClCompile>
     <ClCompile Include="Source\Il2CppTypeDefinitions.c">
     </ClCompile>
+    <ClCompile Include="Source\mcs_CodeGen.c">
+    </ClCompile>
     <ClCompile Include="Source\Mono.Security_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\mscorlib_CodeGen.c">
     </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Demo_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Extras_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Grammar_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Parsers_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.Serializers_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC.UI_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\QFSW.QC_CodeGen.c">
+    </ClCompile>
     <ClCompile Include="Source\System.Configuration_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\System.Core_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\System.Numerics_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\System.Xml_CodeGen.c">
     </ClCompile>
@@ -577,8 +735,6 @@
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.CoreModule_CodeGen.c">
     </ClCompile>
-    <ClCompile Include="Source\UnityEngine.CrashReportingModule_CodeGen.c">
-    </ClCompile>
     <ClCompile Include="Source\UnityEngine.DirectorModule_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.GridModule_CodeGen.c">
@@ -592,8 +748,6 @@
     <ClCompile Include="Source\UnityEngine.JSONSerializeModule_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.ParticleSystemModule_CodeGen.c">
-    </ClCompile>
-    <ClCompile Include="Source\UnityEngine.PerformanceReportingModule_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.Physics2DModule_CodeGen.c">
     </ClCompile>

@@ -971,11 +971,6 @@ struct PlayableOutputExtensions_t03B5A73210D9C8B1A0C2E3AA032FB32E6797F421  : pub
 {
 };
 
-// UnityEngine.Diagnostics.PlayerConnection
-struct PlayerConnection_t0A3514072F25F57E3B8CACB936ACBE44866B8C65  : public RuntimeObject
-{
-};
-
 // UnityEngine.Rendering.RenderPipeline
 struct RenderPipeline_t3AF1E2046D27ABCEBA2279770AADA9F531073E69  : public RuntimeObject
 {
@@ -16114,7 +16109,7 @@ CATCH_000e:
 			L_2 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(6 /* System.Collections.IDictionary System.Exception::get_Data() */, L_1);
 			NullCheck(L_2);
 			bool L_3;
-			L_3 = InterfaceFuncInvoker1< bool, RuntimeObject* >::Invoke(2 /* System.Boolean System.Collections.IDictionary::Contains(System.Object) */, ((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220_il2cpp_TypeInfo_var)), L_2, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral180C5DB7272B54061862DF51C798C0FE1E1AB386)));
+			L_3 = InterfaceFuncInvoker1< bool, RuntimeObject* >::Invoke(4 /* System.Boolean System.Collections.IDictionary::Contains(System.Object) */, ((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220_il2cpp_TypeInfo_var)), L_2, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral180C5DB7272B54061862DF51C798C0FE1E1AB386)));
 			if (!L_3)
 			{
 				goto IL_0056;
@@ -29041,14 +29036,6 @@ IL_0010:
 		return L_2;
 	}
 }
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

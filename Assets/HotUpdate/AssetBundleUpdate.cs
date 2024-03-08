@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using QFSW.QC;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -33,15 +34,8 @@ public class AssetBundleUpdate : MonoBehaviour
         //下载资源
         GetDownLoadSizeThenAskForDownLoad();
         LoadFastGetAssets();
-
-
-        // 加载菜单场景
-        Addressables.LoadSceneAsync("MainMenu", LoadSceneMode.Single).Completed += (handle) =>
-        {
-            Debug.Log("加载菜单场景完成");
-        };
-
     }
+    
 
     private void LoadFastGetAssets()
     {

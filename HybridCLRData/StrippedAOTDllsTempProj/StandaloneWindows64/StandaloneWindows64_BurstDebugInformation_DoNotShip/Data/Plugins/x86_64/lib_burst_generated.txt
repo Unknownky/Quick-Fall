@@ -169,7 +169,13 @@ Library: lib_burst_generated
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll
---root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Assembly-CSharp-firstpass.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Serializers.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Extras.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Grammar.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.UI.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Parsers.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Demo.dll
 --assembly-folder=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ReorderJob`1[[UnityEngine.Rendering.Universal.LightMinMaxZ, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ReorderJob`1[[UnityEngine.Rendering.Universal.LightMinMaxZ, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--e943843acfb78f5f2f3716a6553740d9
@@ -356,7 +362,13 @@ Library: lib_burst_generated
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll
---root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Assembly-CSharp-firstpass.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Serializers.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Extras.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Grammar.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.UI.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Parsers.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Demo.dll
 --assembly-folder=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ReorderJob`1[[UnityEngine.Rendering.Universal.LightMinMaxZ, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ReorderJob`1[[UnityEngine.Rendering.Universal.LightMinMaxZ, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--e943843acfb78f5f2f3716a6553740d9

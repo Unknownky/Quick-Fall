@@ -2,7 +2,9 @@
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="CameraFollow" preserve="all" />
     <type fullname="ConsoleToScreen" preserve="all" />
+    <type fullname="DontDestory" preserve="all" />
     <type fullname="FireBox" preserve="all" />
+    <type fullname="HotOpen" preserve="all" />
     <type fullname="LoadDllManager" preserve="all" />
     <type fullname="LoadPlayer" preserve="all" />
     <type fullname="Platform" preserve="all" />
@@ -27,6 +29,20 @@
     <type fullname="AssetBundleUpdate" preserve="all" />
     <type fullname="PrintHello" preserve="all" />
   </assembly>
+  <assembly fullname="QFSW.QC, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="QFSW.QC.QuantumConsole" preserve="all" />
+    <type fullname="QFSW.QC.QuantumKeyConfig" preserve="all" />
+    <type fullname="QFSW.QC.QuantumTheme" preserve="all" />
+    <type fullname="QFSW.QC.CollectionFormatter" preserve="nothing" serialized="true" />
+    <type fullname="QFSW.QC.ModifierKeyCombo" preserve="nothing" serialized="true" />
+    <type fullname="QFSW.QC.TypeColorFormatter" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="QFSW.QC.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="QFSW.QC.UI.BlurShaderController" preserve="all" />
+    <type fullname="QFSW.QC.UI.DraggableUI" preserve="all" />
+    <type fullname="QFSW.QC.UI.DynamicCanvasScaler" preserve="all" />
+    <type fullname="QFSW.QC.UI.ZoomUIController" preserve="all" />
+  </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
     <type fullname="UnityEngine.AddressableAssets.AssetLabelReference" preserve="nothing" serialized="true" />
@@ -45,6 +61,7 @@
   <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
     <type fullname="TMPro.TMP_FontAsset" preserve="all" />
+    <type fullname="TMPro.TMP_InputField" preserve="all" />
     <type fullname="TMPro.FaceInfo_Legacy" preserve="nothing" serialized="true" />
     <type fullname="TMPro.FontAssetCreationSettings" preserve="nothing" serialized="true" />
     <type fullname="TMPro.KerningTable" preserve="nothing" serialized="true" />
@@ -52,6 +69,12 @@
     <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
     <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_Glyph" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/OnChangeEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/SelectionEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/SubmitEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/TextSelectionEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/TouchScreenKeyboardEvent" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.AnimationClip" preserve="all" />
@@ -81,6 +104,8 @@
     <type fullname="UnityEngine.Events.ArgumentCache" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.SceneManagement.Scene" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Grid" preserve="all" />
@@ -101,12 +126,21 @@
   </assembly>
   <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger" preserve="all" />
     <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
     <type fullname="UnityEngine.UI.Button" preserve="all" />
     <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
+    <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />
     <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
+    <type fullname="UnityEngine.UI.HorizontalLayoutGroup" preserve="all" />
     <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.LayoutElement" preserve="all" />
+    <type fullname="UnityEngine.UI.Mask" preserve="all" />
+    <type fullname="UnityEngine.UI.RectMask2D" preserve="all" />
+    <type fullname="UnityEngine.UI.Scrollbar" preserve="all" />
+    <type fullname="UnityEngine.UI.ScrollRect" preserve="all" />
     <type fullname="UnityEngine.UI.Text" preserve="all" />
+    <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
     <type fullname="UnityEngine.UI.FontData" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.AnimationTriggers" preserve="nothing" serialized="true" />
@@ -114,6 +148,10 @@
     <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/Entry" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/TriggerEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ScrollRect/ScrollRectEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Scrollbar/ScrollEvent" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Canvas" preserve="all" />
