@@ -29,6 +29,18 @@ MonoBehaviour:
     m_Address: AlimamaDongFangDaKai-Regular SDF
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 090da11157287de47ae5c615b8ed3cf9
+    m_Address: Default Key Config
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5a19be32700ef4a13bfa337a662ef25b
+    m_Address: Default Theme
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9ed2a051c32b4fe47a5e4fb95c20b03f
+    m_Address: Quantum Console
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:

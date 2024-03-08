@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using HybridCLR;
 using UnityEngine;
@@ -27,12 +28,14 @@ public class LoadDllManager : MonoBehaviour
 
     IEnumerator InitTask()
     {
+
         //加载热更程序集
         yield return StartCoroutine(LoadHotFixDll());
-        //加载aot元数据
+#if !UNITY_EDITOR
+        // 非编辑模式加载aot元数据
         yield return StartCoroutine(LoadAotDll());
 
-        yield return new WaitForSeconds(1);
+#endif
         //加载菜单场景
         LoadMenuScene();
     }
@@ -74,11 +77,19 @@ public class LoadDllManager : MonoBehaviour
 
     private IEnumerator LoadHotFixDll()
     {
+#if UNITY_EDITOR
+        Assembly hotUpdateAss = System.AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == "HotUpdate");
+        if (hotUpdateAss != null)
+        {
+            Debug.Log("已经加载热更DLL");
+            yield break;
+        }
+#endif
         // 加载热更DLL
         // 这里使用标签来加载资源 Addressables会自动根据标签来加载所有资源
-        yield return waitHandle = Addressables.LoadAssetsAsync<TextAsset>(hotUpdateDllLabelRef, null); 
-        List<TextAsset>dlls = waitHandle.Result as List<TextAsset>;
-        if(dlls == null)
+        yield return waitHandle = Addressables.LoadAssetsAsync<TextAsset>(hotUpdateDllLabelRef, null);
+        List<TextAsset> dlls = waitHandle.Result as List<TextAsset>;
+        if (dlls == null)
         {
             Debug.Log("无热更DLL");
             yield break;
