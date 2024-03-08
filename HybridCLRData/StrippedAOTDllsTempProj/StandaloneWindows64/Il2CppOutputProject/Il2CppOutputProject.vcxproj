@@ -35,6 +35,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Assembly-CSharp-firstpass.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Assembly-CSharp-firstpass1.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Assembly-CSharp.cpp">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine.cpp">
@@ -47,6 +51,8 @@
     </ClCompile>
     <ClCompile Include="Source\Cinemachine4.cpp">
     </ClCompile>
+    <ClCompile Include="Source\CommandSystem.cpp">
+    </ClCompile>
     <ClCompile Include="Source\GenericMethods.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods1.cpp">
@@ -58,6 +64,8 @@
     <ClCompile Include="Source\GenericMethods12.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods13.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods14.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods2.cpp">
     </ClCompile>
@@ -191,6 +199,10 @@
     </ClCompile>
     <ClCompile Include="Source\Generics60.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Generics61.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics62.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Generics7.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics8.cpp">
@@ -202,6 +214,8 @@
     <ClCompile Include="Source\Il2CppCCalculateFieldValues.cpp">
     </ClCompile>
     <ClCompile Include="Source\Il2CppCCalculateFieldValues1.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Il2CppCCalculateFieldValues2.cpp">
     </ClCompile>
     <ClCompile Include="Source\Il2CppCCalculateTypeValues.cpp">
     </ClCompile>
@@ -262,6 +276,12 @@
     <ClCompile Include="Source\System.Configuration.cpp">
     </ClCompile>
     <ClCompile Include="Source\System.Core.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Core1.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Core2.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Core3.cpp">
     </ClCompile>
     <ClCompile Include="Source\System.cpp">
     </ClCompile>
@@ -377,7 +397,11 @@
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.CoreModule3.cpp">
     </ClCompile>
+    <ClCompile Include="Source\UnityEngine.CoreModule4.cpp">
+    </ClCompile>
     <ClCompile Include="Source\UnityEngine.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\UnityEngine.CrashReportingModule.cpp">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.DirectorModule.cpp">
     </ClCompile>
@@ -394,6 +418,8 @@
     <ClCompile Include="Source\UnityEngine.JSONSerializeModule.cpp">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.ParticleSystemModule.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\UnityEngine.PerformanceReportingModule.cpp">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.Physics2DModule.cpp">
     </ClCompile>
@@ -477,9 +503,13 @@
     </ClCompile>
     <ClCompile Include="Source\__Generated.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Assembly-CSharp-firstpass_CodeGen.c">
+    </ClCompile>
     <ClCompile Include="Source\Assembly-CSharp_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\CommandSystem_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\HybridCLR.Runtime_CodeGen.c">
     </ClCompile>
@@ -547,6 +577,8 @@
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.CoreModule_CodeGen.c">
     </ClCompile>
+    <ClCompile Include="Source\UnityEngine.CrashReportingModule_CodeGen.c">
+    </ClCompile>
     <ClCompile Include="Source\UnityEngine.DirectorModule_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.GridModule_CodeGen.c">
@@ -560,6 +592,8 @@
     <ClCompile Include="Source\UnityEngine.JSONSerializeModule_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.ParticleSystemModule_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\UnityEngine.PerformanceReportingModule_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.Physics2DModule_CodeGen.c">
     </ClCompile>
