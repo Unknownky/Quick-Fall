@@ -244,16 +244,16 @@ extern void U3CMatchlessBlinkU3Ed__25_System_Collections_IEnumerator_get_Current
 extern void HotOpen_Start_mCCA3D15674BD8D3F717E9918828503AFC8A40FCF (void);
 // 0x00000074 System.Void HotOpen::Update()
 extern void HotOpen_Update_m11F83AC30868CAE37F767F20855D0828F313EF15 (void);
-// 0x00000075 System.Void HotOpen::LoadMainMenu()
-extern void HotOpen_LoadMainMenu_mED66C4235421978B338AC386DBA959E357D907FA (void);
+// 0x00000075 System.Void HotOpen::LoadMenu()
+extern void HotOpen_LoadMenu_m77B4BD17691CA5C942480B44D8D44175758F3CA1 (void);
 // 0x00000076 System.Void HotOpen::.ctor()
 extern void HotOpen__ctor_mF0341318B59D26BE95543F6BAA73D2272E313529 (void);
 // 0x00000077 System.Void HotOpen/<>c::.cctor()
 extern void U3CU3Ec__cctor_mA5B16FCA3C64F481EE4D1166BBEA3F99F6C0F9E5 (void);
 // 0x00000078 System.Void HotOpen/<>c::.ctor()
 extern void U3CU3Ec__ctor_mB5031ADBA601C575CD7E7D49E3DB4FC62B0E1B42 (void);
-// 0x00000079 System.Void HotOpen/<>c::<LoadMainMenu>b__3_0(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle`1<UnityEngine.ResourceManagement.ResourceProviders.SceneInstance>)
-extern void U3CU3Ec_U3CLoadMainMenuU3Eb__3_0_m79A257E0594263C410E95D5F9B9C8077197F03C9 (void);
+// 0x00000079 System.Void HotOpen/<>c::<LoadMenu>b__3_0(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle`1<UnityEngine.ResourceManagement.ResourceProviders.SceneInstance>)
+extern void U3CU3Ec_U3CLoadMenuU3Eb__3_0_m169286D0748967677D0F5D84FE7C0E97464020B5 (void);
 // 0x0000007A System.Void SceneLoader::Awake()
 extern void SceneLoader_Awake_m997936369AC5CA6307D0D6700F7E680F41086FEC (void);
 // 0x0000007B System.Void SceneLoader::FromMainMenuLoadTeachScene()
@@ -420,11 +420,11 @@ static Il2CppMethodPointer s_methodPointers[145] =
 	U3CMatchlessBlinkU3Ed__25_System_Collections_IEnumerator_get_Current_m39A21BA478133EA68FB177002DFEB0882F1EBD95,
 	HotOpen_Start_mCCA3D15674BD8D3F717E9918828503AFC8A40FCF,
 	HotOpen_Update_m11F83AC30868CAE37F767F20855D0828F313EF15,
-	HotOpen_LoadMainMenu_mED66C4235421978B338AC386DBA959E357D907FA,
+	HotOpen_LoadMenu_m77B4BD17691CA5C942480B44D8D44175758F3CA1,
 	HotOpen__ctor_mF0341318B59D26BE95543F6BAA73D2272E313529,
 	U3CU3Ec__cctor_mA5B16FCA3C64F481EE4D1166BBEA3F99F6C0F9E5,
 	U3CU3Ec__ctor_mB5031ADBA601C575CD7E7D49E3DB4FC62B0E1B42,
-	U3CU3Ec_U3CLoadMainMenuU3Eb__3_0_m79A257E0594263C410E95D5F9B9C8077197F03C9,
+	U3CU3Ec_U3CLoadMenuU3Eb__3_0_m169286D0748967677D0F5D84FE7C0E97464020B5,
 	SceneLoader_Awake_m997936369AC5CA6307D0D6700F7E680F41086FEC,
 	SceneLoader_FromMainMenuLoadTeachScene_m0BA2208BB19FE743E61D79A5ECEEBAC38B05E7BC,
 	SceneLoader_FromMainMenuLoadTeachSceneReally_m4F82FF830A98DF6A183C5A24239C4889EBF1D2AA,
