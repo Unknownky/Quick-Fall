@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
+using UnityEngine.UI;
 
 
 public class AssetBundleUpdate : MonoBehaviour
@@ -15,10 +16,15 @@ public class AssetBundleUpdate : MonoBehaviour
 
     public List<IResourceLocation> resourceLocations; //保存资源位置，用于之后使用字典获取需要快速获取的资源
 
+    public Text progressText;
+
     private long totalDownloadSize = 0;
 
 
     private void Start() {
+        if(progressText == null){
+            progressText = GameObject.Find("ProgressText").GetComponent<Text>();
+        }
         //首先获取需要更新的资源的大小
         //然后询问用户是否下载
         //下载资源
@@ -35,6 +41,7 @@ public class AssetBundleUpdate : MonoBehaviour
     private void OnLoadFastGetAssetsCompleted(AsyncOperationHandle<IList<IResourceLocation>> handle)
     {
         if(handle.Status == AsyncOperationStatus.Failed){
+            progressText.text = "获取需要快速获取的资源失败，请检查网络连接,一秒后重试";
             Debug.Log("获取需要快速获取的资源失败，请检查网络连接,一秒后重试");
             Invoke("LoadFastGetAssets", 1);
             return;
@@ -51,11 +58,13 @@ public class AssetBundleUpdate : MonoBehaviour
     private void OnGetDownloadSizeCompleted(AsyncOperationHandle<long> handle)
     {
         if(handle.Status == AsyncOperationStatus.Failed){
+            progressText.text = "获取资源大小失败，一秒后重试，请检查网络连接";
             Debug.Log("获取资源大小失败，一秒后重试，请检查网络连接");
             Invoke("GetDownLoadSize", 1);
             return;
         }
         totalDownloadSize = handle.Result;
+        progressText.text = "需要下载的资源大小为：" + totalDownloadSize;
         Debug.Log("需要下载的资源大小为：" + totalDownloadSize);
         //TODO:询问用户是否下载
         Debug.Log("同意下载");
@@ -83,11 +92,13 @@ public class AssetBundleUpdate : MonoBehaviour
             if (percentageComplete > progress * 1.01f) // Report at most every 10% or so
             {
                 progress = percentageComplete; // More accurate %
+                progressText.text = $"下载进度: {progress * 100}%";
                 Debug.Log($"Download progress: {progress * 100}%");
             }
             yield return null;
         }
         yield return downloadHandle;
+        progressText.text = "资源下载完成";
         Debug.Log("资源下载完成");
         Addressables.Release(downloadHandle);
     }
