@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5978539070229571116, guid: 61f86223e7bf00f40915548c088c7019, type: 3}
       propertyPath: hotUpdateMainSceneRef.m_AssetGUID
-      value: 1ebe613a1fe11d940a1eb1eb13b1c9aa
+      value: 6cc5d700715073b4bac8ee38d117c3d5
       objectReference: {fileID: 0}
     - target: {fileID: 5978539070229571116, guid: 61f86223e7bf00f40915548c088c7019, type: 3}
       propertyPath: hotUpdateDllLabelRef.m_LabelString

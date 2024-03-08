@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: MainMenu
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 6cc5d700715073b4bac8ee38d117c3d5
+    m_Address: AssetScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:

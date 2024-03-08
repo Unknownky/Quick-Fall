@@ -27,92 +27,12 @@ public class LoadDllManager : MonoBehaviour
 
     IEnumerator InitTask()
     {
-        //检查资源更新 
-        yield return StartCoroutine(CheckAndUpdateResources());
         //加载热更程序集
         yield return StartCoroutine(LoadHotFixDll());
         //加载aot元数据
         yield return StartCoroutine(LoadAotDll());
         //加载菜单场景
         LoadMenuScene();
-    }
-
-    private IEnumerator CheckAndUpdateResources()
-    {
-        Debug.Log("Initializing Addressables");
-        yield return Addressables.InitializeAsync();
-
-        Debug.Log("Checking for catalog updates");
-        AsyncOperationHandle<List<string>> checkUpdatesHandle = Addressables.CheckForCatalogUpdates();
-        yield return checkUpdatesHandle;
-
-        if (!checkUpdatesHandle.IsDone)
-        {
-            Debug.Log("Failed to check for catalog updates");
-            yield break;
-        }
-
-        if (checkUpdatesHandle.DebugName == "InvalidHandle")
-        {
-            Debug.Log("No resources to update");
-            yield break;
-        }
-
-        List<string> catalogs = checkUpdatesHandle.Result;
-        if (catalogs.Count <= 0)
-        {
-            Debug.Log("No resources to update");
-            yield break;
-        }
-
-        Debug.Log($"Updating {catalogs.Count} resources");
-        AsyncOperationHandle<List<IResourceLocator>> updateCatalogsHandle = Addressables.UpdateCatalogs(catalogs, true);
-        yield return updateCatalogsHandle;
-
-        List<IResourceLocator> resourceLocators = updateCatalogsHandle.Result;
-        Debug.Log($"Downloading {resourceLocators.Count} resources");
-
-        foreach (IResourceLocator resourceLocator in resourceLocators)
-        {
-            Debug.Log($"Downloading resource: {resourceLocator}");
-            yield return StartCoroutine(DownloadResource(resourceLocator));
-            Debug.Log($"Downloaded resource: {resourceLocator}");
-        }
-    }
-
-    private IEnumerator DownloadResource(IResourceLocator resourceLocator)
-    {
-        AsyncOperationHandle<long> downloadSizeHandle = Addressables.GetDownloadSizeAsync(resourceLocator.Keys);
-        yield return downloadSizeHandle;
-
-        long size = downloadSizeHandle.Result;
-        if (size <= 0)
-        {
-            yield break;
-        }
-
-        Debug.Log($"Updating resource: {resourceLocator}, total size: {size}");
-
-        // Download the resources, and report progress, clean the cache
-        AsyncOperationHandle downloadHandle = Addressables.DownloadDependenciesAsync(resourceLocator.Keys, Addressables.MergeMode.Union,true);
-        float progress = 0;
-
-        while (!downloadHandle.IsDone)
-        {
-            float percentageComplete = downloadHandle.GetDownloadStatus().Percent;
-            if (percentageComplete > progress * 1.01f) // Report at most every 10% or so
-            {
-                progress = percentageComplete; // More accurate %
-                Debug.Log($"Download progress: {progress * 100}%");
-            }
-
-            yield return null;
-        }
-
-        yield return downloadHandle;
-
-        Debug.Log("Resource update completed!");
-        Addressables.Release(downloadHandle);
     }
 
 

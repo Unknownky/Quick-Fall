@@ -57,6 +57,8 @@
     </ClCompile>
     <ClCompile Include="Source\GenericMethods12.cpp">
     </ClCompile>
+    <ClCompile Include="Source\GenericMethods13.cpp">
+    </ClCompile>
     <ClCompile Include="Source\GenericMethods2.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods3.cpp">
@@ -183,7 +185,11 @@
     </ClCompile>
     <ClCompile Include="Source\Generics58.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Generics59.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Generics6.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics60.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics7.cpp">
     </ClCompile>
@@ -234,6 +240,8 @@
     <ClCompile Include="Source\mscorlib16.cpp">
     </ClCompile>
     <ClCompile Include="Source\mscorlib17.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\mscorlib18.cpp">
     </ClCompile>
     <ClCompile Include="Source\mscorlib2.cpp">
     </ClCompile>
