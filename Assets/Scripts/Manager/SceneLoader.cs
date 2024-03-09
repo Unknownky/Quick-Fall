@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -13,15 +14,25 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneLoader : MonoBehaviour
 {
-    public Scene teachScene;
 
-    public WaitUntil waitUntilAnimationEnd;
+    [BoxGroup("Animation"), Required, SceneObjectsOnly]
+    public GameObject curtain;
+    [BoxGroup("Animation"), Required]
+    public string inAnimationName;
+
+    [BoxGroup("Animation"), Required]
+    public string outAnimationName;
+
+
+    public WaitUntil waitUntilInAnimationEnd;
+    public WaitUntil waitUntilOutAnimationEnd;
 
     public static SceneLoader instance;
+
+    //加载场景的句柄
     private AsyncOperationHandle loadHandle;
 
-    private Scene loadedScene;
-
+    private Animator animator;
     private void Awake()
     {
         if (instance != null)
@@ -29,13 +40,11 @@ public class SceneLoader : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
+        curtain.SetActive(false);
+        animator = curtain.GetComponent<Animator>();
     }
 
     #region 公共方法
-    public void FromMainMenuLoadTeachScene()
-    {
-        StartCoroutine(FromMainMenuLoadTeachSceneReally());
-    }
 
     /// <summary>
     /// 使用Addressables单独加载场景
@@ -43,53 +52,30 @@ public class SceneLoader : MonoBehaviour
     /// <param name="addressableSceneName">Addressable场景名</param>
     public void AddressablesLoadSceneSingle(string addressableSceneName)
     {
-        loadHandle = Addressables.LoadSceneAsync(addressableSceneName, LoadSceneMode.Single);
-        loadHandle.Completed += OnAddressablesLoadSceneSingleCompleted;
+        StartCoroutine(AddressablesLoadSceneSingleReally(addressableSceneName));
     }
 
     #endregion
 
-    //加载场景完成后的回调
-    private void OnAddressablesLoadSceneSingleCompleted(AsyncOperationHandle handle)
+    IEnumerator AddressablesLoadSceneSingleReally(string addressableSceneName)
     {
-        StartCoroutine(OnAddressablesLoadSceneSingleCompletedReally(handle));
-    }
-
-
-    IEnumerator OnAddressablesLoadSceneSingleCompletedReally(AsyncOperationHandle handle)
-    {
-        loadedScene = (Scene)handle.Result;
-        //先不激活加载后的场景
-        SceneManager.SetActiveScene(loadedScene);
-        yield return waitUntilAnimationEnd; //等待动画结束
-        //TODO：播放加载完成动画
-
-        //激活加载后的场景
-        SceneManager.SetActiveScene(loadedScene);
-    }
-
-    //由于是小游戏这里直接采用动画转场的方式，动画由一个专门的幕布来实现
-    IEnumerator FromMainMenuLoadTeachSceneReally()
-    {
-        //TODO：播放加载动画
-
-        loadHandle = Addressables.LoadSceneAsync("TeachScene", LoadSceneMode.Additive);
-        loadHandle.Completed += (handle) =>
-        {
-            //卸载加载前的场景
-            Debug.Log("加载完成");
-            SceneManager.UnloadSceneAsync("MainMenu");
-        };
+        //播放加载动画，加载动画时长固定
+        animator.Play(inAnimationName);
+        waitUntilInAnimationEnd = new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+        yield return waitUntilInAnimationEnd;
+        //加载场景
+        loadHandle = Addressables.LoadSceneAsync(addressableSceneName, LoadSceneMode.Single);
+        //播放加载完成动画，加载完成动画由加载时长和动画时长最大值决定
+        animator.Play(outAnimationName);
+        waitUntilOutAnimationEnd = new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+        yield return waitUntilOutAnimationEnd;
         yield return loadHandle;
-        // await loadHandle.Task; //等待加载完成
-        yield return waitUntilAnimationEnd; //等待动画结束
-        //TODO：播放加载完成动画
-
-        //移除加载前的场景
-        // UnLoadLoadedScene();
+        Debug.Log($"加载场景{addressableSceneName}完成");
     }
 
-
+    /// <summary>
+    /// 卸载句柄场景
+    /// </summary>
     public void UnLoadLoadedScene()
     {
         Addressables.UnloadSceneAsync(loadHandle);
