@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public float levelScap = 0.02f;
     [TabGroup("Game Setting")]
     public float delayTime = 1.5f;
+    [TabGroup("Game Setting"), Required]
+    public string sceneName;
 
     [ShowInInspector]
     private Dictionary<string, int> fruits = new Dictionary<string, int>();
@@ -60,7 +62,8 @@ public class GameManager : MonoBehaviour
     public void ReStartGame()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log(Time.timeScale);
+        SceneLoader.instance.AddressablesLoadSceneSingle(sceneName);
     }
 
     public static void GameOver(bool dead)
@@ -116,12 +119,12 @@ public class GameManager : MonoBehaviour
     }
 
     #region FunctionsForOdin 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     private void SelectObject(Object obj)
     {
         if (obj)
             Selection.activeObject = obj;
     }
-    #endif
+#endif
     #endregion
 }

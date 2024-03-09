@@ -473,6 +473,8 @@ struct Collider2D_t6A17BA7734600EF3F26588E9ED903617D5B8EB52;
 struct Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0;
 // UnityEngine.Collision2D
 struct Collision2D_t81E83212C969FDDE2AB84EBCA31502818EEAB85B;
+// UnityEngine.Compass
+struct Compass_t161CD14062E71ED7324FE12ED003EE0877EE546F;
 // UnityEngine.Component
 struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3;
 // Cinemachine.ConfinerOven
@@ -489,6 +491,8 @@ struct DocumentationSortingAttribute_tA55609D6CBF14B51495C89458782B63312172144;
 struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
 // Cinemachine.GroupWeightManipulator
 struct GroupWeightManipulator_tCB9D6F406D2E95A5DB2616F503666C4AB47989ED;
+// UnityEngine.Gyroscope
+struct Gyroscope_tA4CEC0F47FFB4CEB90410CC6B860D052BB35BE9E;
 // System.IAsyncResult
 struct IAsyncResult_t7B9B5A0ECB35DCEC31B8A8122C37D687369253B5;
 // Cinemachine.ICinemachineCamera
@@ -507,6 +511,8 @@ struct InvokableCallList_t309E1C8C7CE885A0D2F98C84CEA77A8935688382;
 struct LensSettings_t6DAB2F204EC22686BF4397E0871B4875414A84FE;
 // Cinemachine.LensSettingsPropertyAttribute
 struct LensSettingsPropertyAttribute_t5539598E05FD9A9577DC426077865268A41F0288;
+// UnityEngine.LocationService
+struct LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2;
 // System.Reflection.MemberFilter
 struct MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553;
 // System.Reflection.MethodInfo
@@ -1373,6 +1379,16 @@ struct Documentation_tB9A5316855124F3D66BDCE585D52E29BF2D7F676  : public Runtime
 // UnityEngine.Input
 struct Input_t47D83E2A50E6AF7F8A47AA06FBEF9EBE6BBC22BB  : public RuntimeObject
 {
+};
+
+struct Input_t47D83E2A50E6AF7F8A47AA06FBEF9EBE6BBC22BB_StaticFields
+{
+	// UnityEngine.LocationService UnityEngine.Input::locationServiceInstance
+	LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2* ___locationServiceInstance_0;
+	// UnityEngine.Compass UnityEngine.Input::compassInstance
+	Compass_t161CD14062E71ED7324FE12ED003EE0877EE546F* ___compassInstance_1;
+	// UnityEngine.Gyroscope UnityEngine.Input::s_MainGyro
+	Gyroscope_tA4CEC0F47FFB4CEB90410CC6B860D052BB35BE9E* ___s_MainGyro_2;
 };
 
 // System.Reflection.MemberInfo

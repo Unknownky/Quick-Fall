@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class AnimationBG : MonoBehaviour
 {
-    private Material material;//´æ´¢²ÄÖÊÇòÀ´½øĞĞµ÷Õû
-    private Vector2 movement;//¸Ã²ÎÊıÓÃÓÚµ÷ÕûËÙ¶È£»Óëspeed¼äÓĞÒ»¸ö×ª»»¹ØÏµ
+    private Material material;//å­˜å‚¨æè´¨çƒæ¥è¿›è¡Œè°ƒæ•´
+    private Vector2 movement;//è¯¥å‚æ•°ç”¨äºè°ƒæ•´é€Ÿåº¦ï¼›ä¸speedé—´æœ‰ä¸€ä¸ªè½¬æ¢å…³ç³»
 
-    public Vector2 speed;//ÔÚ´°¿ÚÖĞÕ¹ÏÖÒ»¸ö²ÎÊı¿ÉÒÔµ÷ÕûxyÖáµÄÒÆ¶¯Öµ
+    public Vector2 speed;//åœ¨çª—å£ä¸­å±•ç°ä¸€ä¸ªå‚æ•°å¯ä»¥è°ƒæ•´xyè½´çš„ç§»åŠ¨å€¼
     void Start()
     {
-        /*material = GetComponent<Material>();*///Õâ¶Î´úÂë»ñµÃµ±Ç°ÎïÌå¹ÒÔØµÄ²ÄÖÊ£¬ĞŞ¸Äºó»á¸Ä±ä²ÄÖÊÇòµÄÉèÖÃ
-        material = GetComponent<Renderer>().material;//¶øÕâ¶Î´úÂë»ñµÃRendererÖĞÊ¹ÓÃµÄmaterial,ËûÄÜ¿ÆÂ¡¹²ÏíµÄ²ÄÖÊ,Ê¹Õâ¸öÊµÀıµÄ²ÄÖÊ×¨ÏíÓÚµ±Ç°ÎïÌå(¼´ÌØ¶¨µÄäÖÈ¾)
+        /*material = GetComponent<Material>();*///è¿™æ®µä»£ç è·å¾—å½“å‰ç‰©ä½“æŒ‚è½½çš„æè´¨ï¼Œä¿®æ”¹åä¼šæ”¹å˜æè´¨çƒçš„è®¾ç½®
+        material = GetComponent<Renderer>().material;//è€Œè¿™æ®µä»£ç è·å¾—Rendererä¸­ä½¿ç”¨çš„material,ä»–èƒ½ç§‘éš†å…±äº«çš„æè´¨,ä½¿è¿™ä¸ªå®ä¾‹çš„æè´¨ä¸“äº«äºå½“å‰ç‰©ä½“(å³ç‰¹å®šçš„æ¸²æŸ“)
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement += speed * Time.deltaTime;//Time.deltaTimeÓëTime.fixedDeltaTimeÀàËÆÓÚUpdateÓëFixUpdateµÄÇø±ğ;Update¼ä¸ôÎÈ¶¨ÓÚÒ»¸öÖµ¸½½ü£¬FixUpdateÎÈ¶¨ÎªÒ»¸öÖµ
-        material.mainTextureOffset = movement;//À´µ÷Õûµ±Ç°²ÄÖÊµÄoffset
+        movement += speed * Time.deltaTime;//Time.deltaTimeä¸Time.fixedDeltaTimeç±»ä¼¼äºUpdateä¸FixUpdateçš„åŒºåˆ«;Updateé—´éš”ç¨³å®šäºä¸€ä¸ªå€¼é™„è¿‘ï¼ŒFixUpdateç¨³å®šä¸ºä¸€ä¸ªå€¼
+        material.mainTextureOffset = movement;//æ¥è°ƒæ•´å½“å‰æè´¨çš„offset
     }
 }

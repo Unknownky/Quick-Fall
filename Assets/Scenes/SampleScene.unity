@@ -1334,6 +1334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 884854803}
   - component: {fileID: 884854804}
+  - component: {fileID: 884854805}
   m_Layer: 0
   m_Name: BottomLine
   m_TagString: Untagged
@@ -1378,6 +1379,32 @@ MonoBehaviour:
   - {fileID: 5894766962729770783, guid: d0d21dd0bf7363a4b9c0db5ffbab8671, type: 3}
   - {fileID: 2506596452285138199, guid: f73d169ba2c812e4bbf992f0e713160d, type: 3}
   spawnTime: 2
+--- !u!61 &884854805
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884854802}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 29.845566, y: 1.0472481}
+  m_EdgeRadius: 0
 --- !u!1 &994037429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1606,7 @@ MonoBehaviour:
   GameOverPanelUI: {fileID: 1551499859}
   levelScap: 0.02
   delayTime: 1
+  sceneName: SampleScene
 --- !u!114 &1294426737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2327,7 +2355,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
 --- !u!114 &1546007824
 MonoBehaviour:
   m_ObjectHideFlags: 0

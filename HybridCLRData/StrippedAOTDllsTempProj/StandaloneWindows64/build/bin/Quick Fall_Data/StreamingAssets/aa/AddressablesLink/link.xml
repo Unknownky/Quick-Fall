@@ -1,15 +1,21 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="AnimationBG" preserve="all" />
+    <type fullname="Apple" preserve="all" />
     <type fullname="CameraFollow" preserve="all" />
     <type fullname="ConsoleToScreen" preserve="all" />
     <type fullname="DontDestory" preserve="all" />
     <type fullname="FireBox" preserve="all" />
-    <type fullname="HotOpen" preserve="all" />
+    <type fullname="FunPlatform" preserve="all" />
+    <type fullname="GameManager" preserve="all" />
+    <type fullname="LineRender" preserve="all" />
     <type fullname="LoadDllManager" preserve="all" />
     <type fullname="LoadPlayer" preserve="all" />
+    <type fullname="Orange" preserve="all" />
     <type fullname="Platform" preserve="all" />
     <type fullname="PlayerController" preserve="all" />
     <type fullname="SceneLoader" preserve="all" />
+    <type fullname="Spawner" preserve="all" />
     <type fullname="StartGame" preserve="all" />
     <type fullname="Trampoline" preserve="all" />
   </assembly>
@@ -27,6 +33,7 @@
   </assembly>
   <assembly fullname="HotUpdate, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="AssetBundleUpdate" preserve="all" />
+    <type fullname="HotCommands" preserve="all" />
     <type fullname="PrintHello" preserve="all" />
   </assembly>
   <assembly fullname="QFSW.QC, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -89,7 +96,10 @@
     <type fullname="UnityEngine.Camera" preserve="all" />
     <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.LightmapSettings" preserve="all" />
+    <type fullname="UnityEngine.LineRenderer" preserve="all" />
     <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.MeshFilter" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
     <type fullname="UnityEngine.Object" preserve="all" />
     <type fullname="UnityEngine.RectTransform" preserve="all" />
     <type fullname="UnityEngine.RenderSettings" preserve="all" />
@@ -105,15 +115,21 @@
     <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.SceneManagement.Scene" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Grid" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.BoxCollider2D" preserve="all" />
+    <type fullname="UnityEngine.CircleCollider2D" preserve="all" />
     <type fullname="UnityEngine.CompositeCollider2D" preserve="all" />
+    <type fullname="UnityEngine.DistanceJoint2D" preserve="all" />
+    <type fullname="UnityEngine.HingeJoint2D" preserve="all" />
+    <type fullname="UnityEngine.PolygonCollider2D" preserve="all" />
     <type fullname="UnityEngine.Rigidbody2D" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.MeshCollider" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Font" preserve="all" />

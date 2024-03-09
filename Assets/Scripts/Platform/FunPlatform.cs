@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class FunPlatform : MonoBehaviour
 {
-    //ÔÚµ±Ç°½Å±¾¶Ôfan·çÉÈ½øĞĞ¿ØÖÆ(Åö×²¼ì²â,¶¯»­Æô¶¯)
+    //åœ¨å½“å‰è„šæœ¬å¯¹fané£æ‰‡è¿›è¡Œæ§åˆ¶(ç¢°æ’æ£€æµ‹,åŠ¨ç”»å¯åŠ¨)
     public float flyHeight;
-    Animator animator;//»ñÈ¡AnimatorÓÃÓÚ¶¯»­Æô¶¯
+    Animator animator;//è·å–Animatorç”¨äºåŠ¨ç”»å¯åŠ¨
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)//Åö×²¼ì²â,¼ì²âµÄÊÇÅöµ½µ±Ç°ÎïÌåµÄColider
+    private void OnCollisionEnter2D(Collision2D other)//ç¢°æ’æ£€æµ‹,æ£€æµ‹çš„æ˜¯ç¢°åˆ°å½“å‰ç‰©ä½“çš„Colider
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            animator.Play("Fun_run");//¸ø½ÇÉ«Ò»¸öËÙ¶È
+            animator.Play("Fun_run");//ç»™è§’è‰²ä¸€ä¸ªé€Ÿåº¦
             other.rigidbody.velocity = new Vector2(other.rigidbody.velocity.x, flyHeight);
-        }//Åöµ½ÁË½ÇÉ«;Ò²¿ÉÒÔÓÃtag==
+        }//ç¢°åˆ°äº†è§’è‰²;ä¹Ÿå¯ä»¥ç”¨tag==
     }
 
 }

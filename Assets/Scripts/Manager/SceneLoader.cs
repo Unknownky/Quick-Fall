@@ -25,7 +25,6 @@ public class SceneLoader : MonoBehaviour
     [BoxGroup("Animation"), Required]
     public string outAnimationName;
 
-
     public WaitUntil waitUntilInAnimationEnd;
     public WaitUntil waitUntilOutAnimationEnd;
 
@@ -61,8 +60,9 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator AddressablesLoadSceneSingleReally(string addressableSceneName)
     {
+        Debug.Log($"SceneLoader开始加载场景{addressableSceneName}");
         //播放加载动画，加载动画时长固定
-        animator.Play(inAnimationName);
+        animator.Play(inAnimationName); 
         yield return null; //等待一帧，确保动画机已经开始播放 ==》猜测动画机状态切换是在下一帧开始的
         waitUntilInAnimationEnd = new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
         yield return waitUntilInAnimationEnd;

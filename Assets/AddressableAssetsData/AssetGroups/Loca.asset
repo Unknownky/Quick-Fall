@@ -61,6 +61,58 @@ MonoBehaviour:
     m_Address: Jump
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 8de5c758a14d2544dbf501e06f634df7
+    m_Address: Apple
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 99fbec4f8b7d635469b55d072b2a849a
+    m_Address: Basic Platform With Apple Variant
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5f5991e12ffa4c044b35e6dbf38bbd02
+    m_Address: Basic Platform
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f1b9c4d8193a2d84e829b2a8a2768797
+    m_Address: CollectedEff
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2b0769bbaa1a40a4d9d52aadeb8b1499
+    m_Address: FireBox
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f73d169ba2c812e4bbf992f0e713160d
+    m_Address: FireBoxGroup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a9750068cf0ee64c8582a7bd4a33ac0
+    m_Address: Fun Platform
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cdc5fa7158af5814dbe9dc80a9151c65
+    m_Address: Orange
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9383b237c1cfc6147bcb69251de39ea2
+    m_Address: Rotate Platform
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d0d21dd0bf7363a4b9c0db5ffbab8671
+    m_Address: Spiked Ball With Orange Variant
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 07bd18f989db63b4093d4b52481532f3
+    m_Address: Spiked Ball
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3ca008362f174e94b9b85448db233f1f
+    m_Address: Trampoline With Apple Variant
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f939a0dcbffc24f4b98ba91fe9f2829b
+    m_Address: Trampoline
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:

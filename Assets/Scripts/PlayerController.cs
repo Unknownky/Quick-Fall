@@ -112,11 +112,6 @@ public class PlayerController : MonoBehaviour
         {//改变人物朝向
             transform.localScale = new Vector3(xVelocity, 1, 1);//取巧通过反向改变了scale值达到左右反转的效果
         }
-
-        if (transform.position.y < -10)
-        {
-            PlayerDead();
-        }
     }
 
 
@@ -136,7 +131,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayerDead()
+    public void PlayerDead()
     {
         playerDead = true;
         GameManager.GameOver(playerDead);

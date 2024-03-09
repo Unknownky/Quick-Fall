@@ -4,34 +4,28 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public List<GameObject> generBox = new List<GameObject>();//ÉùÃ÷ÎïÆ·ÁĞ±í£¬ÓÃÓÚËæ»úÉú³ÉÎïÌå
+    public List<GameObject> generBox = new List<GameObject>();//å£°æ˜ç‰©å“åˆ—è¡¨ï¼Œç”¨äºéšæœºç”Ÿæˆç‰©ä½“
 
-    public float spawnTime;//ÉùÃ÷¼ä¸ôÊµ¼ù
-    private float countTime;//ÉùÃ÷ÓÃÓÚ¼ÇÂ¼Ê±¼ä
-    Vector3 generpoint;//¸ù¾İµ±Ç°Î»ÖÃ½øĞĞÉú³ÉËæ»úÎ»ÖÃ
+    public float spawnTime;//å£°æ˜é—´éš”å®è·µ
+    private float countTime;//å£°æ˜ç”¨äºè®°å½•æ—¶é—´
+    Vector3 generpoint;//æ ¹æ®å½“å‰ä½ç½®è¿›è¡Œç”Ÿæˆéšæœºä½ç½®
 
 
     void Update()
     {
         RandGenerPlatform();
-        // #if UNITY_EDITOR
-        // if (Input.GetKeyDown(KeyCode.T))
-        // {
-        //     Time.timeScale = 5f;
-        // }
-        // #endif
     }
 
     void RandGenerPlatform()
     {
-        countTime += Time.deltaTime;//½øĞĞ¼ÆÊ±
+        countTime += Time.deltaTime;//è¿›è¡Œè®¡æ—¶
         generpoint = transform.position;
-        generpoint.x = Random.Range(-3.0f, 3.0f);//Ëæ»úÉú³ÉÉú³ÉµÄxÎ»ÖÃ(×óÓÒ·½Ïò)
+        generpoint.x = Random.Range(-3.0f, 3.0f);//éšæœºç”Ÿæˆç”Ÿæˆçš„xä½ç½®(å·¦å³æ–¹å‘)
 
         if (countTime > spawnTime)
         {
             CreatePlatform();
-            countTime = 0;//»Ø¹éÎª0
+            countTime = 0;//å›å½’ä¸º0
         }
 
     }
@@ -41,14 +35,21 @@ public class Spawner : MonoBehaviour
         int index = Random.Range(0, generBox.Count);
         if (GameObject.Find("Spiked Ball(Clone)") || GameObject.Find("Spiked Ball With Orange Variant(Clone)") || GameObject.Find("FireBoxGroup(Clone)"))
         {
-            while (generBox[index].name == "Spiked Ball" || generBox[index].name == "Spiked Ball With Orange Variant" || generBox[index].name == "FireBoxGroup")//Èç¹ûÓĞ¸ÃÎïÌåµÄ»°ÔÙËæ»úÖ±µ½²»ÊÇ
+            while (generBox[index].name == "Spiked Ball" || generBox[index].name == "Spiked Ball With Orange Variant" || generBox[index].name == "FireBoxGroup")//å¦‚æœæœ‰è¯¥ç‰©ä½“çš„è¯å†éšæœºç›´åˆ°ä¸æ˜¯
             {
                 index = Random.Range(0, generBox.Count);
             }
         }
-        //Èç¹ûµ±Ç°ÒÑ¾­ÓĞÁËSpiked Ball ²¢ÇÒ¼´½«Éú³É Ò»¸ö
-        GameObject newItem = Instantiate(generBox[index], generpoint, Quaternion.identity);//Quaternion.identity¼´ÎªËÄÔªÊı(0,0,0,0)
-        newItem.transform.SetParent(gameObject.transform);//½«Éú³ÉÎïÆ·µÄÎ»ÖÃÉèÖÃÎªµ±Ç°½Å±¾¹ÒÔØÎïÌåÎ»ÖÃµÄ×Ó¼¯
-        //thisÊÇµ±Ç°½Å±¾
+        //å¦‚æœå½“å‰å·²ç»æœ‰äº†Spiked Ball å¹¶ä¸”å³å°†ç”Ÿæˆ ä¸€ä¸ª
+        GameObject newItem = Instantiate(generBox[index], generpoint, Quaternion.identity);//Quaternion.identityå³ä¸ºå››å…ƒæ•°(0,0,0,0)
+        newItem.transform.SetParent(gameObject.transform);//å°†ç”Ÿæˆç‰©å“çš„ä½ç½®è®¾ç½®ä¸ºå½“å‰è„šæœ¬æŒ‚è½½ç‰©ä½“ä½ç½®çš„å­é›†
+        //thisæ˜¯å½“å‰è„šæœ¬
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Player")
+        {
+            PlayerController.instance.PlayerDead();
+        }
     }
 }

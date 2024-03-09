@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    Vector3 movement;//ÓÉÓÚplatform¸ü¶àÊÇ¸Ä±äÎ»ÖÃ,ĞèÒªÖ±½ÓÓ¦ÓÃµ½transformÉÏ(ËüÊÇ3DµÄ)
+    Vector3 movement;//ç”±äºplatformæ›´å¤šæ˜¯æ”¹å˜ä½ç½®,éœ€è¦ç›´æ¥åº”ç”¨åˆ°transformä¸Š(å®ƒæ˜¯3Dçš„)
     GameObject topLine;
 
     public float speed;
     void Start()
     {
-        movement.y = speed;//ÏŞ¶¨platformÔÚyÖáÉÏÒÆ¶¯
-        topLine = GameObject.Find("TopLine");//Í¨¹ıÃû×ÖÕÒµ½¸ÃÎïÌå
+        movement.y = speed;//é™å®šplatformåœ¨yè½´ä¸Šç§»åŠ¨
+        topLine = GameObject.Find("TopLine");//é€šè¿‡åå­—æ‰¾åˆ°è¯¥ç‰©ä½“
     }
 
     void Update()

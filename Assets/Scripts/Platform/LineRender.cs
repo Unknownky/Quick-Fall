@@ -14,7 +14,7 @@ public class LineRender : MonoBehaviour
 
     void Update()
     {
-        lineRenderer.SetPosition(0, startPoint.position);//注意大小写
+        lineRenderer.SetPosition(0, startPoint.position);//脳垄脪芒麓贸脨隆脨麓
         lineRenderer.SetPosition(1, endPoint.position);
     }
 }
