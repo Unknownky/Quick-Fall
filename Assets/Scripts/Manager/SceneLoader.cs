@@ -18,6 +18,8 @@ public class SceneLoader : MonoBehaviour
     [BoxGroup("Animation"), Required, SceneObjectsOnly]
     public GameObject curtain;
     [BoxGroup("Animation"), Required]
+    public string originalAnimationName;
+    [BoxGroup("Animation"), Required]
     public string inAnimationName;
 
     [BoxGroup("Animation"), Required]
@@ -40,7 +42,7 @@ public class SceneLoader : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
-        curtain.SetActive(false);
+        curtain.SetActive(true);
         animator = curtain.GetComponent<Animator>();
     }
 
@@ -61,15 +63,19 @@ public class SceneLoader : MonoBehaviour
     {
         //播放加载动画，加载动画时长固定
         animator.Play(inAnimationName);
+        yield return null; //等待一帧，确保动画机已经开始播放 ==》猜测动画机状态切换是在下一帧开始的
         waitUntilInAnimationEnd = new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
         yield return waitUntilInAnimationEnd;
         //加载场景
         loadHandle = Addressables.LoadSceneAsync(addressableSceneName, LoadSceneMode.Single);
         //播放加载完成动画，加载完成动画由加载时长和动画时长最大值决定
         animator.Play(outAnimationName);
+        yield return null; //等待一帧，确保动画机已经开始播放
         waitUntilOutAnimationEnd = new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
         yield return waitUntilOutAnimationEnd;
         yield return loadHandle;
+        //动画机回到初始状态
+        animator.Play(originalAnimationName);
         Debug.Log($"加载场景{addressableSceneName}完成");
     }
 
