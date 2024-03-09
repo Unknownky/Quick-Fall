@@ -47,12 +47,12 @@ static const int32_t s_InvokerIndices[9] =
 	8760,
 	7209,
 	11970,
-	14688,
-	13884,
-	14688,
-	13884,
-	12387,
-	13455,
+	14687,
+	13883,
+	14687,
+	13883,
+	12386,
+	13454,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_HybridCLR_Runtime_CodeGenModule;
 const Il2CppCodeGenModule g_HybridCLR_Runtime_CodeGenModule = 

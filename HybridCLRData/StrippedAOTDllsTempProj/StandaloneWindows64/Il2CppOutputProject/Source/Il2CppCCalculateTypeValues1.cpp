@@ -11704,14 +11704,14 @@ struct LayoutCache_tF844B2FAD6933B78FD5EFEBDE0529BCBAC19BA60  : public RuntimeOb
 	GUILayoutGroup_tD08496E80F283C290B5B90D7BFB3C9C7CC33CD8D* ___windows_3;
 };
 
-// GameManager/<DelayGameOver>d__16
-struct U3CDelayGameOverU3Ed__16_t98F355FD05E1C0647DC1C5F0B2DCDA915782F8EF  : public RuntimeObject
+// GameManager/<DelayGameOver>d__17
+struct U3CDelayGameOverU3Ed__17_t680390E6FFDA91956A65F612FB9C94EC9CBD8909  : public RuntimeObject
 {
-	// System.Int32 GameManager/<DelayGameOver>d__16::<>1__state
+	// System.Int32 GameManager/<DelayGameOver>d__17::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object GameManager/<DelayGameOver>d__16::<>2__current
+	// System.Object GameManager/<DelayGameOver>d__17::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// GameManager GameManager/<DelayGameOver>d__16::<>4__this
+	// GameManager GameManager/<DelayGameOver>d__17::<>4__this
 	GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* ___U3CU3E4__this_2;
 };
 
@@ -12992,10 +12992,10 @@ struct U3CAddressablesLoadSceneSingleReallyU3Ed__11_t37B4C0F0E697ADD2E0EB14F1DF8
 	int32_t ___U3CU3E1__state_0;
 	// System.Object SceneLoader/<AddressablesLoadSceneSingleReally>d__11::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// SceneLoader SceneLoader/<AddressablesLoadSceneSingleReally>d__11::<>4__this
-	SceneLoader_t96010F6DCE0AD6BEB011B72A85110D4801F5CCCF* ___U3CU3E4__this_2;
 	// System.String SceneLoader/<AddressablesLoadSceneSingleReally>d__11::addressableSceneName
-	String_t* ___addressableSceneName_3;
+	String_t* ___addressableSceneName_2;
+	// SceneLoader SceneLoader/<AddressablesLoadSceneSingleReally>d__11::<>4__this
+	SceneLoader_t96010F6DCE0AD6BEB011B72A85110D4801F5CCCF* ___U3CU3E4__this_3;
 };
 
 // CSharpCompiler.ScriptBundleLoader/<>c
@@ -48633,12 +48633,14 @@ struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6  : public MonoBehav
 	float ___levelScap_11;
 	// System.Single GameManager::delayTime
 	float ___delayTime_12;
+	// System.String GameManager::sceneName
+	String_t* ___sceneName_13;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> GameManager::fruits
-	Dictionary_2_t5C8F46F5D57502270DD9E1DA8303B23C7FE85588* ___fruits_13;
+	Dictionary_2_t5C8F46F5D57502270DD9E1DA8303B23C7FE85588* ___fruits_14;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> GameManager::fruitScores
-	Dictionary_2_t5C8F46F5D57502270DD9E1DA8303B23C7FE85588* ___fruitScores_14;
+	Dictionary_2_t5C8F46F5D57502270DD9E1DA8303B23C7FE85588* ___fruitScores_15;
 	// System.Int32 GameManager::additionalScore
-	int32_t ___additionalScore_15;
+	int32_t ___additionalScore_16;
 };
 
 struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields
@@ -59337,7 +59339,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize8726 = { sizeof(LoadPlayer_t
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize8727;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize8727 = { sizeof(ConsoleToScreen_t4D4E2DA6049B115E29915B9B584C8009100A848E), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize8728;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize8728 = { sizeof(U3CDelayGameOverU3Ed__16_t98F355FD05E1C0647DC1C5F0B2DCDA915782F8EF), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize8728 = { sizeof(U3CDelayGameOverU3Ed__17_t680390E6FFDA91956A65F612FB9C94EC9CBD8909), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize8729;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize8729 = { sizeof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6), -1, sizeof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize8730;

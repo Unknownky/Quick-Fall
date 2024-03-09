@@ -82,18 +82,18 @@ extern void GameManager_LevelUpdate_m6BA2AE2E60C11FEF56495680E343C019BCF05A68 (v
 extern void GameManager_Quit_mD4E439BAC10B04E13E09995F0194D55A519974ED (void);
 // 0x00000023 System.Void GameManager::.ctor()
 extern void GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368 (void);
-// 0x00000024 System.Void GameManager/<DelayGameOver>d__16::.ctor(System.Int32)
-extern void U3CDelayGameOverU3Ed__16__ctor_mCA36BE0C2D53CBF0795806D577F2319F14DC19B7 (void);
-// 0x00000025 System.Void GameManager/<DelayGameOver>d__16::System.IDisposable.Dispose()
-extern void U3CDelayGameOverU3Ed__16_System_IDisposable_Dispose_m0C6D0BFFA06982012604502D895D5465B3EBFD93 (void);
-// 0x00000026 System.Boolean GameManager/<DelayGameOver>d__16::MoveNext()
-extern void U3CDelayGameOverU3Ed__16_MoveNext_m504645D37D3B1371F969DE4EE8C13D517B452E72 (void);
-// 0x00000027 System.Object GameManager/<DelayGameOver>d__16::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CDelayGameOverU3Ed__16_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mC075641BC4CA4475CD10DCF3207910511F9AB0D7 (void);
-// 0x00000028 System.Void GameManager/<DelayGameOver>d__16::System.Collections.IEnumerator.Reset()
-extern void U3CDelayGameOverU3Ed__16_System_Collections_IEnumerator_Reset_mA6A873B7E4AB3D3DD4624642A9E506866411AF8C (void);
-// 0x00000029 System.Object GameManager/<DelayGameOver>d__16::System.Collections.IEnumerator.get_Current()
-extern void U3CDelayGameOverU3Ed__16_System_Collections_IEnumerator_get_Current_m00CF14A10D2B91E9EA67A5AB1C5724C8D3DF6742 (void);
+// 0x00000024 System.Void GameManager/<DelayGameOver>d__17::.ctor(System.Int32)
+extern void U3CDelayGameOverU3Ed__17__ctor_m6F62DD5AEFF4CE5E49BB389736AE04C9F6DA9F31 (void);
+// 0x00000025 System.Void GameManager/<DelayGameOver>d__17::System.IDisposable.Dispose()
+extern void U3CDelayGameOverU3Ed__17_System_IDisposable_Dispose_m1980F8B25D6BD47BF8638BC6FBFF46709399E422 (void);
+// 0x00000026 System.Boolean GameManager/<DelayGameOver>d__17::MoveNext()
+extern void U3CDelayGameOverU3Ed__17_MoveNext_mF9C0E761DE216BBA4D9C6C5FE9766E9CAF810B29 (void);
+// 0x00000027 System.Object GameManager/<DelayGameOver>d__17::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CDelayGameOverU3Ed__17_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m4D4E21671F7BF09BC1A6F795E578A9875B33AB26 (void);
+// 0x00000028 System.Void GameManager/<DelayGameOver>d__17::System.Collections.IEnumerator.Reset()
+extern void U3CDelayGameOverU3Ed__17_System_Collections_IEnumerator_Reset_mD531B54EB4C13FFEA095CAE23CDF5452E45A8DD6 (void);
+// 0x00000029 System.Object GameManager/<DelayGameOver>d__17::System.Collections.IEnumerator.get_Current()
+extern void U3CDelayGameOverU3Ed__17_System_Collections_IEnumerator_get_Current_mE8A58781807D445F98AC3FF6FDC180CF1320B198 (void);
 // 0x0000002A System.Void LoadDllManager::Start()
 extern void LoadDllManager_Start_mF4EEC75EB4E392B43B0E056DCA31DBE6C1C5BA3A (void);
 // 0x0000002B System.Collections.IEnumerator LoadDllManager::InitTask()
@@ -258,17 +258,19 @@ extern void Spawner_Update_m6DAC21E4E2E5A3C46C3F3EE45A3358909808DDC5 (void);
 extern void Spawner_RandGenerPlatform_mED2F01D26B06E405A7EB3EADD4B238FA8619FB78 (void);
 // 0x0000007B System.Void Spawner::CreatePlatform()
 extern void Spawner_CreatePlatform_mA3FA0A59B1E030C89AE1D6C3D2AC795C98BCD20D (void);
-// 0x0000007C System.Void Spawner::.ctor()
+// 0x0000007C System.Void Spawner::OnTriggerEnter2D(UnityEngine.Collider2D)
+extern void Spawner_OnTriggerEnter2D_m3D496A4E1A2D9EF8D93CCAF0C48F01CC39CBB6E6 (void);
+// 0x0000007D System.Void Spawner::.ctor()
 extern void Spawner__ctor_mBF592E8E9B5682687D8C28E73A64BF29B6BF2088 (void);
-// 0x0000007D System.Void StartGame::OnTriggerEnter2D(UnityEngine.Collider2D)
+// 0x0000007E System.Void StartGame::OnTriggerEnter2D(UnityEngine.Collider2D)
 extern void StartGame_OnTriggerEnter2D_mF01ED35A3831B9E145285E1984E6D02E0B817345 (void);
-// 0x0000007E System.Void StartGame::.ctor()
+// 0x0000007F System.Void StartGame::.ctor()
 extern void StartGame__ctor_mCE51A8179D9D10D4F741CDAB63ED2DA16C00B797 (void);
-// 0x0000007F System.Void PrintHello::Start()
+// 0x00000080 System.Void PrintHello::Start()
 extern void PrintHello_Start_m867FF29043E3D13980DF62790C82F45B1CBAAB8B (void);
-// 0x00000080 System.Void PrintHello::.ctor()
+// 0x00000081 System.Void PrintHello::.ctor()
 extern void PrintHello__ctor_m3EED8777ECCA23EF65CBF29AE85C118B3021E496 (void);
-static Il2CppMethodPointer s_methodPointers[128] = 
+static Il2CppMethodPointer s_methodPointers[129] = 
 {
 	AOTGenericReferences_RefMethods_m17CF257D96D8BC2F232C4C1502905B792D17170C,
 	AOTGenericReferences__ctor_m41CBD692FC9B521512E552575AFE7A385DEC71A6,
@@ -305,12 +307,12 @@ static Il2CppMethodPointer s_methodPointers[128] =
 	GameManager_LevelUpdate_m6BA2AE2E60C11FEF56495680E343C019BCF05A68,
 	GameManager_Quit_mD4E439BAC10B04E13E09995F0194D55A519974ED,
 	GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368,
-	U3CDelayGameOverU3Ed__16__ctor_mCA36BE0C2D53CBF0795806D577F2319F14DC19B7,
-	U3CDelayGameOverU3Ed__16_System_IDisposable_Dispose_m0C6D0BFFA06982012604502D895D5465B3EBFD93,
-	U3CDelayGameOverU3Ed__16_MoveNext_m504645D37D3B1371F969DE4EE8C13D517B452E72,
-	U3CDelayGameOverU3Ed__16_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mC075641BC4CA4475CD10DCF3207910511F9AB0D7,
-	U3CDelayGameOverU3Ed__16_System_Collections_IEnumerator_Reset_mA6A873B7E4AB3D3DD4624642A9E506866411AF8C,
-	U3CDelayGameOverU3Ed__16_System_Collections_IEnumerator_get_Current_m00CF14A10D2B91E9EA67A5AB1C5724C8D3DF6742,
+	U3CDelayGameOverU3Ed__17__ctor_m6F62DD5AEFF4CE5E49BB389736AE04C9F6DA9F31,
+	U3CDelayGameOverU3Ed__17_System_IDisposable_Dispose_m1980F8B25D6BD47BF8638BC6FBFF46709399E422,
+	U3CDelayGameOverU3Ed__17_MoveNext_mF9C0E761DE216BBA4D9C6C5FE9766E9CAF810B29,
+	U3CDelayGameOverU3Ed__17_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m4D4E21671F7BF09BC1A6F795E578A9875B33AB26,
+	U3CDelayGameOverU3Ed__17_System_Collections_IEnumerator_Reset_mD531B54EB4C13FFEA095CAE23CDF5452E45A8DD6,
+	U3CDelayGameOverU3Ed__17_System_Collections_IEnumerator_get_Current_mE8A58781807D445F98AC3FF6FDC180CF1320B198,
 	LoadDllManager_Start_mF4EEC75EB4E392B43B0E056DCA31DBE6C1C5BA3A,
 	LoadDllManager_InitTask_m70F6F958F1FFEAAFC507F652A8F1E5346F63F126,
 	LoadDllManager_LoadAotDll_m2D37A738AF18F50955DF2DB71C78E65B1F370D72,
@@ -393,17 +395,18 @@ static Il2CppMethodPointer s_methodPointers[128] =
 	Spawner_Update_m6DAC21E4E2E5A3C46C3F3EE45A3358909808DDC5,
 	Spawner_RandGenerPlatform_mED2F01D26B06E405A7EB3EADD4B238FA8619FB78,
 	Spawner_CreatePlatform_mA3FA0A59B1E030C89AE1D6C3D2AC795C98BCD20D,
+	Spawner_OnTriggerEnter2D_m3D496A4E1A2D9EF8D93CCAF0C48F01CC39CBB6E6,
 	Spawner__ctor_mBF592E8E9B5682687D8C28E73A64BF29B6BF2088,
 	StartGame_OnTriggerEnter2D_mF01ED35A3831B9E145285E1984E6D02E0B817345,
 	StartGame__ctor_mCE51A8179D9D10D4F741CDAB63ED2DA16C00B797,
 	PrintHello_Start_m867FF29043E3D13980DF62790C82F45B1CBAAB8B,
 	PrintHello__ctor_m3EED8777ECCA23EF65CBF29AE85C118B3021E496,
 };
-static const int32_t s_InvokerIndices[128] = 
+static const int32_t s_InvokerIndices[129] = 
 {
 	8951,
 	8951,
-	14739,
+	14738,
 	8951,
 	8951,
 	8951,
@@ -430,7 +433,7 @@ static const int32_t s_InvokerIndices[128] =
 	8951,
 	8951,
 	8951,
-	13878,
+	13877,
 	6580,
 	4371,
 	8951,
@@ -466,7 +469,7 @@ static const int32_t s_InvokerIndices[128] =
 	8802,
 	8951,
 	8802,
-	14739,
+	14738,
 	8951,
 	6851,
 	8951,
@@ -524,6 +527,7 @@ static const int32_t s_InvokerIndices[128] =
 	8951,
 	8951,
 	8951,
+	7248,
 	8951,
 	7248,
 	8951,
@@ -534,7 +538,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	128,
+	129,
 	s_methodPointers,
 	0,
 	NULL,
