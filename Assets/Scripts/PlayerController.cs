@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Sirenix.OdinInspector;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,25 +11,34 @@ public class PlayerController : MonoBehaviour
 
     // [Header("PlayerComponent")]
 
-    [Header("move")]
+    [BoxGroup("PlayerComponent")]
     public float speed = 3f;
-
+    [BoxGroup("PlayerComponent")]
     public float dashSpeed = 4f;
-
+    [BoxGroup("PlayerComponent")]
     public float defaultGravityScale = 1.5f;
+    [BoxGroup("PlayerComponent")]
     public float dashGravity = 1.8f;
-
+    [BoxGroup("PlayerComponent")]
     public float sharpDownGravity = 3f;
+
+
     float xVelocity;//用于接收x轴移动的真假值
 
 
     //进行是否在地面上的判定，可以直接射线检测
-    [Header("detection")]
+    [BoxGroup("detection")]
     public bool teachLevel = false;
+    [BoxGroup("detection")]
     public GameObject groundCheck;
+    [BoxGroup("detection")]
     public bool isOnGround;
+    [BoxGroup("detection")]
     public float checkRadius;
+    [BoxGroup("detection")]
+    [BoxGroup("detection")]
     public LayerMask platform;
+
 
     public static PlayerController instance;
 

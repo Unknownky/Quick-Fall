@@ -4,27 +4,31 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Sirenix.OdinInspector;
 
 public class GameManager : MonoBehaviour
 {
+    [TabGroup("UI"), SceneObjectsOnly, InlineButton("SelectObject", "Select")]
     public Text TimeText;
-
+    [TabGroup("UI"), SceneObjectsOnly, InlineButton("SelectObject", "Select")]
     public Text MaxScore;
-
+    [TabGroup("UI"), SceneObjectsOnly, InlineButton("SelectObject", "Select")]
     public Text AppleCountText;
-
+    [TabGroup("UI"), SceneObjectsOnly, InlineButton("SelectObject", "Select")]
     public Text OrangeCountText;
-
+    [TabGroup("UI"), SceneObjectsOnly, InlineButton("SelectObject", "Select")]
     public TMP_Text currentScoreText;
+    [TabGroup("UI"), SceneObjectsOnly, InlineButton("SelectObject", "Select")]
+    public GameObject GameOverPanelUI;
 
     public static GameManager instance;
 
-    public GameObject GameOverPanelUI;
-
+    [TabGroup("Game Setting")]
     public float levelScap = 0.02f;
-
+    [TabGroup("Game Setting")]
     public float delayTime = 1.5f;
 
+    [ShowInInspector]
     private Dictionary<string, int> fruits = new Dictionary<string, int>();
 
     [SerializeField] private Dictionary<string, int> fruitScores = new Dictionary<string, int>();
@@ -100,7 +104,8 @@ public class GameManager : MonoBehaviour
     }
 
     //难度逐渐升级
-    public void LevelUpdate(){
+    public void LevelUpdate()
+    {
         Time.timeScale += levelScap * Time.deltaTime;
     }
 
@@ -108,4 +113,12 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    #region FunctionsForOdin 
+    private void SelectObject(Object obj)
+    {
+        if (obj)
+            UnityEditor.Selection.activeObject = obj;
+    }
+    #endregion
 }
