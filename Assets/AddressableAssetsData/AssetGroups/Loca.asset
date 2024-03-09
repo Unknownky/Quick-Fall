@@ -41,6 +41,26 @@ MonoBehaviour:
     m_Address: Quantum Console
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: ef66326218a3e244a91f2200681c5016
+    m_Address: PowerUp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3fa0736a3c6ae34ca728d49690f513d
+    m_Address: Select
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d4af7d97787df1c498cc37cdb21f18be
+    m_Address: Hit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 232a94649df218c4696476d981f843f7
+    m_Address: PickUpCoin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 91f09c3461f39b2448255b3202ddbba9
+    m_Address: Jump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:
