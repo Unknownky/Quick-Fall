@@ -62,11 +62,6 @@ public class PlayerController : MonoBehaviour
         ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         matchLessEffect = transform.GetChild(1).gameObject;
-        //设置teachLevel的值
-        if (SceneManager.GetActiveScene().name == "TeachLevel")
-        {
-            teachLevel = true;
-        }
     }
 
     void Update()
@@ -122,7 +117,7 @@ public class PlayerController : MonoBehaviour
             if (playerMatchless) return;
             ani.SetTrigger("dead");
             if(teachLevel){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneLoader.instance.AddressablesLoadSceneSingle("TeachScene");
                 return;
             }
             else{

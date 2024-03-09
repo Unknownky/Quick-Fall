@@ -37,7 +37,8 @@ public class HotCommands : MonoBehaviour
     [Command]
     //回到主菜单，要注意跨场景的物体，避免出现问题，主要用于测试
     public static void BackToAssetScene()
-    {   
+    {
+        Time.timeScale = 1f; //时间恢复正常,避免游玩中途退出后，时间缩放不正常
          // 加载菜单场景
         Addressables.LoadSceneAsync("AssetScene", LoadSceneMode.Single).Completed += (handle) =>
         {

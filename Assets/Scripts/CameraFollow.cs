@@ -18,6 +18,7 @@ public class CameraFollow : MonoBehaviour
         player = GameObject.Find("Player(Clone)");
         vcam = GetComponent<CinemachineVirtualCamera>();
         vcam.Follow = player.transform;
+        player.GetComponent<PlayerController>().teachLevel = true; //设置教学关卡选项为true
         //卸载事件
         LoadPlayer.OnPlayerLoaded -= StorePlayer;
     }
