@@ -259,6 +259,8 @@
     </ClCompile>
     <ClCompile Include="Source\Il2CppCCalculateFieldValues2.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Il2CppCCalculateFieldValues3.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Il2CppCCalculateTypeValues.cpp">
     </ClCompile>
     <ClCompile Include="Source\Il2CppCCalculateTypeValues1.cpp">
