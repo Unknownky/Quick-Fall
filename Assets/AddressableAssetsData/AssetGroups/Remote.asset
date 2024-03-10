@@ -43,6 +43,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Objects
     - Scene
+  - m_GUID: 4dc7a52f99f3dc049af0f581a7c06c5f
+    m_Address: LoadingCanvas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Objects
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:

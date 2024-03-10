@@ -9,7 +9,9 @@ using UnityEngine.ResourceManagement.ResourceLocations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// 根据资源包标签，一起下载资源包
+/// </summary>
 public class AssetBundleUpdate : MonoBehaviour
 {
     [Tooltip("需要下载的资源组标签"), SerializeField] private List<AssetLabelReference> assetBundleLables;
@@ -32,7 +34,7 @@ public class AssetBundleUpdate : MonoBehaviour
         }
         //首先获取需要更新的资源的大小
         //然后询问用户是否下载
-        //下载资源
+        //做到一起下载资源
         GetDownLoadSizeThenAskForDownLoad();
         LoadFastGetAssets();
     }
@@ -107,8 +109,22 @@ public class AssetBundleUpdate : MonoBehaviour
             yield return null;
         }
         yield return downloadHandle;
-        progressText.text = "资源下载完成";
+        progressText.text = "资源加载完成:点击屏幕继续";
+        StartCoroutine(WaitForClikLoadMainMenu());
         Debug.Log("资源下载完成");
         Addressables.Release(downloadHandle);
+    }
+
+    IEnumerator WaitForClikLoadMainMenu()
+    {
+        while (true)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Addressables.LoadSceneAsync("MainMenu");
+                break;
+            }
+            yield return null;
+        }
     }
 }

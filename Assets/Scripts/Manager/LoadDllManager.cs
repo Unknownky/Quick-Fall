@@ -37,7 +37,7 @@ public class LoadDllManager : MonoBehaviour
 
 #endif
         //加载菜单场景
-        LoadMenuScene();
+        LoadAssetScene();
     }
 
 
@@ -104,12 +104,12 @@ public class LoadDllManager : MonoBehaviour
     }
 
 
-    private void LoadMenuScene()
+    private void LoadAssetScene()
     {
         // 加载菜单场景
         Addressables.LoadSceneAsync(hotUpdateMainSceneRef, LoadSceneMode.Additive).Completed += (handle) =>
         {
-            Debug.Log("加载菜单场景完成");
+            Debug.Log("加载资源场景完成");
         };
     }
 
