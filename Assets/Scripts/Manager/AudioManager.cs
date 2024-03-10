@@ -68,8 +68,7 @@ public class AudioManager : MonoBehaviour
             {
                 soundEffectAudioSource.clip = clip;
                 soundEffectAudioSource.volume = volume;
-                soundEffectAudioSource.Stop();
-                soundEffectAudioSource.Play();
+                soundEffectAudioSource.PlayOneShot(clip);
             }
         }
     }
@@ -90,7 +89,6 @@ public class AudioManager : MonoBehaviour
                 musicAudioSource.clip = clip;
                 musicAudioSource.loop = loop;
                 musicAudioSource.volume = volume;
-                musicAudioSource.Stop();
                 musicAudioSource.Play();
             }
         }

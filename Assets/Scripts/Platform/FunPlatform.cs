@@ -17,6 +17,7 @@ public class FunPlatform : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             animator.Play("Fun_run");//给角色一个速度
+            AudioManager.instance.PlaySoundEffect("Jump");
             other.rigidbody.velocity = new Vector2(other.rigidbody.velocity.x, flyHeight);
         }//碰到了角色;也可以用tag==
     }
