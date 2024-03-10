@@ -24,7 +24,6 @@ public class AssetBundleUpdate : MonoBehaviour
 
     private long totalDownloadSize = 0;
 
-
     private void Start()
     {
         Debug.Log("开始检查资源更新!!!");

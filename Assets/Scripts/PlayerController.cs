@@ -115,7 +115,10 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("spike") || other.CompareTag("Fire"))
         {
             if (playerMatchless) return;
+            // 播放受伤动画
             ani.SetTrigger("dead");
+            // 播放受伤音效
+            AudioManager.instance.PlaySoundEffect("Hit");
             if(teachLevel){
                 SceneLoader.instance.AddressablesLoadSceneSingle("TeachScene");
                 return;
