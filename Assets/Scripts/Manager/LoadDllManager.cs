@@ -28,7 +28,8 @@ public class LoadDllManager : MonoBehaviour
 
     IEnumerator InitTask()
     {
-
+        // 初始化Addressables，让它应用设置好的资源定位器
+        yield return Addressables.InitializeAsync();
         //加载热更程序集
         yield return StartCoroutine(LoadHotFixDll());
 #if !UNITY_EDITOR
