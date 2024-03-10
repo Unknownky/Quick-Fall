@@ -28209,7 +28209,7 @@ IL_00e6_1:
 			String_t* L_93 = V_7;
 			NullCheck(L_92);
 			Type_t* L_94;
-			L_94 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_92, L_93);
+			L_94 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(33 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_92, L_93);
 			V_9 = L_94;
 			// return JsonUtility.FromJson(jsonText, t);
 			Type_t* L_95 = V_9;
@@ -28711,7 +28711,7 @@ IL_0236:
 		L_110 = VirtualFuncInvoker0< Assembly_t* >::Invoke(32 /* System.Reflection.Assembly System.Type::get_Assembly() */, L_109);
 		NullCheck(L_110);
 		String_t* L_111;
-		L_111 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Reflection.Assembly::get_FullName() */, L_110);
+		L_111 = VirtualFuncInvoker0< String_t* >::Invoke(12 /* System.String System.Reflection.Assembly::get_FullName() */, L_110);
 		NullCheck(L_108);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_112;
 		L_112 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18 /* System.Byte[] System.Text.Encoding::GetBytes(System.String) */, L_108, L_111);
@@ -33896,7 +33896,7 @@ IL_0050:
 		String_t* L_22 = V_2;
 		NullCheck(L_21);
 		Type_t* L_23;
-		L_23 = VirtualFuncInvoker3< Type_t*, String_t*, bool, bool >::Invoke(23 /* System.Type System.Reflection.Assembly::GetType(System.String,System.Boolean,System.Boolean) */, L_21, L_22, (bool)0, (bool)0);
+		L_23 = VirtualFuncInvoker3< Type_t*, String_t*, bool, bool >::Invoke(51 /* System.Type System.Reflection.Assembly::GetType(System.String,System.Boolean,System.Boolean) */, L_21, L_22, (bool)0, (bool)0);
 		V_6 = L_23;
 		// if (t == null)
 		Type_t* L_24 = V_6;
@@ -33986,7 +33986,7 @@ IL_00af_1:
 			FieldInfo_t* L_45 = V_8;
 			NullCheck(L_45);
 			RuntimeObject* L_46;
-			L_46 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(27 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_45, NULL);
+			L_46 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(38 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_45, NULL);
 			V_11 = L_46;
 			// if (v != null)
 			RuntimeObject* L_47 = V_11;

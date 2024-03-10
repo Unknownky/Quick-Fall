@@ -17609,7 +17609,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Assembly_t0F56DA2D0C139A8A98C373C4A5385B5A275
 		Assembly_t* L_0 = ___asm0;
 		NullCheck(L_0);
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Reflection.Assembly::get_FullName() */, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(12 /* System.String System.Reflection.Assembly::get_FullName() */, L_0);
 		Assembly_t0F56DA2D0C139A8A98C373C4A5385B5A27543008* L_2;
 		L_2 = Universe_Load_m265E97F10A3D60466307365F724C1EC39BEE2CF1(__this, L_1, NULL);
 		return L_2;
@@ -18485,7 +18485,7 @@ IL_000d:
 		L_6 = Assembly_ReflectionOnlyLoad_m14421FE2308C3A0872897F8D75F1D20CCD8CFD18(L_5, NULL);
 		NullCheck(L_6);
 		String_t* L_7;
-		L_7 = VirtualFuncInvoker0< String_t* >::Invoke(11 /* System.String System.Reflection.Assembly::get_Location() */, L_6);
+		L_7 = VirtualFuncInvoker0< String_t* >::Invoke(18 /* System.String System.Reflection.Assembly::get_Location() */, L_6);
 		V_1 = L_7;
 		goto IL_004f;
 	}// end try (depth: 1)
@@ -18523,7 +18523,7 @@ IL_002c:
 		L_13 = Assembly_ReflectionOnlyLoad_m14421FE2308C3A0872897F8D75F1D20CCD8CFD18(L_12, NULL);
 		NullCheck(L_13);
 		String_t* L_14;
-		L_14 = VirtualFuncInvoker0< String_t* >::Invoke(11 /* System.String System.Reflection.Assembly::get_Location() */, L_13);
+		L_14 = VirtualFuncInvoker0< String_t* >::Invoke(18 /* System.String System.Reflection.Assembly::get_Location() */, L_13);
 		V_1 = L_14;
 		goto IL_004f;
 	}// end try (depth: 1)

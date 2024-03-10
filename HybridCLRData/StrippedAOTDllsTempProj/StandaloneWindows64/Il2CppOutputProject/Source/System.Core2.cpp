@@ -30872,11 +30872,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightCompiler_CompileMember_mBE0712C3F17
 		FieldInfo_t* L_6 = V_0;
 		NullCheck(L_6);
 		RuntimeObject* L_7;
-		L_7 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(27 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_6, NULL);
+		L_7 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(38 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_6, NULL);
 		FieldInfo_t* L_8 = V_0;
 		NullCheck(L_8);
 		Type_t* L_9;
-		L_9 = VirtualFuncInvoker0< Type_t* >::Invoke(16 /* System.Type System.Reflection.FieldInfo::get_FieldType() */, L_8);
+		L_9 = VirtualFuncInvoker0< Type_t* >::Invoke(21 /* System.Type System.Reflection.FieldInfo::get_FieldType() */, L_8);
 		NullCheck(L_5);
 		InstructionList_EmitLoad_m60FB7F20951E13A4603F87DA5C70D0A537420E82(L_5, L_7, L_9, NULL);
 		return;
@@ -30922,11 +30922,11 @@ IL_0042:
 		FieldInfo_t* L_17 = V_0;
 		NullCheck(L_17);
 		RuntimeObject* L_18;
-		L_18 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(27 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_17, NULL);
+		L_18 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(38 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_17, NULL);
 		FieldInfo_t* L_19 = V_0;
 		NullCheck(L_19);
 		Type_t* L_20;
-		L_20 = VirtualFuncInvoker0< Type_t* >::Invoke(16 /* System.Type System.Reflection.FieldInfo::get_FieldType() */, L_19);
+		L_20 = VirtualFuncInvoker0< Type_t* >::Invoke(21 /* System.Type System.Reflection.FieldInfo::get_FieldType() */, L_19);
 		NullCheck(L_16);
 		InstructionList_EmitLoad_m60FB7F20951E13A4603F87DA5C70D0A537420E82(L_16, L_18, L_20, NULL);
 		return;
@@ -31918,7 +31918,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LightCompiler_CompileInvocationExpressio
 		MethodInfo_t* L_16 = V_1;
 		NullCheck(L_16);
 		Type_t* L_17;
-		L_17 = VirtualFuncInvoker0< Type_t* >::Invoke(44 /* System.Type System.Reflection.MethodInfo::get_ReturnType() */, L_16);
+		L_17 = VirtualFuncInvoker0< Type_t* >::Invoke(63 /* System.Type System.Reflection.MethodInfo::get_ReturnType() */, L_16);
 		il2cpp_codegen_runtime_class_init_inline(TypeUtils_t2C9FA7DD0D8907A05421D44B8E7F1D4F602C9FE7_il2cpp_TypeInfo_var);
 		MethodInfo_t* L_18;
 		L_18 = TypeUtils_GetInvokeMethod_m62AB477BF6415EEB6F7108534BAB598CA9CDCA02(L_17, NULL);
@@ -32100,7 +32100,7 @@ IL_0049:
 		MethodInfo_t* L_18 = V_2;
 		NullCheck(L_18);
 		Type_t* L_19;
-		L_19 = VirtualFuncInvoker0< Type_t* >::Invoke(44 /* System.Type System.Reflection.MethodInfo::get_ReturnType() */, L_18);
+		L_19 = VirtualFuncInvoker0< Type_t* >::Invoke(63 /* System.Type System.Reflection.MethodInfo::get_ReturnType() */, L_18);
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_20 = { reinterpret_cast<intptr_t> (Void_t4861ACF8F4594C3437BB48B6E56783494B843915_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_21;
@@ -32414,7 +32414,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* LightCompiler_GetMemberType_mB49DFE92
 		FieldInfo_t* L_3 = V_0;
 		NullCheck(L_3);
 		Type_t* L_4;
-		L_4 = VirtualFuncInvoker0< Type_t* >::Invoke(16 /* System.Type System.Reflection.FieldInfo::get_FieldType() */, L_3);
+		L_4 = VirtualFuncInvoker0< Type_t* >::Invoke(21 /* System.Type System.Reflection.FieldInfo::get_FieldType() */, L_3);
 		return L_4;
 	}
 

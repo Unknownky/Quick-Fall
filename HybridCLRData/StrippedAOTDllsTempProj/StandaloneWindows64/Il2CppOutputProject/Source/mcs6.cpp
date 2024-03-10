@@ -13195,7 +13195,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AssemblyDefinition_get_FullName_m5E
 		AssemblyBuilder_t87D45090370084F95DC55357D97AC3FBD578220A* L_0 = __this->___Builder_0;
 		NullCheck(L_0);
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Reflection.Assembly::get_FullName() */, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(12 /* System.String System.Reflection.Assembly::get_FullName() */, L_0);
 		return L_1;
 	}
 }
@@ -14399,7 +14399,7 @@ IL_005e_1:
 				L_17 = ImportedAssemblyDefinition_get_Assembly_m582073F77AA5530CB4C3247ACFB78531B358B73B_inline(L_16, NULL);
 				NullCheck(L_17);
 				AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* L_18;
-				L_18 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(20 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_17);
+				L_18 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(35 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_17);
 				NullCheck(L_18);
 				CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* L_19;
 				L_19 = AssemblyName_get_CultureInfo_m56A5F3AD50420B6D63300704C62BB174E26AC3B3_inline(L_18, NULL);

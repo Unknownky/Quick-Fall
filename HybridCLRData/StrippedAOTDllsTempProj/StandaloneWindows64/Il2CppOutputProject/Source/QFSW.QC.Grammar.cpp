@@ -1962,14 +1962,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorData__ctor_mA99223B536ACC8
 		MethodInfo_t* L_1 = ___OperatorMethod0;
 		NullCheck(L_1);
 		Type_t* L_2;
-		L_2 = VirtualFuncInvoker0< Type_t* >::Invoke(44 /* System.Type System.Reflection.MethodInfo::get_ReturnType() */, L_1);
+		L_2 = VirtualFuncInvoker0< Type_t* >::Invoke(63 /* System.Type System.Reflection.MethodInfo::get_ReturnType() */, L_1);
 		__this->___U3CRetU3Ek__BackingField_2 = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CRetU3Ek__BackingField_2), (void*)L_2);
 		// ParameterInfo[] paramData = _method.GetParameters();
 		MethodInfo_t* L_3 = __this->____method_3;
 		NullCheck(L_3);
 		ParameterInfoU5BU5D_t86995AB4A1693393FE29B058CC3FD727DF0B984C* L_4;
-		L_4 = VirtualFuncInvoker0< ParameterInfoU5BU5D_t86995AB4A1693393FE29B058CC3FD727DF0B984C* >::Invoke(15 /* System.Reflection.ParameterInfo[] System.Reflection.MethodBase::GetParameters() */, L_3);
+		L_4 = VirtualFuncInvoker0< ParameterInfoU5BU5D_t86995AB4A1693393FE29B058CC3FD727DF0B984C* >::Invoke(20 /* System.Reflection.ParameterInfo[] System.Reflection.MethodBase::GetParameters() */, L_3);
 		V_0 = L_4;
 		// LArg = paramData[0].ParameterType;
 		ParameterInfoU5BU5D_t86995AB4A1693393FE29B058CC3FD727DF0B984C* L_5 = V_0;
@@ -2773,7 +2773,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass13_0_U3CGetOperator
 		MethodInfo_t* L_0 = ___x0;
 		NullCheck(L_0);
 		Type_t* L_1;
-		L_1 = VirtualFuncInvoker0< Type_t* >::Invoke(44 /* System.Type System.Reflection.MethodInfo::get_ReturnType() */, L_0);
+		L_1 = VirtualFuncInvoker0< Type_t* >::Invoke(63 /* System.Type System.Reflection.MethodInfo::get_ReturnType() */, L_0);
 		Type_t* L_2 = __this->___type_1;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -2908,7 +2908,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CGetOperatorDataU3Eb__13_2_m97
 		MethodInfo_t* L_0 = ___x0;
 		NullCheck(L_0);
 		ParameterInfoU5BU5D_t86995AB4A1693393FE29B058CC3FD727DF0B984C* L_1;
-		L_1 = VirtualFuncInvoker0< ParameterInfoU5BU5D_t86995AB4A1693393FE29B058CC3FD727DF0B984C* >::Invoke(15 /* System.Reflection.ParameterInfo[] System.Reflection.MethodBase::GetParameters() */, L_0);
+		L_1 = VirtualFuncInvoker0< ParameterInfoU5BU5D_t86995AB4A1693393FE29B058CC3FD727DF0B984C* >::Invoke(20 /* System.Reflection.ParameterInfo[] System.Reflection.MethodBase::GetParameters() */, L_0);
 		NullCheck(L_1);
 		return (bool)((((int32_t)((int32_t)(((RuntimeArray*)L_1)->max_length))) == ((int32_t)2))? 1 : 0);
 	}

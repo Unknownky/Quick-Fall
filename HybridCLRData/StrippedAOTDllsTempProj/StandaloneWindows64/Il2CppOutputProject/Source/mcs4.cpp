@@ -18791,7 +18791,7 @@ IL_0153:
 		L_50 = VirtualFuncInvoker0< Assembly_t* >::Invoke(32 /* System.Reflection.Assembly System.Type::get_Assembly() */, L_49);
 		NullCheck(L_50);
 		String_t* L_51;
-		L_51 = VirtualFuncInvoker0< String_t* >::Invoke(12 /* System.String System.Reflection.Assembly::get_ImageRuntimeVersion() */, L_50);
+		L_51 = VirtualFuncInvoker0< String_t* >::Invoke(19 /* System.String System.Reflection.Assembly::get_ImageRuntimeVersion() */, L_50);
 		__this->___imageRuntimeVersion_20 = L_51;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___imageRuntimeVersion_20), (void*)L_51);
 	}

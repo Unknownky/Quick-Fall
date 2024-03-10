@@ -20106,7 +20106,7 @@ IL_0079:
 		L_16 = InterfaceFuncInvoker0< MethodBase_t* >::Invoke(0 /* System.Reflection.MethodBase Mono.CSharp.IMethodDefinition::get_Metadata() */, IMethodDefinition_tE70473945F13C91AD181B12771637A4D2F24288D_il2cpp_TypeInfo_var, L_15);
 		NullCheck(L_16);
 		RuntimeMethodHandle_tB35B96E97214DCBE20B0B02B1E687884B34680B2 L_17;
-		L_17 = VirtualFuncInvoker0< RuntimeMethodHandle_tB35B96E97214DCBE20B0B02B1E687884B34680B2 >::Invoke(36 /* System.RuntimeMethodHandle System.Reflection.MethodBase::get_MethodHandle() */, L_16);
+		L_17 = VirtualFuncInvoker0< RuntimeMethodHandle_tB35B96E97214DCBE20B0B02B1E687884B34680B2 >::Invoke(46 /* System.RuntimeMethodHandle System.Reflection.MethodBase::get_MethodHandle() */, L_16);
 		Type_t* L_18 = V_0;
 		NullCheck(L_18);
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_19;
@@ -20186,7 +20186,7 @@ IL_00f3:
 		TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* L_38 = V_1;
 		NullCheck(((MethodInfo_t*)CastclassClass((RuntimeObject*)L_37, MethodInfo_t_il2cpp_TypeInfo_var)));
 		MethodInfo_t* L_39;
-		L_39 = VirtualFuncInvoker1< MethodInfo_t*, TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* >::Invoke(46 /* System.Reflection.MethodInfo System.Reflection.MethodInfo::MakeGenericMethod(System.Type[]) */, ((MethodInfo_t*)CastclassClass((RuntimeObject*)L_37, MethodInfo_t_il2cpp_TypeInfo_var)), L_38);
+		L_39 = VirtualFuncInvoker1< MethodInfo_t*, TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* >::Invoke(65 /* System.Reflection.MethodInfo System.Reflection.MethodInfo::MakeGenericMethod(System.Type[]) */, ((MethodInfo_t*)CastclassClass((RuntimeObject*)L_37, MethodInfo_t_il2cpp_TypeInfo_var)), L_38);
 		__this->___inflatedMetaInfo_6 = L_39;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___inflatedMetaInfo_6), (void*)L_39);
 		int32_t L_40 = ((MemberSpec_t85B82DECA3D1EAB1C93F1200254FC070117981C8*)__this)->___state_2;

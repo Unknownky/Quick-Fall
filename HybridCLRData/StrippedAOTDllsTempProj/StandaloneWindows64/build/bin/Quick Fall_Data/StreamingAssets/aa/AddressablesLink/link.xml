@@ -36,6 +36,7 @@
     <type fullname="AssetBundleUpdate" preserve="all" />
     <type fullname="HotCommands" preserve="all" />
     <type fullname="PrintHello" preserve="all" />
+    <type fullname="Requester" preserve="all" />
   </assembly>
   <assembly fullname="QFSW.QC, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="QFSW.QC.QuantumConsole" preserve="all" />
@@ -53,8 +54,6 @@
   </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
-    <type fullname="UnityEngine.AddressableAssets.Initialization.CacheInitialization" preserve="all" />
-    <type fullname="UnityEngine.AddressableAssets.Initialization.CacheInitializationData" preserve="all" />
     <type fullname="UnityEngine.AddressableAssets.AssetLabelReference" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.AddressableAssets.AssetReference" preserve="nothing" serialized="true" />
   </assembly>

@@ -9195,13 +9195,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TypeSpec__cctor_mF90051643A39DFA0A00C2E7
 		Assembly_t* L_4 = V_0;
 		NullCheck(L_4);
 		Type_t* L_5;
-		L_5 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_4, _stringLiteralF9F58B04F38563C99B3F8B0BE099E6C17FAF7C2A);
+		L_5 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(33 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_4, _stringLiteralF9F58B04F38563C99B3F8B0BE099E6C17FAF7C2A);
 		((TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_StaticFields*)il2cpp_codegen_static_fields_for(TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_il2cpp_TypeInfo_var))->___TypeBuilder_12 = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&((TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_StaticFields*)il2cpp_codegen_static_fields_for(TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_il2cpp_TypeInfo_var))->___TypeBuilder_12), (void*)L_5);
 		Assembly_t* L_6 = V_0;
 		NullCheck(L_6);
 		Type_t* L_7;
-		L_7 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_6, _stringLiteralF2BA708F8516E185161BC668821048436E0D155C);
+		L_7 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(33 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_6, _stringLiteralF2BA708F8516E185161BC668821048436E0D155C);
 		((TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_StaticFields*)il2cpp_codegen_static_fields_for(TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_il2cpp_TypeInfo_var))->___GenericTypeBuilder_13 = L_7;
 		Il2CppCodeGenWriteBarrier((void**)(&((TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_StaticFields*)il2cpp_codegen_static_fields_for(TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_il2cpp_TypeInfo_var))->___GenericTypeBuilder_13), (void*)L_7);
 		Type_t* L_8 = ((TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_StaticFields*)il2cpp_codegen_static_fields_for(TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_il2cpp_TypeInfo_var))->___GenericTypeBuilder_13;
@@ -9214,7 +9214,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TypeSpec__cctor_mF90051643A39DFA0A00C2E7
 		Assembly_t* L_9 = V_0;
 		NullCheck(L_9);
 		Type_t* L_10;
-		L_10 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_9, _stringLiteral9A82CF83CF54C2CC1F39D72210571AF0B680154A);
+		L_10 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(33 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_9, _stringLiteral9A82CF83CF54C2CC1F39D72210571AF0B680154A);
 		((TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_StaticFields*)il2cpp_codegen_static_fields_for(TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_il2cpp_TypeInfo_var))->___GenericTypeBuilder_13 = L_10;
 		Il2CppCodeGenWriteBarrier((void**)(&((TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_StaticFields*)il2cpp_codegen_static_fields_for(TypeSpec_t59724C170F2A668BF7D43C0FDD932030AE0A5253_il2cpp_TypeInfo_var))->___GenericTypeBuilder_13), (void*)L_10);
 	}
@@ -27848,7 +27848,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoSymbolFile_tD256E431D52C008A280DC283B4B3F
 		Assembly_t* L_0 = ___assembly0;
 		NullCheck(L_0);
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(11 /* System.String System.Reflection.Assembly::get_Location() */, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(18 /* System.String System.Reflection.Assembly::get_Location() */, L_0);
 		String_t* L_2;
 		L_2 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_1, _stringLiteral735D34ECCFD36CD13646B05CC0169EB562A786BB, NULL);
 		Assembly_t* L_3 = ___assembly0;

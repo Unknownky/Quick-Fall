@@ -17427,7 +17427,7 @@ IL_0492:
 		FieldInfo_t* L_111 = (L_108)->GetAt(static_cast<il2cpp_array_size_t>(L_110));
 		NullCheck(L_111);
 		RuntimeObject* L_112;
-		L_112 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(27 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_111, __this);
+		L_112 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(38 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_111, __this);
 		NullCheck(((PredefinedAttribute_t706C927D9113A85C639FA69FEAD27F1CE988A64B*)CastclassClass((RuntimeObject*)L_112, PredefinedAttribute_t706C927D9113A85C639FA69FEAD27F1CE988A64B_il2cpp_TypeInfo_var)));
 		bool L_113;
 		L_113 = PredefinedType_Define_m936EA6BB9222CB60D0C535FA609355A91C88884D(((PredefinedAttribute_t706C927D9113A85C639FA69FEAD27F1CE988A64B*)CastclassClass((RuntimeObject*)L_112, PredefinedAttribute_t706C927D9113A85C639FA69FEAD27F1CE988A64B_il2cpp_TypeInfo_var)), NULL);
