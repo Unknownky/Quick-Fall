@@ -17,7 +17,7 @@ public class Apple : MonoBehaviour
         {
             GameManager.instance.AddFruitsCount("Apple", 1);
             collectedAnimator.Play("Collected_n");
-            AudioManager.instance.PlaySoundEffect("PickUpCoin");
+            AudioManager.PlaySoundEffect("PickUpCoin");
             gameObject.SetActive(false);
         }
     }

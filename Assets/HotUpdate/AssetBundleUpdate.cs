@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using QFSW.QC;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -24,6 +25,7 @@ public class AssetBundleUpdate : MonoBehaviour
 
     private long totalDownloadSize = 0;
 
+    private Assembly systemAssembly;
     private void Start()
     {
         Debug.Log("开始检查资源更新!!!");
@@ -35,9 +37,10 @@ public class AssetBundleUpdate : MonoBehaviour
         //然后询问用户是否下载
         //做到一起下载资源
         GetDownLoadSizeThenAskForDownLoad();
+        systemAssembly = Assembly.Load("Assembly-CSharp");
         LoadFastGetAssets();
     }
-    
+
 
     private void LoadFastGetAssets()
     {
@@ -120,7 +123,12 @@ public class AssetBundleUpdate : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Addressables.LoadSceneAsync("MainMenu");
+                //反射获取SceneLoader类型的instance字段，调用AddressablesLoadSceneSingle方法
+                Type type = systemAssembly.GetType("SceneLoader");
+                FieldInfo instanceField = type.GetField("instance");
+                object instance = instanceField.GetValue(null);
+                MethodInfo method = type.GetMethod("AddressablesLoadSceneSingle");
+                method.Invoke(instance, new object[] { "MainMenu" });
                 break;
             }
             yield return null;

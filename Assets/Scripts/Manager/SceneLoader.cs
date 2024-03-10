@@ -25,10 +25,10 @@ public class SceneLoader : MonoBehaviour
     [BoxGroup("Animation"), Required]
     public string outAnimationName;
 
-    [BoxGroup("ScenePropertied"), ShowInInspector, ReadOnly]
+    [BoxGroup("ScenePropertied"), ShowInInspector]
     public static string currentSceneName;
-    [BoxGroup("ScenePropertied"), ShowInInspector, ReadOnly]
-    public Action OnSceneLoadComplete; //场景加载完成的回调,用于其他类加载场景后方法的挂载调用
+    [BoxGroup("ScenePropertied"), ShowInInspector]
+    public static Action OnSceneLoadComplete; //场景加载完成的回调,用于其他类加载场景后方法的挂载调用
 
     public WaitUntil waitUntilInAnimationEnd;
     public WaitUntil waitUntilOutAnimationEnd;

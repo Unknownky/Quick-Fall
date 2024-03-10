@@ -59,16 +59,16 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     /// <param name="soundName"></param>
     /// <param name="volume"></param>
-    public void PlaySoundEffect(string soundName, float volume = 1)
+    public static void PlaySoundEffect(string soundName, float volume = 1)
     {
-        if (musicList != null && musicList.Count > 0)
+        if (instance.musicList != null && instance.musicList.Count > 0)
         {
-            AudioClip clip = musicList.Find(music => music.name == soundName);
+            AudioClip clip = instance.musicList.Find(music => music.name == soundName);
             if (clip != null)
             {
-                soundEffectAudioSource.clip = clip;
-                soundEffectAudioSource.volume = volume;
-                soundEffectAudioSource.PlayOneShot(clip);
+                instance.soundEffectAudioSource.clip = clip;
+                instance.soundEffectAudioSource.volume = volume;
+                instance.soundEffectAudioSource.PlayOneShot(clip);
             }
         }
     }
@@ -79,17 +79,17 @@ public class AudioManager : MonoBehaviour
     /// <param name="musicName">音乐名字</param>
     /// <param name="loop">是否循环播放</param>
     /// <param name="volume">音量大小</param>
-    public void PlayMusic(string musicName, bool loop = true, float volume = 1)
+    public static void PlayMusic(string musicName, bool loop = true, float volume = 1)
     {
-        if (musicList != null && musicList.Count > 0)
+        if (instance.musicList != null && instance.musicList.Count > 0)
         {
-            AudioClip clip = musicList.Find(music => music.name == musicName);
+            AudioClip clip = instance.musicList.Find(music => music.name == musicName);
             if (clip != null)
             {
-                musicAudioSource.clip = clip;
-                musicAudioSource.loop = loop;
-                musicAudioSource.volume = volume;
-                musicAudioSource.Play();
+                instance.musicAudioSource.clip = clip;
+                instance.musicAudioSource.loop = loop;
+                instance.musicAudioSource.volume = volume;
+                instance.musicAudioSource.Play();
             }
         }
     }

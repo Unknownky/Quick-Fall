@@ -20,8 +20,8 @@ public class Orange : MonoBehaviour
             GameManager.instance.AddFruitsCount("Orange", 1);
             collectedAnimator.Play("Collected_n");
             //播放拾取与无敌音效
-            AudioManager.instance.PlaySoundEffect("PickUpCoin");
-            AudioManager.instance.PlaySoundEffect("PowerUp");
+            AudioManager.PlaySoundEffect("PickUpCoin");
+            AudioManager.PlaySoundEffect("PowerUp");
             PlayerController.instance.PlayerMatchless(matchlessTime);
             gameObject.SetActive(false);
         }

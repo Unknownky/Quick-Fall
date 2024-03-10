@@ -10,12 +10,12 @@ using UnityEngine;
 /// </summary>
 public class Requester : MonoBehaviour
 {
-    [TabGroup("SystemProperties"), ShowInInspector, OnValueChanged("TestSceneMusic"), ReadOnly, InfoBox("当前场景名")]
+    [TabGroup("SystemProperties"), ShowInInspector, OnValueChanged("TestSceneMusic"), InfoBox("当前场景名")]
     private string currentSceneName;
 
     [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly, InfoBox("场景对应的音乐名")]
     private string sceneSwitchMusicName;
-
+    private Assembly systemAssembly;
     private Type sceneLoaderType;
 
     private Type audioManagerType;
@@ -23,13 +23,16 @@ public class Requester : MonoBehaviour
 
     private void Awake()
     {
-        sceneLoaderType = Type.GetType("SceneLoader");
-        audioManagerType = Type.GetType("AudioManager");
-        Debug.Log(sceneLoaderType.GetTypeInfo());
-        //通过反射获取SceneLoader的OnSceneLoadComplete委托字段并挂载一个方法
+        systemAssembly = Assembly.Load("Assembly-CSharp");  //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
+        //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
+        sceneLoaderType = systemAssembly.GetType("SceneLoader");  //Assembly.Load 方法会检查程序集是否已经加载。如果已经加载，它会返回已加载的程序集的引用，而不是再次加载它。
+        audioManagerType = systemAssembly.GetType("AudioManager");
+        Debug.Log(sceneLoaderType);
+        //通过反射获取SceneLoader的静态委托字段并添加一个方法
         var onSceneLoadComplete = sceneLoaderType.GetField("OnSceneLoadComplete");
-        onSceneLoadComplete.SetValue(null, new Action(OnSceneLoadComplete_Listener));
-
+        Debug.Log(onSceneLoadComplete);
+        onSceneLoadComplete.SetValue(null, (Action)OnSceneLoadComplete_Listener);
+    
     }
 
     ~Requester()
@@ -47,7 +50,7 @@ public class Requester : MonoBehaviour
         //通过反射获取AudioManager的PlayMusic方法
         SceneMusicSwitcher();
         var playMusicMethod = audioManagerType.GetMethod("PlayMusic");
-        playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName });
+        playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName, true, 1 });
     }
 
 
@@ -58,7 +61,7 @@ public class Requester : MonoBehaviour
     {
         switch (currentSceneName)
         {
-            case "MenuScene":
+            case "MainMenu":
                 sceneSwitchMusicName = "MenuMusic";
                 break;
             case "SampleScene":
@@ -73,11 +76,23 @@ public class Requester : MonoBehaviour
         }
     }
 
+    #region 公共方法
+    public void AddressablesLoadSceneSingle(string addressableSceneName)
+    {
+        //通过反射获取SceneLoader的instance调用AddressablesLoadSceneSingle方法
+        var instanceField = sceneLoaderType.GetField("instance");
+        var instance = instanceField.GetValue(null);
+        var method = sceneLoaderType.GetMethod("AddressablesLoadSceneSingle");
+        method.Invoke(instance, new object[] { addressableSceneName });
+    }
+
+    #endregion  
+
 
     private void TestSceneMusic()
     {
         SceneMusicSwitcher();
         var playMusicMethod = audioManagerType.GetMethod("PlayMusic");
-        playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName });
+        playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName,true,1 });
     }
 }
