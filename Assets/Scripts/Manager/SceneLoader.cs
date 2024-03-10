@@ -25,8 +25,14 @@ public class SceneLoader : MonoBehaviour
     [BoxGroup("Animation"), Required]
     public string outAnimationName;
 
+    [BoxGroup("ScenePropertied"), ShowInInspector, ReadOnly]
+    public static string currentSceneName;
+    [BoxGroup("ScenePropertied"), ShowInInspector, ReadOnly]
+    public Action OnSceneLoadComplete; //场景加载完成的回调,用于其他类加载场景后方法的挂载调用
+
     public WaitUntil waitUntilInAnimationEnd;
     public WaitUntil waitUntilOutAnimationEnd;
+
 
     public static SceneLoader instance;
 
@@ -74,6 +80,8 @@ public class SceneLoader : MonoBehaviour
         waitUntilOutAnimationEnd = new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
         yield return waitUntilOutAnimationEnd;
         yield return loadHandle;
+        StoreCurrentSceneName(addressableSceneName); //每次加载场景后存储加载后的场景名
+        OnSceneLoadComplete?.Invoke(); //场景加载完成后的回调
         //动画机回到初始状态
         animator.Play(originalAnimationName);
         Debug.Log($"加载场景{addressableSceneName}完成");
@@ -85,5 +93,10 @@ public class SceneLoader : MonoBehaviour
     public void UnLoadLoadedScene()
     {
         Addressables.UnloadSceneAsync(loadHandle);
+    }
+
+    private void StoreCurrentSceneName(string sceneName)
+    {
+        currentSceneName = sceneName;
     }
 }

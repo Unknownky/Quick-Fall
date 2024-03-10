@@ -113,6 +113,14 @@ MonoBehaviour:
     m_Address: Trampoline
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: a8e62b8f0fd6b2f479df424b27e4cc69
+    m_Address: MenuMusic
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d59e9da42857123458327723ae1fff48
+    m_Address: PlayMusic
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:
