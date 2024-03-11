@@ -6,26 +6,36 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 /// <summary>
-/// 请求者，利用反射机制来对一些管理类进行请求
+/// 请求者，利用反射机制来对一些管理类进行请求,Manager of Managers
 /// </summary>
 public class Requester : MonoBehaviour
 {
     [TabGroup("SystemProperties"), ShowInInspector, OnValueChanged("TestSceneMusic"), InfoBox("当前场景名")]
-    public string currentSceneName { get; private set;} //节约性能让其他热更新脚本直接获取
+    public string currentSceneName { get; private set; } //节约性能让其他热更新脚本直接获取
 
     [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly, InfoBox("场景对应的音乐名")]
     private string sceneSwitchMusicName;
-    public Assembly systemAssembly; //反射信息只在Requester中使用，其他类不使用，便于管理
-
+    [TabGroup("SystemProperties"), ShowInInspector, ReadOnly, InfoBox("系统程序集信息")]
+    private Assembly systemAssembly; //反射程序集信息只在Requester中使用，其他类不使用，便于管理
+    [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly, InfoBox("Requester单例")]
     public static Requester instance;
-    public Type sceneLoaderType; //反射只在Requester中使用，其他类不使用，便于管理
+    [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
+    private Type sceneLoaderType;
+    [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
+    private Type audioManagerType;
+    [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
+    private Type gameManagerType;
 
-    public Type audioManagerType; 
-
+    [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
+    private MethodInfo playSoundEffectMethod;
+    [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
+    private MethodInfo addressablesLoadSceneSingleMethod;
+    [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
+    private MethodInfo gameOverMethod;
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -34,16 +44,31 @@ public class Requester : MonoBehaviour
             Destroy(gameObject);
         }
         systemAssembly = Assembly.Load("Assembly-CSharp");  //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
-        //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
-        sceneLoaderType = systemAssembly.GetType("SceneLoader");  //Assembly.Load 方法会检查程序集是否已经加载。如果已经加载，它会返回已加载的程序集的引用，而不是再次加载它。
-        audioManagerType = systemAssembly.GetType("AudioManager");
-        Debug.Log(sceneLoaderType);
+        RegisterEssentialType();    //注册必要的类型
+        //通过反射获取常用的方法
+        RegisterMethodInfo();
         //通过反射获取SceneLoader的静态委托字段并添加一个方法
         var onSceneLoadComplete = sceneLoaderType.GetField("OnSceneLoadComplete");
         Debug.Log(onSceneLoadComplete);
         onSceneLoadComplete.SetValue(null, (Action)OnSceneLoadComplete_Listener);
-    
+
     }
+
+    private void RegisterEssentialType()
+    {
+        //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
+        sceneLoaderType = systemAssembly.GetType("SceneLoader");//Assembly.Load 方法会检查程序集是否已经加载。如果已经加载，它会返回已加载的程序集的引用，而不是再次加载它。
+        audioManagerType = systemAssembly.GetType("AudioManager");
+        gameManagerType = systemAssembly.GetType("GameManager");
+    }
+
+    private void RegisterMethodInfo()
+    {
+        playSoundEffectMethod = audioManagerType.GetMethod("PlaySoundEffect");
+        addressablesLoadSceneSingleMethod = sceneLoaderType.GetMethod("AddressablesLoadSceneSingle");
+        gameOverMethod = gameManagerType.GetMethod("GameOver");
+    }
+
 
     ~Requester()
     {
@@ -87,13 +112,34 @@ public class Requester : MonoBehaviour
     }
 
     #region 公共方法
+    /// <summary>
+    /// 单独加载场景，截取自SceneLoader
+    /// </summary>
+    /// <param name="addressableSceneName">场景名</param>
     public void AddressablesLoadSceneSingle(string addressableSceneName)
     {
         //通过反射获取SceneLoader的instance调用AddressablesLoadSceneSingle方法
         var instanceField = sceneLoaderType.GetField("instance");
         var instance = instanceField.GetValue(null);
-        var method = sceneLoaderType.GetMethod("AddressablesLoadSceneSingle");
-        method.Invoke(instance, new object[] { addressableSceneName });
+        addressablesLoadSceneSingleMethod.Invoke(instance, new object[] { addressableSceneName });
+    }
+
+    /// <summary>
+    /// 播放音效，截取自AudioManager
+    /// </summary>
+    /// <param name="soundName">音效名</param>
+    public void PlaySoundEffect(string soundName, float volume = 1f)
+    {
+        //通过反射获取AudioManager的PlaySoundEffect方法
+        playSoundEffectMethod.Invoke(null, new object[] { soundName, 1f });
+    }
+
+    /// <summary>
+    /// 游戏结束，截取自GameManager
+    /// </summary>
+    /// <param name="dead">角色是否死亡</param>
+    public void GameOver(bool dead){
+        gameOverMethod.Invoke(null, new object[] { dead });
     }
 
     #endregion  
@@ -103,6 +149,6 @@ public class Requester : MonoBehaviour
     {
         SceneMusicSwitcher();
         var playMusicMethod = audioManagerType.GetMethod("PlayMusic");
-        playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName,true,1 });
+        playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName, true, 1 });
     }
 }
