@@ -11,18 +11,28 @@ using UnityEngine;
 public class Requester : MonoBehaviour
 {
     [TabGroup("SystemProperties"), ShowInInspector, OnValueChanged("TestSceneMusic"), InfoBox("当前场景名")]
-    private string currentSceneName;
+    public string currentSceneName { get; private set;} //节约性能让其他热更新脚本直接获取
 
     [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly, InfoBox("场景对应的音乐名")]
     private string sceneSwitchMusicName;
-    private Assembly systemAssembly;
-    private Type sceneLoaderType;
+    public Assembly systemAssembly; //反射信息只在Requester中使用，其他类不使用，便于管理
 
-    private Type audioManagerType;
+    public static Requester instance;
+    public Type sceneLoaderType; //反射只在Requester中使用，其他类不使用，便于管理
+
+    public Type audioManagerType; 
 
 
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         systemAssembly = Assembly.Load("Assembly-CSharp");  //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
         //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
         sceneLoaderType = systemAssembly.GetType("SceneLoader");  //Assembly.Load 方法会检查程序集是否已经加载。如果已经加载，它会返回已加载的程序集的引用，而不是再次加载它。
