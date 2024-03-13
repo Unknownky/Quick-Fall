@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using QFSW.QC;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -21,11 +22,18 @@ public class AssetBundleUpdate : MonoBehaviour
 
     public List<IResourceLocation> resourceLocations; //保存资源位置，用于之后使用字典获取需要快速获取的资源
 
+    [TabGroup("UI"), SceneObjectsOnly, Required]
     public Text progressText;
+    [TabGroup("UI"), SceneObjectsOnly, Required]
+    public Text infoText;
+    [TabGroup("UI"), SceneObjectsOnly, Required]
+    public Slider progressBar;
 
     private long totalDownloadSize = 0;
 
     private Assembly systemAssembly;
+
+    AsyncOperationHandle downloadDependencyHandle;
     private void Start()
     {
         Debug.Log("开始检查资源更新!!!");
@@ -52,7 +60,7 @@ public class AssetBundleUpdate : MonoBehaviour
     {
         if (handle.Status == AsyncOperationStatus.Failed)
         {
-            progressText.text = "获取需要快速获取的资源失败，请检查网络连接,一秒后重试";
+            infoText.text = "获取需要快速获取的资源失败，请检查网络连接,一秒后重试";
             Debug.Log("获取需要快速获取的资源失败，请检查网络连接,一秒后重试");
             Invoke("LoadFastGetAssets", 1);
             return;
@@ -70,14 +78,15 @@ public class AssetBundleUpdate : MonoBehaviour
     {
         if (handle.Status == AsyncOperationStatus.Failed)
         {
-            progressText.text = "获取资源大小失败，一秒后重试，请检查网络连接";
+            infoText.text = "获取资源大小失败，一秒后重试，请检查网络连接";
             Debug.Log("获取资源大小失败，一秒后重试，请检查网络连接");
             Invoke("GetDownLoadSize", 1);
             return;
         }
         totalDownloadSize = handle.Result;
-        progressText.text = "需要下载的资源大小为：" + totalDownloadSize;
+
         Debug.Log("需要下载的资源大小为：" + totalDownloadSize);
+        infoText.text = "需要下载的资源大小为：" + totalDownloadSize + " bytes";
         //TODO:询问用户是否下载
         Debug.Log("同意下载");
         //开始下载资源
@@ -97,24 +106,13 @@ public class AssetBundleUpdate : MonoBehaviour
 
     private IEnumerator DownLoadAssetBundles()
     {
-        AsyncOperationHandle downloadHandle = Addressables.DownloadDependenciesAsync(assetBundleLables, Addressables.MergeMode.Union, false);
-        float progress = 0;
-        while (!downloadHandle.IsDone)
-        {
-            float percentageComplete = downloadHandle.GetDownloadStatus().Percent;
-            if (percentageComplete > progress * 1.01f) // Report at most every 10% or so
-            {
-                progress = percentageComplete; // More accurate %
-                progressText.text = $"下载进度: {progress * 100}%";
-                Debug.Log($"Download progress: {progress * 100}%");
-            }
-            yield return null;
-        }
-        yield return downloadHandle;
-        progressText.text = "资源加载完成:点击屏幕继续";
+        downloadDependencyHandle = Addressables.DownloadDependenciesAsync(assetBundleLables, Addressables.MergeMode.Union, false);
+        yield return downloadDependencyHandle;
+        infoText.text = "资源加载完成,点击屏幕进入游戏";
+
         StartCoroutine(WaitForClikLoadMainMenu());
         Debug.Log("资源下载完成");
-        Addressables.Release(downloadHandle);
+        Addressables.Release(downloadDependencyHandle);
     }
 
     IEnumerator WaitForClikLoadMainMenu()
@@ -133,5 +131,28 @@ public class AssetBundleUpdate : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    private void Update()
+    {
+        if (downloadDependencyHandle.IsValid())
+        {
+            if (downloadDependencyHandle.PercentComplete < 1)
+            {
+                UpdateProgressBar();
+            }
+        }
+        else
+        {
+            infoText.text = "资源加载完成,点击屏幕进入游戏";
+            progressText.text = "100%";
+            progressBar.value = 1;
+        }
+    }
+
+    void UpdateProgressBar()
+    {
+        progressText.text = Mathf.CeilToInt(downloadDependencyHandle.PercentComplete * 100f) + "%";
+        progressBar.value = downloadDependencyHandle.PercentComplete;
     }
 }
