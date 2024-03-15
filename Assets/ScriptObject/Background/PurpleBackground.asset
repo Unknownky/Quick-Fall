@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a1be989704e3d47b8065882b74d219, type: 3}
+  m_Name: PurpleBackground
+  m_EditorClassIdentifier: 
+  backgroundMaterialName: Background_purple
+  backgroundMaterial: {fileID: 2100000, guid: b97f368387a7d0f45bf452179b4d23b3, type: 2}
+  backgroundDescription: "\u7EFF\u7684\u53D1\u7D2B"

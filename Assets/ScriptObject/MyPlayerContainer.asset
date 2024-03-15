@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75fd1d2a0f6db4499337a3290b15213, type: 3}
+  m_Name: MyPlayerContainer
+  m_EditorClassIdentifier: 
+  playerName: BuZhiDao
+  backgroundsPossesion:
+  - {fileID: 11400000, guid: bf991a3a3aac6044c81f208c1e2683fb, type: 2}
+  playerAniControllersPossesion:
+  - {fileID: 11400000, guid: 884b1c90e413b204a9aff832ff7aa9d8, type: 2}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c2bcc43309b9347b4287e91bc22e62, type: 3}
+  m_Name: PinkPlayerAniController
+  m_EditorClassIdentifier: 
+  playerAniName: PinkPlayer
+  variablePlayerAniController: 1
+  playerAnimatorController: {fileID: 9100000, guid: eabad7f262c215244a26cf0e64533095, type: 2}
+  playerAnimatorOverrideController: {fileID: 22100000, guid: 458c41808431a9346b1508e981a8f7f8, type: 2}
+  playerAniDescription: "\u7C89\u7EA2\u6D3E\u5927\u661F"
