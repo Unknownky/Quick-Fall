@@ -584,6 +584,7 @@ MonoBehaviour:
   - m_LabelString: aot
   - m_LabelString: Scene
   - m_LabelString: Objects
+  - m_LabelString: Folder
   assetLabelForFastGet:
     m_LabelString: 
   progressText: {fileID: 1099079808}

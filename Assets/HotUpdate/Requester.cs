@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using Sirenix.OdinInspector;
+using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 /// <summary>
 /// 请求者，利用反射机制来对一些管理类进行请求,Manager of Managers
@@ -32,6 +35,18 @@ public class Requester : MonoBehaviour
     private MethodInfo addressablesLoadSceneSingleMethod;
     [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
     private MethodInfo gameOverMethod;
+
+    [BoxGroup("背包"), ReadOnly, ShowInInspector]
+    private string currentPlayerAniControllerName => ContainerManager.instance.currentPlayerAniControllerName;
+
+    [BoxGroup("背包"), ReadOnly, ShowInInspector]
+    private string currentBackgroundName => ContainerManager.instance.currentBackgroundName;
+
+    [BoxGroup("背包 "), ShowInInspector, Required, InfoBox("可寻址的动画控制器总文件夹")]
+    private string addressableAnimatorControllerFolderName = "Player"; // 可寻址的动画控制器总文件夹
+
+    [BoxGroup("背包 "), ShowInInspector, Required, InfoBox("可寻址的背景总文件夹")]
+    private string addressableBackgroundFolderName = "Background"; // 可寻址的背景材质总文件夹
 
     private void Awake()
     {
@@ -138,12 +153,41 @@ public class Requester : MonoBehaviour
     /// 游戏结束，截取自GameManager
     /// </summary>
     /// <param name="dead">角色是否死亡</param>
-    public void GameOver(bool dead){
+    public void GameOver(bool dead)
+    {
         gameOverMethod.Invoke(null, new object[] { dead });
+    }
+
+
+    /// <summary>
+    /// 请求动画控制器
+    /// </summary>
+    /// <returns>角色控制器句柄</returns>
+    public AsyncOperationHandle RequestAniController()
+    {
+        string path;
+        if (currentPlayerAniControllerName == "FogPlayer")
+            path = addressableAnimatorControllerFolderName + "/" + currentPlayerAniControllerName + "/" + currentPlayerAniControllerName + ".controller";
+        else
+            path = addressableAnimatorControllerFolderName + "/" + currentPlayerAniControllerName + "/" + currentPlayerAniControllerName + ".overrideController";
+        return Addressables.LoadAssetAsync<RuntimeAnimatorController>(path);
+    }
+
+    /// <summary>
+    /// 请求背景材质
+    /// </summary>
+    /// <returns>背景材质句柄</returns>
+    public AsyncOperationHandle RequestBackground()
+    {
+        string path = addressableBackgroundFolderName + "/" + currentBackgroundName + ".mat";
+        return Addressables.LoadAssetAsync<Material>(path);
     }
 
     #endregion  
 
+    #region 帮助函数
+
+    #endregion
 
     private void TestSceneMusic()
     {

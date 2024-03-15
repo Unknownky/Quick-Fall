@@ -48,15 +48,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Objects
-  - m_GUID: 4a623451529bba94d979288d4ef27a8f
-    m_Address: Materials
+  - m_GUID: 3429ec96b43810a4fa25cf2693fa7ca5
+    m_Address: Background
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Objects
+    - Folder
   - m_GUID: 4b1bbbafbd60f6048aed3569c3e4e0bb
     m_Address: Player
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Folder
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:
