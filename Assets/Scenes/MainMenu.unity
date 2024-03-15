@@ -244,7 +244,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 222944266}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8250499278379268918, guid: 6224c91d543af1e4e91b60d9dd82b808, type: 3}
+        m_TargetAssemblyTypeName: Requester, HotUpdate
+        m_MethodName: AddressablesLoadSceneSingle
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TeachScene
+          m_BoolArgument: 0
+        m_CallState: 2
   isScale: 1
   scaleValue: 1.1
   duration: 0.2

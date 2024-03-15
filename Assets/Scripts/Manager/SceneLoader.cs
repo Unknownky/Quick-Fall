@@ -46,7 +46,8 @@ public class SceneLoader : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        instance = this;
+        else
+            instance = this;
         curtain.SetActive(true);
         animator = curtain.GetComponent<Animator>();
     }

@@ -6,12 +6,12 @@ public class ContainerManager : MonoBehaviour
     public static ContainerManager instance;
 
     [BoxGroup("背包"), ReadOnly, InfoBox("当前玩家动画控制器名字")]
-    public string currentPlayerAniControllerName => playerContainer.euipedPlayerAniController.name;
+    public string currentPlayerAniControllerName => playerContainer.euipedPlayerAniController.playerAniName;
     [BoxGroup("背包"), ReadOnly, InfoBox("当前背景名字")]
-    public string currentBackgroundName => playerContainer.euipedBackground.name;
+    public string currentBackgroundName => playerContainer.euipedBackground.backgroundMaterialName;
 
     [BoxGroup("背包"), ShowInInspector, Required, InfoBox("玩家背包"), InlineEditor(InlineEditorModes.GUIOnly)]
-    public PlayerContainer playerContainer { private set;  get; }
+    public PlayerContainer playerContainer;
 
     private void Awake()
     {

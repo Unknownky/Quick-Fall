@@ -133,9 +133,9 @@ public class Requester : MonoBehaviour
     public void AddressablesLoadSceneSingle(string addressableSceneName)
     {
         //通过反射获取SceneLoader的instance调用AddressablesLoadSceneSingle方法
-        var instanceField = sceneLoaderType.GetField("instance");
-        var instance = instanceField.GetValue(null);
-        addressablesLoadSceneSingleMethod.Invoke(instance, new object[] { addressableSceneName });
+        var instanceField = instance.sceneLoaderType.GetField("instance");
+        var instanceScene = instanceField.GetValue(null);
+        instance.addressablesLoadSceneSingleMethod.Invoke(instanceScene, new object[] { addressableSceneName });
     }
 
     /// <summary>
@@ -169,6 +169,7 @@ public class Requester : MonoBehaviour
             path = addressableAnimatorControllerFolderName + "/" + currentPlayerAniControllerName + "/" + currentPlayerAniControllerName + ".controller";
         else
             path = addressableAnimatorControllerFolderName + "/" + currentPlayerAniControllerName + "/" + currentPlayerAniControllerName + ".overrideController";
+        Debug.Log(path);
         return Addressables.LoadAssetAsync<RuntimeAnimatorController>(path);
     }
 
@@ -179,6 +180,7 @@ public class Requester : MonoBehaviour
     public AsyncOperationHandle RequestBackground()
     {
         string path = addressableBackgroundFolderName + "/" + currentBackgroundName + ".mat";
+        Debug.Log(path);
         return Addressables.LoadAssetAsync<Material>(path);
     }
 

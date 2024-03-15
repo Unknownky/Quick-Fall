@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Mono.Cecil.Cil;
 using Sirenix.OdinInspector;
-using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = ("Container/newPlayerAniController"), fileName = ("NewPlayerAniController"))]
@@ -14,7 +13,7 @@ public class PlayerAniController : ScriptableObject
     public bool variablePlayerAniController;
 
     [BoxGroup("玩家动画控制器"), SerializeField, HideIf("variablePlayerAniController")]
-    public AnimatorController playerAnimatorController;
+    public RuntimeAnimatorController playerAnimatorController;
 
     [BoxGroup("玩家动画控制器"), SerializeField, ShowIf("variablePlayerAniController")]
     public AnimatorOverrideController playerAnimatorOverrideController;
