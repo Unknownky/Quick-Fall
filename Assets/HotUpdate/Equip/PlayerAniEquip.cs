@@ -1,36 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerAniEquip : MonoBehaviour
 {
     Animator playerAnimator;
 
-    [BoxGroup("动画控制器")]
-    private string animatorControlerFolderName = "Player"; // 动画控制器文件夹名字
+    AsyncOperationHandle playerAniControllerHandle;
 
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
     }
 
-    /// <summary>
-    /// 设置动画控制器
-    /// </summary>
-    /// <param name="addressableAniController">动画控制机的名字</param>
-    public void SetAniControllerEquip(string addressableAniController)
+    private void Start()
     {
-        string aniControllerPath;
-        if(addressableAniController == "FogPlayer")
-            aniControllerPath = animatorControlerFolderName + "/" + addressableAniController + "/" + addressableAniController + ".controller";
-        else
-            aniControllerPath = animatorControlerFolderName + "/" + addressableAniController + "/" + addressableAniController + ".overrideController";
-        Addressables.LoadAssetAsync<RuntimeAnimatorController>(addressableAniController).Completed += (handle) =>
+        playerAniControllerHandle = Requester.instance.RequestAniController();
+        playerAniControllerHandle.Completed += OnPlayerAniControllerLoaded;
+    }
+
+    private void OnPlayerAniControllerLoaded(AsyncOperationHandle handle)
+    {
+        if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            playerAnimator.runtimeAnimatorController = handle.Result;
-        };
+            playerAnimator.runtimeAnimatorController = handle.Result as RuntimeAnimatorController;
+        }
+        else
+        {
+            Debug.LogError("玩家动画控制器加载失败");
+        }
     }
 }

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using Sirenix.OdinInspector;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -36,10 +35,10 @@ public class Requester : MonoBehaviour
     [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
     private MethodInfo gameOverMethod;
 
-    [BoxGroup("背包"), ReadOnly, ShowInInspector]
+    [BoxGroup("背包"), ReadOnly]
     private string currentPlayerAniControllerName => ContainerManager.instance.currentPlayerAniControllerName;
 
-    [BoxGroup("背包"), ReadOnly, ShowInInspector]
+    [BoxGroup("背包"), ReadOnly]
     private string currentBackgroundName => ContainerManager.instance.currentBackgroundName;
 
     [BoxGroup("背包 "), ShowInInspector, Required, InfoBox("可寻址的动画控制器总文件夹")]

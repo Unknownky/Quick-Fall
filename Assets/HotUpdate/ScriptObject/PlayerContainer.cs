@@ -8,8 +8,13 @@ public class PlayerContainer : ScriptableObject
 {
     [BoxGroup("玩家名字")]
     public string playerName;
-    [BoxGroup("玩家拥有的背景"), ShowInInspector, InlineEditor(InlineEditorModes.GUIOnly)]
+    [BoxGroup("当前装备"),InlineEditor(InlineEditorModes.GUIOnly)]
+    public Background euipedBackground;
+    [BoxGroup("当前装备"),InlineEditor(InlineEditorModes.GUIOnly)]
+    public PlayerAniController euipedPlayerAniController;
+
+    [TabGroup("玩家拥有的背景"), ShowInInspector, InlineEditor(InlineEditorModes.GUIOnly)]
     public List<Background> backgroundsPossesion;
-    [BoxGroup("玩家拥有的动画"), ShowInInspector, InlineEditor(InlineEditorModes.GUIOnly)]
+    [TabGroup("玩家拥有的动画"), ShowInInspector, InlineEditor(InlineEditorModes.GUIOnly)]
     public List<PlayerAniController> playerAniControllersPossesion;
 }
