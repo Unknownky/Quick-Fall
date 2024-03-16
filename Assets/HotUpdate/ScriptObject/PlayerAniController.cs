@@ -17,7 +17,8 @@ public class PlayerAniController : ScriptableObject
 
     [BoxGroup("玩家动画控制器"), SerializeField, ShowIf("variablePlayerAniController")]
     public AnimatorOverrideController playerAnimatorOverrideController;
-
+    [BoxGroup("玩家动画图片")]
+    public Texture playerAniControllerSprite;
     [BoxGroup("玩家动画描述"), Multiline(5)]
     public string playerAniDescription;
 }

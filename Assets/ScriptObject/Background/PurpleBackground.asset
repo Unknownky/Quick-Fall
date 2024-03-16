@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundMaterialName: Background_purple
   backgroundMaterial: {fileID: 2100000, guid: b97f368387a7d0f45bf452179b4d23b3, type: 2}
+  backgroundSprite: {fileID: 2800000, guid: 248611cc7bb8d85448933cee393ce41e, type: 3}
   backgroundDescription: "\u7EFF\u7684\u53D1\u7D2B"

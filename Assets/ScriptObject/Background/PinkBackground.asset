@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundMaterialName: Background_pink
   backgroundMaterial: {fileID: 2100000, guid: fa9b1bef1629e9c49bbb922db0c5652e, type: 2}
+  backgroundSprite: {fileID: 2800000, guid: 348c3b734b11d3b4aa5c69e25b7113e6, type: 3}
   backgroundDescription: "\u7C89\u5F64\u5F64"
