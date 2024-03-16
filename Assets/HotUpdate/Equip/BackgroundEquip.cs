@@ -13,6 +13,8 @@ public class BackgroundEquip : MonoBehaviour
 
     private AsyncOperationHandle backgroundMaterialHandle;
 
+    public Action afterBackgroundMaterialLoaded;
+
     private void Awake() {
         backgroundRenderer = GetComponent<MeshRenderer>();
     }
@@ -28,6 +30,7 @@ public class BackgroundEquip : MonoBehaviour
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {
             backgroundRenderer.material = handle.Result as Material;
+            afterBackgroundMaterialLoaded?.Invoke();
         }
         else
         {

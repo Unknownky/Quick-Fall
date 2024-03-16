@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MyPlayerContainer
   m_EditorClassIdentifier: 
   playerName: BuZhiDao
-  euipedBackground: {fileID: 0}
-  euipedPlayerAniController: {fileID: 0}
+  euipedBackground: {fileID: 11400000, guid: f9164dd903eb717419e41c8db8752798, type: 2}
+  euipedPlayerAniController: {fileID: 11400000, guid: fef0e497b8ef23b4f8e43ef61b85e740, type: 2}
   backgroundsPossesion:
   - {fileID: 11400000, guid: eb4f39fc6530ebf4492cdc780f6330a8, type: 2}
   - {fileID: 11400000, guid: bf991a3a3aac6044c81f208c1e2683fb, type: 2}
