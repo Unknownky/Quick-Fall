@@ -1,6 +1,10 @@
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+/// <summary>
+/// 该脚本借助PlayerContainer背包数据来应用装备到游戏中，其中的背景和动画控制器由对应的装备器来装备，请求全部向Requester请求
+/// </summary>
 public class ContainerManager : MonoBehaviour
 {
     public static ContainerManager instance;
@@ -47,5 +51,17 @@ public class ContainerManager : MonoBehaviour
         playerContainer.euipedPlayerAniController = playerAniController;
     }
 
+    public void UpdateFruitsPossesion(string fruitName, int fruitCount)
+    {
+        if (playerContainer.fruitsPossesion.ContainsKey(fruitName))
+        {
+            playerContainer.fruitsPossesion[fruitName] += fruitCount;
+        }
+        else
+        {
+            playerContainer.fruitsPossesion.Add(fruitName, fruitCount);
+        }
+        Debug.Log("更新果实信息" + fruitName + " " + playerContainer.fruitsPossesion[fruitName]);
+    }
     #endregion
 }

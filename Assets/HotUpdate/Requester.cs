@@ -34,6 +34,8 @@ public class Requester : MonoBehaviour
     private MethodInfo addressablesLoadSceneSingleMethod;
     [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
     private MethodInfo gameOverMethod;
+    [TabGroup("RequesterProperties"), ShowInInspector, ReadOnly]
+    public Action OnGameOverForRequester; //游戏结束的委托,由GameManager的GameOver方法调用，由Requester注册方法
 
     [BoxGroup("背包"), ReadOnly]
     private string currentPlayerAniControllerName => ContainerManager.instance.currentPlayerAniControllerName;
@@ -61,139 +63,154 @@ public class Requester : MonoBehaviour
         RegisterEssentialType();    //注册必要的类型
         //通过反射获取常用的方法
         RegisterMethodInfo();
+
         //通过反射获取SceneLoader的静态委托字段并添加一个方法
         var onSceneLoadComplete = sceneLoaderType.GetField("OnSceneLoadComplete");
         Debug.Log(onSceneLoadComplete);
         onSceneLoadComplete.SetValue(null, (Action)OnSceneLoadComplete_Listener);
 
+        //注册游戏结束的委托
+        OnGameOverForRequester += StoreFruitsInfo;
     }
 
-    private void RegisterEssentialType()
+    private void StoreFruitsInfo()
     {
-        //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
-        sceneLoaderType = systemAssembly.GetType("SceneLoader");//Assembly.Load 方法会检查程序集是否已经加载。如果已经加载，它会返回已加载的程序集的引用，而不是再次加载它。
-        audioManagerType = systemAssembly.GetType("AudioManager");
-        gameManagerType = systemAssembly.GetType("GameManager");
-    }
-
-    private void RegisterMethodInfo()
-    {
-        playSoundEffectMethod = audioManagerType.GetMethod("PlaySoundEffect");
-        addressablesLoadSceneSingleMethod = sceneLoaderType.GetMethod("AddressablesLoadSceneSingle");
-        gameOverMethod = gameManagerType.GetMethod("GameOver");
-    }
-
-
-    ~Requester()
-    {
-        //通过反射获取SceneLoader的OnSceneLoadComplete委托字段并移除一个方法
-        var onSceneLoadComplete = sceneLoaderType.GetField("OnSceneLoadComplete");
-        onSceneLoadComplete.SetValue(null, null);
-    }
-
-    private void OnSceneLoadComplete_Listener()
-    {
-        //通过反射获取SceneLoader的currentSceneName字段
-        var currentSceneNameField = sceneLoaderType.GetField("currentSceneName");
-        currentSceneName = (string)currentSceneNameField.GetValue(null);
-        //通过反射获取AudioManager的PlayMusic方法
-        SceneMusicSwitcher();
-        var playMusicMethod = audioManagerType.GetMethod("PlayMusic");
-        playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName, true, 1 });
-    }
-
-
-    /// <summary>
-    /// 根据currentSceneName匹配音乐名
-    /// </summary>
-    private void SceneMusicSwitcher()
-    {
-        switch (currentSceneName)
+        //当前果实情况,在游戏结束时获取GameManager的fruits信息并更新
+        //通过反射获取GameManager的instance字段的fruits，然后将对应的值加入到fruitsTotal中
+        var instanceField = gameManagerType.GetField("instance");
+        var instance = instanceField.GetValue(null);
+        var fruits = (Dictionary<string, int>)instanceField.FieldType.GetField("fruits").GetValue(instance);    //获取GameManager的fruits
+        foreach (var fruit in fruits)
         {
-            case "MainMenu":
-                sceneSwitchMusicName = "MenuMusic";
-                break;
-            case "SampleScene":
-                sceneSwitchMusicName = "PlayMusic";
-                break;
-            case "TeachMenu":
-                sceneSwitchMusicName = "MenuMusic";
-                break;
-            default:
-                sceneSwitchMusicName = "MenuMusic";
-                break;
+            //TODO:通过ContainerManager的方法更新果实信息
+            ContainerManager.instance.UpdateFruitsPossesion(fruit.Key, fruit.Value);
         }
     }
 
-    #region 公共方法
-    /// <summary>
-    /// 单独加载场景，截取自SceneLoader
-    /// </summary>
-    /// <param name="addressableSceneName">场景名</param>
-    public void AddressablesLoadSceneSingle(string addressableSceneName)
+        private void RegisterEssentialType()
+        {
+            //通过反射从先前已经加载了的Assembly-CSharp程序集中获取SceneLoader和AudioManager的Type
+            sceneLoaderType = systemAssembly.GetType("SceneLoader");//Assembly.Load 方法会检查程序集是否已经加载。如果已经加载，它会返回已加载的程序集的引用，而不是再次加载它。
+            audioManagerType = systemAssembly.GetType("AudioManager");
+            gameManagerType = systemAssembly.GetType("GameManager");
+        }
+
+        private void RegisterMethodInfo()
+        {
+            playSoundEffectMethod = audioManagerType.GetMethod("PlaySoundEffect");
+            addressablesLoadSceneSingleMethod = sceneLoaderType.GetMethod("AddressablesLoadSceneSingle");
+            gameOverMethod = gameManagerType.GetMethod("GameOver");
+        }
+
+
+        ~Requester()
     {
-        //通过反射获取SceneLoader的instance调用AddressablesLoadSceneSingle方法
-        var instanceField = instance.sceneLoaderType.GetField("instance");
-        var instanceScene = instanceField.GetValue(null);
-        instance.addressablesLoadSceneSingleMethod.Invoke(instanceScene, new object[] { addressableSceneName });
+            //通过反射获取SceneLoader的OnSceneLoadComplete委托字段并移除一个方法
+            var onSceneLoadComplete = sceneLoaderType.GetField("OnSceneLoadComplete");
+            onSceneLoadComplete.SetValue(null, null);
+            OnGameOverForRequester -= StoreFruitsInfo; //移除游戏结束的委托
+        }
+
+        private void OnSceneLoadComplete_Listener()
+        {
+            //通过反射获取SceneLoader的currentSceneName字段
+            var currentSceneNameField = sceneLoaderType.GetField("currentSceneName");
+            currentSceneName = (string)currentSceneNameField.GetValue(null);
+            //通过反射获取AudioManager的PlayMusic方法
+            SceneMusicSwitcher();
+            var playMusicMethod = audioManagerType.GetMethod("PlayMusic");
+            playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName, true, 1 });
+        }
+
+
+        /// <summary>
+        /// 根据currentSceneName匹配音乐名
+        /// </summary>
+        private void SceneMusicSwitcher()
+        {
+            switch (currentSceneName)
+            {
+                case "MainMenu":
+                    sceneSwitchMusicName = "MenuMusic";
+                    break;
+                case "SampleScene":
+                    sceneSwitchMusicName = "PlayMusic";
+                    break;
+                case "TeachMenu":
+                    sceneSwitchMusicName = "MenuMusic";
+                    break;
+                default:
+                    sceneSwitchMusicName = "MenuMusic";
+                    break;
+            }
+        }
+
+        #region 公共方法
+        /// <summary>
+        /// 单独加载场景，截取自SceneLoader
+        /// </summary>
+        /// <param name="addressableSceneName">场景名</param>
+        public void AddressablesLoadSceneSingle(string addressableSceneName)
+        {
+            //通过反射获取SceneLoader的instance调用AddressablesLoadSceneSingle方法
+            var instanceField = instance.sceneLoaderType.GetField("instance");
+            var instanceScene = instanceField.GetValue(null);
+            instance.addressablesLoadSceneSingleMethod.Invoke(instanceScene, new object[] { addressableSceneName });
+        }
+
+        /// <summary>
+        /// 播放音效，截取自AudioManager
+        /// </summary>
+        /// <param name="soundName">音效名</param>
+        public void PlaySoundEffect(string soundName, float volume = 1f)
+        {
+            //通过反射获取AudioManager的PlaySoundEffect方法
+            playSoundEffectMethod.Invoke(null, new object[] { soundName, 1f });
+        }
+
+        /// <summary>
+        /// 游戏结束，截取自GameManager
+        /// </summary>
+        /// <param name="dead">角色是否死亡</param>
+        public void GameOver(bool dead)
+        {
+            gameOverMethod.Invoke(null, new object[] { dead });
+        }
+
+
+        /// <summary>
+        /// 请求动画控制器
+        /// </summary>
+        /// <returns>角色控制器句柄</returns>
+        public AsyncOperationHandle RequestAniController()
+        {
+            string path;
+            if (currentPlayerAniControllerName == "FogPlayer")
+                path = addressableAnimatorControllerFolderName + "/" + currentPlayerAniControllerName + "/" + currentPlayerAniControllerName + ".controller";
+            else
+                path = addressableAnimatorControllerFolderName + "/" + currentPlayerAniControllerName + "/" + currentPlayerAniControllerName + ".overrideController";
+            Debug.Log(path);
+            return Addressables.LoadAssetAsync<RuntimeAnimatorController>(path);
+        }
+
+        /// <summary>
+        /// 请求背景材质
+        /// </summary>
+        /// <returns>背景材质句柄</returns>
+        public AsyncOperationHandle RequestBackground()
+        {
+            string path = addressableBackgroundFolderName + "/" + currentBackgroundName + ".mat";
+            Debug.Log(path);
+            return Addressables.LoadAssetAsync<Material>(path);
+        }
+
+        #endregion
+
+
+        private void TestSceneMusic()
+        {
+            SceneMusicSwitcher();
+            var playMusicMethod = audioManagerType.GetMethod("PlayMusic");
+            playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName, true, 1 });
+        }
     }
-
-    /// <summary>
-    /// 播放音效，截取自AudioManager
-    /// </summary>
-    /// <param name="soundName">音效名</param>
-    public void PlaySoundEffect(string soundName, float volume = 1f)
-    {
-        //通过反射获取AudioManager的PlaySoundEffect方法
-        playSoundEffectMethod.Invoke(null, new object[] { soundName, 1f });
-    }
-
-    /// <summary>
-    /// 游戏结束，截取自GameManager
-    /// </summary>
-    /// <param name="dead">角色是否死亡</param>
-    public void GameOver(bool dead)
-    {
-        gameOverMethod.Invoke(null, new object[] { dead });
-    }
-
-
-    /// <summary>
-    /// 请求动画控制器
-    /// </summary>
-    /// <returns>角色控制器句柄</returns>
-    public AsyncOperationHandle RequestAniController()
-    {
-        string path;
-        if (currentPlayerAniControllerName == "FogPlayer")
-            path = addressableAnimatorControllerFolderName + "/" + currentPlayerAniControllerName + "/" + currentPlayerAniControllerName + ".controller";
-        else
-            path = addressableAnimatorControllerFolderName + "/" + currentPlayerAniControllerName + "/" + currentPlayerAniControllerName + ".overrideController";
-        Debug.Log(path);
-        return Addressables.LoadAssetAsync<RuntimeAnimatorController>(path);
-    }
-
-    /// <summary>
-    /// 请求背景材质
-    /// </summary>
-    /// <returns>背景材质句柄</returns>
-    public AsyncOperationHandle RequestBackground()
-    {
-        string path = addressableBackgroundFolderName + "/" + currentBackgroundName + ".mat";
-        Debug.Log(path);
-        return Addressables.LoadAssetAsync<Material>(path);
-    }
-
-    #endregion  
-
-    #region 帮助函数
-
-    #endregion
-
-    private void TestSceneMusic()
-    {
-        SceneMusicSwitcher();
-        var playMusicMethod = audioManagerType.GetMethod("PlayMusic");
-        playMusicMethod.Invoke(null, new object[] { sceneSwitchMusicName, true, 1 });
-    }
-}

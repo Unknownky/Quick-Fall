@@ -5,6 +5,9 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 该脚本只管理栏位的显示和背包选中物体的操作， 然后通过ContainerManager来应用装备到游戏中
+/// </summary>
 public class SlotManager : MonoBehaviour
 {
     public static SlotManager instance;
@@ -73,11 +76,19 @@ public class SlotManager : MonoBehaviour
         selectedScriptableObject = scriptableObject;
         if (scriptableObject is Background)
         {
-            playerContainer.euipedBackground = scriptableObject as Background;
+            #if !UNITY_EDITOR
+            ContainerManager.instance.EquipBackground(scriptableObject as Background); //游玩时装备背景
+            #else
+            playerContainer.euipedBackground = scriptableObject as Background; //编辑器模式下装备背景
+            #endif
         }
         else if (scriptableObject is PlayerAniController)
         {
+            #if !UNITY_EDITOR
+            ContainerManager.instance.EquipPlayerAniController(scriptableObject as PlayerAniController);
+            #else
             playerContainer.euipedPlayerAniController = scriptableObject as PlayerAniController;
+            #endif
         }
     }
     #endregion

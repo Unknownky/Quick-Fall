@@ -13,6 +13,9 @@ public class PlayerContainer : ScriptableObject
     [BoxGroup("当前装备"),InlineEditor(InlineEditorModes.GUIOnly)]
     public PlayerAniController euipedPlayerAniController;
 
+    [BoxGroup("玩家的果实"), ShowInInspector]
+    public Dictionary<string, int> fruitsPossesion = new Dictionary<string, int>();
+
     [TabGroup("玩家拥有的背景"), ShowInInspector, InlineEditor(InlineEditorModes.GUIOnly)]
     public List<Background> backgroundsPossesion;
     [TabGroup("玩家拥有的动画"), ShowInInspector, InlineEditor(InlineEditorModes.GUIOnly)]
