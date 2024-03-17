@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [BoxGroup("栏位"), LabelText("当前栏位的物体")]
     public ScriptableObject scriptableObjectOnSlot;
@@ -30,37 +28,29 @@ public class Slot : MonoBehaviour
             slotImage.color = new Color(slotImage.color.r, slotImage.color.g, slotImage.color.b, 1);
     }
 
-    /// <summary>
-    /// 鼠标点击时
-    /// </summary>
-    private void OnMouseDown()
+
+    public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("鼠标点击");
         if (scriptableObjectOnSlot != null)
             OnSlotSelected();
     }
 
-
-    /// <summary>
-    /// 鼠标进入时
-    /// </summary>
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("鼠标进入");
         if (scriptableObjectOnSlot != null)
         {
             SlotManager.instance.bagInfoPanel.SetActive(true);
-            if(scriptableObjectOnSlot is Background)
-                SlotManager.instance.bagInfoPanel.GetComponent<Text>().text = (scriptableObjectOnSlot as Background).backgroundDescription;
-            else if(scriptableObjectOnSlot is PlayerAniController)
-                SlotManager.instance.bagInfoPanel.GetComponent<Text>().text = (scriptableObjectOnSlot as PlayerAniController).playerAniDescription;
+            if (scriptableObjectOnSlot is Background)
+                SlotManager.instance.bagInfoText.text = (scriptableObjectOnSlot as Background).backgroundDescription;
+            else if (scriptableObjectOnSlot is PlayerAniController)
+                SlotManager.instance.bagInfoText.text = (scriptableObjectOnSlot as PlayerAniController).playerAniDescription;
         }
     }
 
-    /// <summary>
-    /// 鼠标离开时
-    /// </summary>
-    private void OnMouseExit() 
+
+    public void OnPointerExit(PointerEventData eventData)
     {
         SlotManager.instance.bagInfoPanel.SetActive(false); //一直关闭背包信息面板
     }

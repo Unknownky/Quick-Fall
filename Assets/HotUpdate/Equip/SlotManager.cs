@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlotManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class SlotManager : MonoBehaviour
     public ScriptableObject selectedScriptableObject { private set; get; }
     [BoxGroup("栏位"), LabelText("背包信息面板"), ShowInInspector, SceneObjectsOnly]
     public GameObject bagInfoPanel { private set; get; }
+    [BoxGroup("栏位"), LabelText("背包信息面板的文本"), ShowInInspector, SceneObjectsOnly]
+    public Text bagInfoText;
 
     private void Awake()
     {
@@ -28,6 +31,7 @@ public class SlotManager : MonoBehaviour
         }
         slots = gameObject.GetComponentsInChildren<Slot>().ToList(); // 获取所有栏位
         bagInfoPanel = GameObject.Find("BagInfo");
+        bagInfoText = bagInfoPanel.GetComponentInChildren<Text>();
         bagInfoPanel.SetActive(false);
     }
 
@@ -61,12 +65,20 @@ public class SlotManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 选中栏位物体
+    /// 选中栏位物体，然后将该物体装备起来
     /// </summary>
     /// <param name="scriptableObject">选中的物体</param>
     public void OnSlotSelected(ScriptableObject scriptableObject)
     {
         selectedScriptableObject = scriptableObject;
+        if (scriptableObject is Background)
+        {
+            playerContainer.euipedBackground = scriptableObject as Background;
+        }
+        else if (scriptableObject is PlayerAniController)
+        {
+            playerContainer.euipedPlayerAniController = scriptableObject as PlayerAniController;
+        }
     }
     #endregion
 }
