@@ -61,6 +61,8 @@ public class AudioManager : MonoBehaviour
     /// <param name="volume"></param>
     public static void PlaySoundEffect(string soundName, float volume = 1)
     {
+        volume = volume == 1 ? PlayerPrefs.GetFloat("SoundEffectVolume", 1) : volume;
+        volume *= PlayerPrefs.GetFloat("TotalVolume", 1);
         if (instance.musicList != null && instance.musicList.Count > 0)
         {
             AudioClip clip = instance.musicList.Find(music => music.name == soundName);
@@ -81,6 +83,8 @@ public class AudioManager : MonoBehaviour
     /// <param name="volume">音量大小</param>
     public static void PlayMusic(string musicName, bool loop = true, float volume = 1)
     {
+        volume = volume == 1 ? PlayerPrefs.GetFloat("MusicVolume", 1) : volume;
+        volume *= PlayerPrefs.GetFloat("TotalVolume", 1);
         if (instance.musicList != null && instance.musicList.Count > 0)
         {
             AudioClip clip = instance.musicList.Find(music => music.name == musicName);
@@ -93,6 +97,7 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
 
     #endregion
     //音效测试
