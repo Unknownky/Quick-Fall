@@ -80,6 +80,8 @@ public class GameManager : MonoBehaviour
     {
         if (dead)
         {
+            //暂停所有的协程，避免多次调用GameOver
+            instance.StopAllCoroutines();
             instance.StartCoroutine(instance.DelayGameOver(dead));
         }
     }

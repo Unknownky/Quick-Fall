@@ -60,6 +60,8 @@ public class SceneLoader : MonoBehaviour
     /// <param name="addressableSceneName">Addressable场景名</param>
     public void AddressablesLoadSceneSingle(string addressableSceneName)
     {
+        //暂停其他的加载场景的协程，避免多次加载场景
+        StopAllCoroutines();
         StartCoroutine(AddressablesLoadSceneSingleReally(addressableSceneName));
     }
 
