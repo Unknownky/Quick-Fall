@@ -63,5 +63,10 @@ public class ContainerManager : MonoBehaviour
         }
         Debug.Log("更新果实信息" + fruitName + " " + playerContainer.fruitsPossesion[fruitName]);
     }
+
+    public Dictionary<string, int> GetCurrentFruitsPossesion()
+    {
+        return playerContainer.fruitsPossesion;
+    }
     #endregion
 }

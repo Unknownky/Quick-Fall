@@ -152,6 +152,7 @@ public class Requester : MonoBehaviour
         /// <param name="addressableSceneName">场景名</param>
         public void AddressablesLoadSceneSingle(string addressableSceneName)
         {
+            Time.timeScale = 1.0f;
             //通过反射获取SceneLoader的instance调用AddressablesLoadSceneSingle方法
             var instanceField = instance.sceneLoaderType.GetField("instance");
             var instanceScene = instanceField.GetValue(null);
