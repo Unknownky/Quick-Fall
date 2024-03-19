@@ -3303,7 +3303,7 @@ struct Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682
 struct Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_StaticFields
 {
 	// System.Single UnityEngine.Mathf::Epsilon
-	float ___Epsilon_0;
+	float ___Epsilon_5;
 };
 
 // UnityEngine.Matrix4x4
@@ -35500,7 +35500,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		L_2 = Vector3_Dot_mBB86BB940AA0A32FA7D3C02AC42E5BC7095A5D52_inline(L_0, L_1, NULL);
 		V_0 = L_2;
 		float L_3 = V_0;
-		float L_4 = ((Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_StaticFields*)il2cpp_codegen_static_fields_for(Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_il2cpp_TypeInfo_var))->___Epsilon_0;
+		float L_4 = ((Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_StaticFields*)il2cpp_codegen_static_fields_for(Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_il2cpp_TypeInfo_var))->___Epsilon_5;
 		V_1 = (bool)((((float)L_3) < ((float)L_4))? 1 : 0);
 		bool L_5 = V_1;
 		if (!L_5)

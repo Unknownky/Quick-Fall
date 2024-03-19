@@ -7114,7 +7114,7 @@ IL_0185_2:
 						PrecannedResource_t79D10200E27690DDBB746E68647CBACBDFE31E54* L_69;
 						L_69 = KeyValuePair_2_get_Value_mCD0E5C4E53CE576BB73C61110FBBABE449F7DB58_inline((&V_18), KeyValuePair_2_get_Value_mCD0E5C4E53CE576BB73C61110FBBABE449F7DB58_RuntimeMethod_var);
 						NullCheck(L_67);
-						VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(16 /* System.Void System.Collections.SortedList::Add(System.Object,System.Object) */, L_67, L_68, L_69);
+						VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(20 /* System.Void System.Collections.SortedList::Add(System.Object,System.Object) */, L_67, L_68, L_69);
 					}
 
 IL_01a3_2:
@@ -7141,7 +7141,7 @@ IL_01bc_1:
 				SortedList_t847331629BA06B518F1B5203BD22B59746EDDBF3* L_71 = V_13;
 				NullCheck(L_71);
 				RuntimeObject* L_72;
-				L_72 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(28 /* System.Collections.IDictionaryEnumerator System.Collections.SortedList::GetEnumerator() */, L_71);
+				L_72 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(34 /* System.Collections.IDictionaryEnumerator System.Collections.SortedList::GetEnumerator() */, L_71);
 				V_14 = L_72;
 				goto IL_0260_1;
 			}

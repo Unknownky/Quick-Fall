@@ -18,32 +18,42 @@ MonoBehaviour:
   m_GUID: 231b6329b0ca56f469beb5b203d8c269
   m_SerializeEntries:
   - m_GUID: a4fea2b643a17044c9a57c1f80c05eb5
-    m_Address: HotUpdate.dll
+    m_Address: HotUpdate
     m_ReadOnly: 0
     m_SerializedLabels:
     - hotfix
   - m_GUID: 7900ffe387498684bac2c97135ad61e4
-    m_Address: System.Core.dll
+    m_Address: System.Core
     m_ReadOnly: 0
     m_SerializedLabels:
     - aot
   - m_GUID: 6beba1a228a82ee47a49829511b34246
-    m_Address: mscorlib.dll
+    m_Address: mscorlib
     m_ReadOnly: 0
     m_SerializedLabels:
     - aot
   - m_GUID: 29ff87b08f835b349bbf747e01cc1e01
-    m_Address: System.dll
+    m_Address: System
     m_ReadOnly: 0
     m_SerializedLabels:
     - aot
   - m_GUID: c040fc85bd56c6647822e3be83fa4a11
-    m_Address: Unity.ResourceManager.dll
+    m_Address: Unity.ResourceManager
     m_ReadOnly: 0
     m_SerializedLabels:
     - aot
   - m_GUID: d7ddb5bb620a0374db63ebb2dde34c19
-    m_Address: UnityEngine.CoreModule.dll
+    m_Address: UnityEngine.CoreModule
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - aot
+  - m_GUID: 35f26f90074d2cb42af58cdb4bab2004
+    m_Address: DOTween.dll
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - aot
+  - m_GUID: 337d3e0ded691d143879fe3c31dadd28
+    m_Address: Unity.Addressables.dll
     m_ReadOnly: 0
     m_SerializedLabels:
     - aot

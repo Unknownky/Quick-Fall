@@ -113,6 +113,7 @@ Library: lib_burst_generated
 --compilation-defines=ODIN_INSPECTOR
 --compilation-defines=ODIN_INSPECTOR_3
 --compilation-defines=ODIN_INSPECTOR_EDITOR_ONLY
+--compilation-defines=DOTWEEN
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
@@ -170,6 +171,7 @@ Library: lib_burst_generated
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.Addressables.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\HybridCLR.Runtime.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.2D.IK.Runtime.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Assembly-CSharp-firstpass.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.2D.Tilemap.Extras.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Demo.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Parsers.dll
@@ -309,6 +311,7 @@ Library: lib_burst_generated
 --compilation-defines=ODIN_INSPECTOR
 --compilation-defines=ODIN_INSPECTOR_3
 --compilation-defines=ODIN_INSPECTOR_EDITOR_ONLY
+--compilation-defines=DOTWEEN
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
@@ -366,6 +369,7 @@ Library: lib_burst_generated
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.Addressables.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\HybridCLR.Runtime.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.2D.IK.Runtime.dll
+--root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Assembly-CSharp-firstpass.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\Unity.2D.Tilemap.Extras.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Demo.dll
 --root-assembly=D:\PC\unity\游戏制作文件\Quick Fall\Temp\StagingArea\Data\Managed\QFSW.QC.Parsers.dll

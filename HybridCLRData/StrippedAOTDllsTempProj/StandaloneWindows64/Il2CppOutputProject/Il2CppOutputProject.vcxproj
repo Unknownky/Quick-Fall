@@ -35,6 +35,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Assembly-CSharp-firstpass.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Assembly-CSharp.cpp">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine.cpp">
@@ -46,6 +48,12 @@
     <ClCompile Include="Source\Cinemachine3.cpp">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine4.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\DOTween.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\DOTween1.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\DOTween2.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods.cpp">
     </ClCompile>
@@ -69,7 +77,11 @@
     </ClCompile>
     <ClCompile Include="Source\GenericMethods18.cpp">
     </ClCompile>
+    <ClCompile Include="Source\GenericMethods19.cpp">
+    </ClCompile>
     <ClCompile Include="Source\GenericMethods2.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods20.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods3.cpp">
     </ClCompile>
@@ -248,6 +260,16 @@
     <ClCompile Include="Source\Generics81.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics82.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics83.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics84.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics85.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics86.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics87.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics9.cpp">
     </ClCompile>
@@ -649,9 +671,13 @@
     </ClCompile>
     <ClCompile Include="Source\__Generated.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Assembly-CSharp-firstpass_CodeGen.c">
+    </ClCompile>
     <ClCompile Include="Source\Assembly-CSharp_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\Cinemachine_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\DOTween_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\HybridCLR.Runtime_CodeGen.c">
     </ClCompile>

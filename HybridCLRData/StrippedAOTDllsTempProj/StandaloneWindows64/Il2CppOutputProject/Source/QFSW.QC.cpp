@@ -18623,7 +18623,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* QuantumConsole_GetErrorMessage_m300
 		Exception_t* L_5 = ___e0;
 		NullCheck(L_5);
 		String_t* L_6;
-		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, L_5);
+		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, L_5);
 		String_t* L_7;
 		L_7 = String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C(_stringLiteralB3E8637570D4B29F2528832D7238B76EA5C81E61, L_2, L_4, L_6, NULL);
 		return L_7;
@@ -18672,7 +18672,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* QuantumConsole_GetInvocationErrorMe
 		Exception_t* L_5 = ___e0;
 		NullCheck(L_5);
 		String_t* L_6;
-		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, L_5);
+		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, L_5);
 		String_t* L_7;
 		L_7 = String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C(_stringLiteral905AB6119FA833C58D6C5A55DFBB2E4F4AEE52F6, L_2, L_4, L_6, NULL);
 		return L_7;

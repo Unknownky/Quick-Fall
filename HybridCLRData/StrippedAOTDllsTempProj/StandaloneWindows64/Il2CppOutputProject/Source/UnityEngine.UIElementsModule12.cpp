@@ -1845,7 +1845,7 @@ struct Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682
 struct Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_StaticFields
 {
 	// System.Single UnityEngine.Mathf::Epsilon
-	float ___Epsilon_0;
+	float ___Epsilon_5;
 };
 
 // UnityEngine.Matrix4x4
@@ -5242,7 +5242,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StyleSelectorHelper_FastLookup_mF436923D
 		String_t* L_1 = ___input3;
 		NullCheck(L_0);
 		bool L_2;
-		L_2 = InterfaceFuncInvoker2< bool, String_t*, StyleComplexSelector_tE46C29F65FDBA48D3152781187401C8B55B7D8AD** >::Invoke(1 /* System.Boolean System.Collections.Generic.IDictionary`2<System.String,UnityEngine.UIElements.StyleComplexSelector>::TryGetValue(TKey,TValue&) */, IDictionary_2_tF4FE6DACA3812494193FC430AC514515FC710646_il2cpp_TypeInfo_var, L_0, L_1, (&V_0));
+		L_2 = InterfaceFuncInvoker2< bool, String_t*, StyleComplexSelector_tE46C29F65FDBA48D3152781187401C8B55B7D8AD** >::Invoke(3 /* System.Boolean System.Collections.Generic.IDictionary`2<System.String,UnityEngine.UIElements.StyleComplexSelector>::TryGetValue(TKey,TValue&) */, IDictionary_2_tF4FE6DACA3812494193FC430AC514515FC710646_il2cpp_TypeInfo_var, L_0, L_1, (&V_0));
 		V_1 = L_2;
 		bool L_3 = V_1;
 		if (!L_3)
@@ -15708,7 +15708,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Mathf_Approximately_m1DADD01
 		L_6 = fabsf(L_5);
 		float L_7;
 		L_7 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline(L_4, L_6, NULL);
-		float L_8 = ((Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_StaticFields*)il2cpp_codegen_static_fields_for(Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_il2cpp_TypeInfo_var))->___Epsilon_0;
+		float L_8 = ((Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_StaticFields*)il2cpp_codegen_static_fields_for(Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_il2cpp_TypeInfo_var))->___Epsilon_5;
 		float L_9;
 		L_9 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline(((float)il2cpp_codegen_multiply((9.99999997E-07f), L_7)), ((float)il2cpp_codegen_multiply(L_8, (8.0f))), NULL);
 		V_0 = (bool)((((float)L_2) < ((float)L_9))? 1 : 0);

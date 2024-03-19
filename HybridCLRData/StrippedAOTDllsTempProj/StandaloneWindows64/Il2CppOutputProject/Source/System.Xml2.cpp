@@ -10974,7 +10974,7 @@ IL_007a_1:
 				L_28 = VirtualFuncInvoker0< String_t* >::Invoke(37 /* System.String System.Xml.XmlNode::get_LocalName() */, L_27);
 				NullCheck(L_26);
 				bool L_29;
-				L_29 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(20 /* System.Boolean System.Collections.Hashtable::Contains(System.Object) */, L_26, L_28);
+				L_29 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(24 /* System.Boolean System.Collections.Hashtable::Contains(System.Object) */, L_26, L_28);
 				if (L_29)
 				{
 					goto IL_00e0_1;
@@ -10991,7 +10991,7 @@ IL_007a_1:
 				String_t* L_34;
 				L_34 = VirtualFuncInvoker0< String_t* >::Invoke(37 /* System.String System.Xml.XmlNode::get_LocalName() */, L_33);
 				NullCheck(L_30);
-				VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(18 /* System.Void System.Collections.Hashtable::Add(System.Object,System.Object) */, L_30, L_32, L_34);
+				VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(22 /* System.Void System.Collections.Hashtable::Add(System.Object,System.Object) */, L_30, L_32, L_34);
 				XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_35 = V_6;
 				XmlAttribute_t4B6CC461196FBF5CC9F777E74CC82C98E0CA9D18* L_36 = V_9;
 				NullCheck(L_36);
