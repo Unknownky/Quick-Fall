@@ -13,16 +13,32 @@ public class PlayerAniEquip : MonoBehaviour
 
     AsyncOperationHandle playerAniControllerHandle;
 
+    public static PlayerAniEquip instance;
+
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
         playerAnimator = GetComponent<Animator>();
     }
 
     private void Start()
     {
+        EquipAniController(); 
+    }
+
+
+    /// <summary>
+    /// 装备玩家动画控制器
+    /// </summary>
+    public void EquipAniController()
+    {
         playerAniControllerHandle = Requester.instance.RequestAniController();
         playerAniControllerHandle.Completed += OnPlayerAniControllerLoaded;
     }
+
 
     private void OnPlayerAniControllerLoaded(AsyncOperationHandle handle)
     {

@@ -15,11 +15,27 @@ public class BackgroundEquip : MonoBehaviour
 
     public Action afterBackgroundMaterialLoaded;
 
-    private void Awake() {
+    public static BackgroundEquip instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
         backgroundRenderer = GetComponent<MeshRenderer>();
+
     }
 
-    private void Start() 
+    private void Start()
+    {
+        EquipBackgroundMaterial();
+    }
+
+    /// <summary>
+    /// 装备背景材质 
+    /// </summary>
+    public void EquipBackgroundMaterial()
     {
         backgroundMaterialHandle = Requester.instance.RequestBackground();
         backgroundMaterialHandle.Completed += OnBackgroundMaterialLoaded;

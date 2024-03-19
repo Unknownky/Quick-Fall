@@ -221,6 +221,14 @@ public class Requester : MonoBehaviour
         PlayerPrefs.SetFloat("TotalVolume", volume);
     }
 
+    /// <summary>
+    /// 为展示装备玩家
+    /// </summary>
+    public void EquipPlayerForShow()
+    {
+        PlayerAniEquip.instance.EquipAniController();
+        BackgroundEquip.instance.EquipBackgroundMaterial();
+    }
 
     #endregion
 
