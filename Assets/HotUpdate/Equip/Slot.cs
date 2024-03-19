@@ -33,7 +33,10 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         Debug.Log("鼠标点击");
         if (scriptableObjectOnSlot != null)
+        {
+            Requester.instance.PlaySoundEffect("Select", 1f);
             OnSlotSelected();
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
