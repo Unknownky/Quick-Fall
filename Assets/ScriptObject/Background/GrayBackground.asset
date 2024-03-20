@@ -15,4 +15,6 @@ MonoBehaviour:
   backgroundMaterialName: Background_gray
   backgroundMaterial: {fileID: 2100000, guid: 49981e8f251f63642b47dbbe1fdad947, type: 2}
   backgroundSprite: {fileID: 2800000, guid: ffc80c129c9aca14c9fb4dbeba0e10d2, type: 3}
+  fruitType: Apple
+  backgroundPrice: 8
   backgroundDescription: "\u5929\u8499\u8499"

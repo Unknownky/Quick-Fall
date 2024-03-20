@@ -63,6 +63,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Scene
+  - m_GUID: 53f0c85aa12d42a4e9097098ccf87d1a
+    m_Address: ShopContainer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Objects
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4134f818bc2c84042afd9ac4cc3d02fb, type: 2}
   m_SchemaSet:

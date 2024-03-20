@@ -38,6 +38,16 @@ public class SlotManager : MonoBehaviour
         bagInfoPanel.SetActive(false);
     }
 
+    private void OnEnable() {
+        StartCoroutine(WaitFramsForRefresh());
+    }
+
+    IEnumerator WaitFramsForRefresh()
+    {
+        yield return null;
+        RefreshSlots();
+    }
+
     private void Start()
     {
         RefreshSlots();

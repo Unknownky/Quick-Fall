@@ -230,6 +230,52 @@ public class Requester : MonoBehaviour
         BackgroundEquip.instance.EquipBackgroundMaterial();
     }
 
+    /// <summary>
+    /// 判断物体是否在背包中 
+    /// </summary>
+    /// <param name="scriptableObject">物体</param>
+    /// <returns></returns>
+    public bool IsLatticeOnBag(ScriptableObject scriptableObject)
+    {
+        if (scriptableObject is Background)
+        {
+            return ContainerManager.instance.playerContainer.backgroundsPossesion.Contains(scriptableObject as Background);
+        }
+        else if (scriptableObject is PlayerAniController)
+        {
+            return ContainerManager.instance.playerContainer.playerAniControllersPossesion.Contains(scriptableObject as PlayerAniController);
+        }
+        return false;
+    }
+
+    public void Shop(ScriptableObject lattice)
+    {
+        if (lattice is Background)
+        {
+            Background background = lattice as Background;
+            var dict = ContainerManager.instance.GetCurrentFruitsPossesion();
+            if (dict.ContainsKey(background.fruitType) && dict[background.fruitType] >= background.backgroundPrice)
+            {
+                ContainerManager.instance.UpdateFruitsPossesion(background.fruitType, -background.backgroundPrice);
+                CoinEquip.instance.UpdateCoinPossesion();
+                if(ContainerManager.instance.playerContainer.backgroundsPossesion.Contains(background) == false)
+                    ContainerManager.instance.playerContainer.backgroundsPossesion.Add(background);
+            }
+        }
+        else if (lattice is PlayerAniController)
+        {
+            PlayerAniController playerAniController = lattice as PlayerAniController;
+            var dict = ContainerManager.instance.GetCurrentFruitsPossesion();
+            if (dict.ContainsKey(playerAniController.fruitType) && dict[playerAniController.fruitType] >= playerAniController.playerAniControllerPrice)
+            {
+                ContainerManager.instance.UpdateFruitsPossesion(playerAniController.fruitType, -playerAniController.playerAniControllerPrice);
+                CoinEquip.instance.UpdateCoinPossesion();
+                if(ContainerManager.instance.playerContainer.playerAniControllersPossesion.Contains(playerAniController) == false)
+                    ContainerManager.instance.playerContainer.playerAniControllersPossesion.Add(playerAniController);
+            }
+        }
+    }
+
     #endregion
 
 

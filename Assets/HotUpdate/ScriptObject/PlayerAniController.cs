@@ -19,6 +19,10 @@ public class PlayerAniController : ScriptableObject
     public AnimatorOverrideController playerAnimatorOverrideController;
     [BoxGroup("玩家动画图片")]
     public Texture playerAniControllerSprite;
+    [BoxGroup("玩家动画花费水果类型")]
+    public string fruitType;
+    [BoxGroup("玩家动画价格")]
+    public int playerAniControllerPrice;
     [BoxGroup("玩家动画描述"), Multiline(5)]
     public string playerAniDescription;
 }

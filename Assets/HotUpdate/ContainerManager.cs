@@ -68,5 +68,6 @@ public class ContainerManager : MonoBehaviour
     {
         return playerContainer.fruitsPossesion;
     }
+    
     #endregion
 }
