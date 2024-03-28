@@ -18,7 +18,10 @@ public class ShopManager : MonoBehaviour
     public GameObject latticeInfoPanel { private set; get; }
     [BoxGroup("商格"), LabelText("商格信息面板的文本"), ShowInInspector, SceneObjectsOnly]
     public Text latticeInfoText;
+    [BoxGroup("商格"), LabelText("果实图片")]
+    public List<Sprite> fruitSprites = new List<Sprite>();
 
+    Dictionary<string, Sprite> fruitSpriteDict = new Dictionary<string, Sprite>();
 
     private void Awake()
     {
@@ -35,6 +38,12 @@ public class ShopManager : MonoBehaviour
         latticeInfoText = latticeInfoPanel.GetComponentInChildren<Text>();
         latticeInfoPanel.SetActive(false);
         GameObject.Find("ShopContainer").SetActive(false);
+        foreach (var fruitSprite in fruitSprites)
+        {
+            //"Apple_0"->"Apple"
+            string fruitName = fruitSprite.name.Split('_')[0];
+            fruitSpriteDict.Add(fruitName, fruitSprite);
+        }
     }
 
     private void OnEnable() {
@@ -64,12 +73,15 @@ public class ShopManager : MonoBehaviour
             bool isOnBag = Requester.instance.IsLatticeOnBag(shopContainer.backgroundsForSale[i]);
             if (i < shopContainer.backgroundsForSale.Count)
             {
-                lattices[i].SetLattice(shopContainer.backgroundsForSale[i], shopContainer.backgroundsForSale[i].backgroundSprite, isOnBag);
-
+                Background background = shopContainer.backgroundsForSale[i];
+                lattices[i].SetLattice(background, background.backgroundSprite, isOnBag);
+                lattices[i].SetLatticeDemand(fruitSpriteDict[background.fruitType], background.backgroundPrice.ToString());
             }
             else if (i < shopContainer.backgroundsForSale.Count + shopContainer.playerAniControllersForSale.Count)
             {
-                lattices[i].SetLattice(shopContainer.playerAniControllersForSale[i - shopContainer.backgroundsForSale.Count], shopContainer.playerAniControllersForSale[i - shopContainer.backgroundsForSale.Count].playerAniControllerSprite,isOnBag);
+                PlayerAniController playerAniController = shopContainer.playerAniControllersForSale[i - shopContainer.backgroundsForSale.Count];
+                lattices[i].SetLattice(playerAniController, playerAniController.playerAniControllerSprite,isOnBag);
+                lattices[i].SetLatticeDemand(fruitSpriteDict[playerAniController.fruitType], playerAniController.playerAniControllerPrice.ToString());
             }
             else
             {

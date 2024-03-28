@@ -1,6 +1,9 @@
 Quick Fall
 快速下坠生存竞赛
 
+利用IIS开启本地服务器服务器资源放置于ServerData\StandaloneWindows64中，绑定小米球内网穿透的网址，进行网络热更新
+
+
 TODO：
 根据难度进度改变背景 => 背景购买(√)
 优化场景加载同步问题

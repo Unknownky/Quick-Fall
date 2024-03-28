@@ -7831,6 +7831,9 @@ MonoBehaviour:
   lattices: []
   shopContainer: {fileID: 11400000, guid: 53f0c85aa12d42a4e9097098ccf87d1a, type: 2}
   latticeInfoText: {fileID: 1981433620}
+  fruitSprites:
+  - {fileID: 7293598183456022363, guid: 1ddc9afd21fec77489b1248d18f31b68, type: 3}
+  - {fileID: 4121880872312635667, guid: ffc9f271fad56c243a45f100b9dc6778, type: 3}
 --- !u!1 &1254814795
 GameObject:
   m_ObjectHideFlags: 0

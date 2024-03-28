@@ -11,13 +11,20 @@ public class Lattice : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     public ScriptableObject scriptableObjectOnSlot;
     [BoxGroup("商格"), LabelText("当前商格的图片"), ShowInInspector]
     private RawImage slotImage; // 商格的图片
+    [BoxGroup("商格"), LabelText("当前商格需求物体图片组件"), HideInInspector]
+    private Image demandImage; // 商格的需求物体图片
+    [BoxGroup("商格"), LabelText("当前商格需求物体文本"), HideInInspector]
+    private Text demandText; // 商格的需求物体文本
     [BoxGroup("商格"), LabelText("已经购买的物品的alpha值"), ShowInInspector]
     private float alpha = 0.5f;
+
 
     private void Awake()
     {
         Debug.Log("Slot Awake");
         slotImage = gameObject.GetComponentInChildren<RawImage>();
+        demandImage = transform.parent.GetChild(1).GetComponent<Image>();
+        demandText = transform.parent.GetChild(2).GetComponent<Text>();
     }
 
     /// <summary>
@@ -33,6 +40,13 @@ public class Lattice : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
                 slotImage.color = new Color(slotImage.color.r, slotImage.color.g, slotImage.color.b, 1);
             else
                 slotImage.color = new Color(slotImage.color.r, slotImage.color.g, slotImage.color.b, alpha);
+    }
+
+    public void SetLatticeDemand(Sprite demandSprite, string price)
+    {
+        demandImage.sprite = demandSprite;
+        demandImage.color = new Color(demandImage.color.r, demandImage.color.g, demandImage.color.b, 1);
+        demandText.text = price;
     }
 
 
