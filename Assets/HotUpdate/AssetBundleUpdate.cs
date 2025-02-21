@@ -45,7 +45,7 @@ public class AssetBundleUpdate : MonoBehaviour
         //然后询问用户是否下载
         //做到一起下载资源
         GetDownLoadSizeThenAskForDownLoad();
-        systemAssembly = Assembly.Load("Assembly-CSharp");
+        systemAssembly = Assembly.Load("Assembly-CSharp"); //SceneLoader在Assembly-CSharp中，而AssetBundleUpdate在HotUpdate中所以这里加载Assembly-CSharp
         LoadFastGetAssets();
     }
 

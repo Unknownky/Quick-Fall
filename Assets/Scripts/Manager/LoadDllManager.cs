@@ -37,7 +37,7 @@ public class LoadDllManager : MonoBehaviour
         yield return StartCoroutine(LoadAotDll());
 
 #endif
-        //加载菜单场景
+        //加载资源加载场景
         LoadAssetScene();
     }
 
